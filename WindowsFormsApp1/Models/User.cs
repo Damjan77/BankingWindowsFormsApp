@@ -1,16 +1,24 @@
 namespace WindowsFormsApp1
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
+        
         {
+            Operations = new HashSet<Operation>();
+        }
+
+        public User(string name,string surname,bool isActive, string username, string password)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.isActive = isActive;
+            this.username = username;
+            this.password = password;
             Operations = new HashSet<Operation>();
         }
 
@@ -25,6 +33,14 @@ namespace WindowsFormsApp1
         public string surname { get; set; }
 
         public bool isActive { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string username { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string password { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Operation> Operations { get; set; }

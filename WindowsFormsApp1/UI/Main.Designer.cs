@@ -117,6 +117,7 @@ namespace WindowsFormsApp1
             this.NameTextBox2 = new System.Windows.Forms.TextBox();
             this.CodeTextBox = new System.Windows.Forms.TextBox();
             this.CLS_CurrentButton = new System.Windows.Forms.Button();
+            this.tDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.UsersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
@@ -143,7 +144,8 @@ namespace WindowsFormsApp1
             this.exchangeRatesToolStripMenuItem,
             this.operationsToolStripMenuItem,
             this.cLSCurrencyToolStripMenuItem,
-            this.cLSOperationTypeToolStripMenuItem});
+            this.cLSOperationTypeToolStripMenuItem,
+            this.tDAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -274,7 +276,6 @@ namespace WindowsFormsApp1
             this.UsersDataGridView.RowTemplate.Height = 33;
             this.UsersDataGridView.Size = new System.Drawing.Size(539, 451);
             this.UsersDataGridView.TabIndex = 16;
-            this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
             // 
             // SurnameTextBox
             // 
@@ -301,19 +302,16 @@ namespace WindowsFormsApp1
             this.SaveUserButton.TabIndex = 13;
             this.SaveUserButton.Text = "Save";
             this.SaveUserButton.UseVisualStyleBackColor = true;
-            this.SaveUserButton.Click += new System.EventHandler(this.SaveUserButton_Click);
             // 
             // AddNewUSer
             // 
             this.AddNewUSer.Location = new System.Drawing.Point(192, 261);
-            this.AddNewUSer.Size = new System.Drawing.Size(135, 34);
             this.AddNewUSer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddNewUSer.Name = "AddNewUSer";
             this.AddNewUSer.Size = new System.Drawing.Size(135, 34);
             this.AddNewUSer.TabIndex = 22;
             this.AddNewUSer.Text = "Add";
             this.AddNewUSer.UseVisualStyleBackColor = true;
-            this.AddNewUSer.Click += new System.EventHandler(this.button1_Click);
             // 
             // OfficialRatesPanel
             // 
@@ -376,7 +374,6 @@ namespace WindowsFormsApp1
             this.OfficialRatedataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OfficialRatedataGridView.Size = new System.Drawing.Size(539, 451);
             this.OfficialRatedataGridView.TabIndex = 16;
-            this.OfficialRatedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OfficialRatedataGridView_CellClick);
             // 
             // OfficialRatesDatalabel
             // 
@@ -395,7 +392,6 @@ namespace WindowsFormsApp1
             this.AddNewOfficialRateButton.TabIndex = 33;
             this.AddNewOfficialRateButton.Text = "Add";
             this.AddNewOfficialRateButton.UseVisualStyleBackColor = true;
-            this.AddNewOfficialRateButton.Click += new System.EventHandler(this.AddNewOfficialRateButton_Click);
             // 
             // ValidityDateTextBox
             // 
@@ -432,7 +428,6 @@ namespace WindowsFormsApp1
             this.SaveOfficialRate.TabIndex = 13;
             this.SaveOfficialRate.Text = "Save";
             this.SaveOfficialRate.UseVisualStyleBackColor = true;
-            this.SaveOfficialRate.Click += new System.EventHandler(this.SaveOfficialRate_Click);
             // 
             // Currencylabel
             // 
@@ -494,12 +489,11 @@ namespace WindowsFormsApp1
             // AddNewExchangeRateButton
             // 
             this.AddNewExchangeRateButton.Location = new System.Drawing.Point(177, 356);
-            this.AddNewExchangeRateButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewExchangeRateButton.Name = "AddNewExchangeRateButton";
+            this.AddNewExchangeRateButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewExchangeRateButton.TabIndex = 32;
             this.AddNewExchangeRateButton.Text = "Add";
             this.AddNewExchangeRateButton.UseVisualStyleBackColor = true;
-            this.AddNewExchangeRateButton.Click += new System.EventHandler(this.AddNewExchangeRateButton_Click);
             // 
             // ActivateUserCheckBox3
             // 
@@ -594,7 +588,6 @@ namespace WindowsFormsApp1
             this.ExchangeRatesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ExchangeRatesDataGridView.Size = new System.Drawing.Size(539, 451);
             this.ExchangeRatesDataGridView.TabIndex = 16;
-            this.ExchangeRatesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExchangeRatesDataGridView_CellClick);
             // 
             // CurrencyFromTextBox
             // 
@@ -621,7 +614,6 @@ namespace WindowsFormsApp1
             this.ExchangeRatesButton.TabIndex = 13;
             this.ExchangeRatesButton.Text = "Save";
             this.ExchangeRatesButton.UseVisualStyleBackColor = true;
-            this.ExchangeRatesButton.Click += new System.EventHandler(this.ExchangeRatesButton_Click);
             // 
             // OperationsPanel
             // 
@@ -649,12 +641,11 @@ namespace WindowsFormsApp1
             // AddNewOperationButton
             // 
             this.AddNewOperationButton.Location = new System.Drawing.Point(89, 461);
-            this.AddNewOperationButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewOperationButton.Name = "AddNewOperationButton";
+            this.AddNewOperationButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewOperationButton.TabIndex = 33;
             this.AddNewOperationButton.Text = "Add";
             this.AddNewOperationButton.UseVisualStyleBackColor = true;
-            this.AddNewOperationButton.Click += new System.EventHandler(this.AddNewOperationButton_Click);
             // 
             // textBox3
             // 
@@ -764,7 +755,6 @@ namespace WindowsFormsApp1
             this.OperationsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OperationsDataGridView.Size = new System.Drawing.Size(539, 451);
             this.OperationsDataGridView.TabIndex = 16;
-            this.OperationsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OperationsDataGridView_CellClick);
             // 
             // UserIdTextBox
             // 
@@ -791,7 +781,6 @@ namespace WindowsFormsApp1
             this.SaveOperationButton.TabIndex = 13;
             this.SaveOperationButton.Text = "Save";
             this.SaveOperationButton.UseVisualStyleBackColor = true;
-            this.SaveOperationButton.Click += new System.EventHandler(this.SaveOperationButton_Click);
             // 
             // CLS_OperationTypePanel
             // 
@@ -818,7 +807,6 @@ namespace WindowsFormsApp1
             this.AddNewOperationTypeButton.TabIndex = 32;
             this.AddNewOperationTypeButton.Text = "Add";
             this.AddNewOperationTypeButton.UseVisualStyleBackColor = true;
-            this.AddNewOperationTypeButton.Click += new System.EventHandler(this.AddNewOperationTypeButton_Click);
             // 
             // checkBox1
             // 
@@ -879,7 +867,6 @@ namespace WindowsFormsApp1
             this.CLS_OperationTypeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CLS_OperationTypeDataGridView.Size = new System.Drawing.Size(539, 451);
             this.CLS_OperationTypeDataGridView.TabIndex = 16;
-            this.CLS_OperationTypeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CLS_OperationTypeDataGridView_CellClick);
             // 
             // NameTextBox3
             // 
@@ -906,7 +893,6 @@ namespace WindowsFormsApp1
             this.VLS_OperationTypeButton.TabIndex = 13;
             this.VLS_OperationTypeButton.Text = "Save";
             this.VLS_OperationTypeButton.UseVisualStyleBackColor = true;
-            this.VLS_OperationTypeButton.Click += new System.EventHandler(this.VLS_OperationTypeButton_Click);
             // 
             // CLS_CurrencyPanel
             // 
@@ -928,12 +914,11 @@ namespace WindowsFormsApp1
             // AddNewCLS_CurrencyButton
             // 
             this.AddNewCLS_CurrencyButton.Location = new System.Drawing.Point(77, 291);
-            this.AddNewCLS_CurrencyButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewCLS_CurrencyButton.Name = "AddNewCLS_CurrencyButton";
+            this.AddNewCLS_CurrencyButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewCLS_CurrencyButton.TabIndex = 31;
             this.AddNewCLS_CurrencyButton.Text = "Add";
             this.AddNewCLS_CurrencyButton.UseVisualStyleBackColor = true;
-            this.AddNewCLS_CurrencyButton.Click += new System.EventHandler(this.AddNewCLS_CurrencyButton_Click);
             // 
             // ActivateUserCheckBox4
             // 
@@ -994,7 +979,6 @@ namespace WindowsFormsApp1
             this.CLS_CurrencyDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CLS_CurrencyDataGridView.Size = new System.Drawing.Size(539, 451);
             this.CLS_CurrencyDataGridView.TabIndex = 16;
-            this.CLS_CurrencyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CLS_CurrencyDataGridView_CellClick);
             // 
             // NameTextBox2
             // 
@@ -1021,7 +1005,13 @@ namespace WindowsFormsApp1
             this.CLS_CurrentButton.TabIndex = 13;
             this.CLS_CurrentButton.Text = "Save";
             this.CLS_CurrentButton.UseVisualStyleBackColor = true;
-            this.CLS_CurrentButton.Click += new System.EventHandler(this.CLS_CurrentButton_Click);
+            // 
+            // tDAToolStripMenuItem
+            // 
+            this.tDAToolStripMenuItem.Name = "tDAToolStripMenuItem";
+            this.tDAToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.tDAToolStripMenuItem.Text = "TDA";
+            this.tDAToolStripMenuItem.Click += new System.EventHandler(this.tDAToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1035,6 +1025,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.UsersPanel);
             this.Controls.Add(this.OperationsPanel);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.Name = "Main";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -1152,5 +1143,6 @@ namespace WindowsFormsApp1
         private TableLayoutPanel tableLayoutPanel1;
         private Button AddNewExchangeRateButton;
         private Button AddNewOperationButton;
+        private ToolStripMenuItem tDAToolStripMenuItem;
     }
 }

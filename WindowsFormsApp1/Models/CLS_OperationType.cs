@@ -20,5 +20,6 @@ namespace WindowsFormsApp1
         public string Name { get; set; }
 
         public bool IsActive { get; set; }
+
     }
 }
