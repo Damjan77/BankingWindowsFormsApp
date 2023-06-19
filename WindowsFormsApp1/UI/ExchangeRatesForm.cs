@@ -249,7 +249,7 @@ namespace WindowsFormsApp1.UI
 
             NBRMDataGridView.DataSource = dataSet.Tables[0];
         }
-
+          
         private void DownloadExchangeRatesButton_Click(object sender, EventArgs e) //Da se poviak metodot so scheduler sekoj den vo 12:00
         {
             exchangeRates.AddNBRMDataInDataBase();
