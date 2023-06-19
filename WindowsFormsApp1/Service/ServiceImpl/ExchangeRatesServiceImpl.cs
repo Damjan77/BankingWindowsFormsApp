@@ -192,7 +192,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         bool isActive = true;
                         string environmentCurrency = Environment.GetEnvironmentVariable("CurrencyMKD");
 
-                        var exchangeRate = new ExchangeRate
+                        var exchangeRate = new ExchangeRate //EUR -> MKD
                         {
                             ValidityDate = validityDate,
                             CurrencyFrom = currencyFrom,
@@ -201,7 +201,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                             IsActive = isActive
                         };
 
-                        var exchangeRate2 = new ExchangeRate
+                        var exchangeRate2 = new ExchangeRate //MKD -> EUR
                         {
                             ValidityDate = validityDate,
                             CurrencyFrom = environmentCurrency,

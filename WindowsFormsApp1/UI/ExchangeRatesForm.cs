@@ -8,12 +8,12 @@ using WindowsFormsApp1.NBRMServiceReference;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.UI
 {
     public partial class ExchangeRatesForm : Form
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IExchangeRatesService exchangeRates;
         ICLS_CurrencyService cls_CurrencyService;
 
@@ -39,31 +39,14 @@ namespace WindowsFormsApp1.UI
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;
 
-            //string connectionString = Environment.GetEnvironmentVariable("ConnString");
-
-
-            getAllData();
-            //getNBRMData();
-            //NBRMServiceReference.KursSoapClient client = new NBRMServiceReference.KursSoapClient();
-            //EdataGridView.DataSource = client.GetExchangeRates("01.02.2010", "15.02.2010"); 
+            Scheduler.StartScheduling(exchangeRates);
+            getAllData(); 
         }
 
         private void getAllData()
         {
             ExchangeRatesDataGridView.DataSource = exchangeRates.getAllData();
-        }
-
-        //private void getNBRMData()
-        //{
-        //    var client = new KursSoapClient();
-        //    var exchangeRates = client.GetExchangeRate("01.02.2010", "15.02.2010");
-        //    //List<ExchangeRate> exchangeRatesList = exchangeRates.ToList();
-        //    foreach (var rate in exchangeRates)
-        //    {
-        //        NBRMDataGridView.DataSource += rate.ToString();
-        //    }
-        //    NBRMDataGridView.DataSource = exchangeRates.ToList();
-        //}
+        } 
 
         private void clearAllData()
         {
@@ -254,6 +237,11 @@ namespace WindowsFormsApp1.UI
         {
             exchangeRates.AddNBRMDataInDataBase();
             getAllData();
+        }
+
+        private void ExchangeRatesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Scheduler.StopScheduling();
         }
     }
 }

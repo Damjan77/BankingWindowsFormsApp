@@ -267,6 +267,7 @@
             this.Controls.Add(this.ExchangeRatesPanel);
             this.Name = "ExchangeRatesForm";
             this.Text = "ExchangeRatesForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExchangeRatesForm_FormClosing);
             this.Load += new System.EventHandler(this.ExchangeRatesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesDataGridView)).EndInit();
             this.ExchangeRatesPanel.ResumeLayout(false);
