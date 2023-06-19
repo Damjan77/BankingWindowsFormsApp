@@ -12,11 +12,14 @@ namespace WindowsFormsApp1.UI
     {
         SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         ICLS_OperationTypeService operationTypeService;
-        public CLS_OperatinoTypeForm()
+        public CLS_OperatinoTypeForm(ICLS_OperationTypeService operationTypeService)
         {
             InitializeComponent();
-            operationTypeService = new CLS_OperationTypeServiceImpl();
+            this.WindowState = FormWindowState.Maximized;
+            this.operationTypeService = operationTypeService;
         }
+
+        public CLS_OperatinoTypeForm() : this(new CLS_OperationTypeServiceImpl()) { }
 
         private void CLS_OperationTypeForm_Load(object sender, EventArgs e)
         {

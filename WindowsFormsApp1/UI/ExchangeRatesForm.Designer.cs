@@ -42,6 +42,9 @@
             this.AddNewExchangeRateButton = new System.Windows.Forms.Button();
             this.ExchangeRatesdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ExchangeRatesPanel = new System.Windows.Forms.Panel();
+            this.DownloadExchangeRatesButton = new System.Windows.Forms.Button();
+            this.WebServiceButton = new System.Windows.Forms.Button();
+            this.NBRMDataGridView = new System.Windows.Forms.DataGridView();
             this.CurrencyToComboBox = new System.Windows.Forms.ComboBox();
             this.CurrencyFromComboBox = new System.Windows.Forms.ComboBox();
             this.ExchangeRatesCurrencyFromErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -49,6 +52,7 @@
             this.ExchangeRatesRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesDataGridView)).BeginInit();
             this.ExchangeRatesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NBRMDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesCurrencyFromErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesCurrencyToErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesRateErrorProvider)).BeginInit();
@@ -110,7 +114,7 @@
             // ExchangeRatesDataLabel
             // 
             this.ExchangeRatesDataLabel.AutoSize = true;
-            this.ExchangeRatesDataLabel.Location = new System.Drawing.Point(717, 40);
+            this.ExchangeRatesDataLabel.Location = new System.Drawing.Point(666, 46);
             this.ExchangeRatesDataLabel.Name = "ExchangeRatesDataLabel";
             this.ExchangeRatesDataLabel.Size = new System.Drawing.Size(166, 20);
             this.ExchangeRatesDataLabel.TabIndex = 21;
@@ -171,6 +175,9 @@
             // 
             // ExchangeRatesPanel
             // 
+            this.ExchangeRatesPanel.Controls.Add(this.DownloadExchangeRatesButton);
+            this.ExchangeRatesPanel.Controls.Add(this.WebServiceButton);
+            this.ExchangeRatesPanel.Controls.Add(this.NBRMDataGridView);
             this.ExchangeRatesPanel.Controls.Add(this.CurrencyToComboBox);
             this.ExchangeRatesPanel.Controls.Add(this.CurrencyFromComboBox);
             this.ExchangeRatesPanel.Controls.Add(this.ExchangeRatesdateTimePicker);
@@ -187,8 +194,42 @@
             this.ExchangeRatesPanel.Controls.Add(this.SaveExchangeRatesButton);
             this.ExchangeRatesPanel.Location = new System.Drawing.Point(24, 30);
             this.ExchangeRatesPanel.Name = "ExchangeRatesPanel";
-            this.ExchangeRatesPanel.Size = new System.Drawing.Size(1101, 596);
+            this.ExchangeRatesPanel.Size = new System.Drawing.Size(1796, 803);
             this.ExchangeRatesPanel.TabIndex = 25;
+            // 
+            // DownloadExchangeRatesButton
+            // 
+            this.DownloadExchangeRatesButton.Location = new System.Drawing.Point(670, 588);
+            this.DownloadExchangeRatesButton.Name = "DownloadExchangeRatesButton";
+            this.DownloadExchangeRatesButton.Size = new System.Drawing.Size(213, 36);
+            this.DownloadExchangeRatesButton.TabIndex = 38;
+            this.DownloadExchangeRatesButton.Text = "DOWNLOAD DATA";
+            this.DownloadExchangeRatesButton.UseVisualStyleBackColor = true;
+            this.DownloadExchangeRatesButton.Click += new System.EventHandler(this.DownloadExchangeRatesButton_Click);
+            // 
+            // WebServiceButton
+            // 
+            this.WebServiceButton.Location = new System.Drawing.Point(1315, 588);
+            this.WebServiceButton.Name = "WebServiceButton";
+            this.WebServiceButton.Size = new System.Drawing.Size(207, 36);
+            this.WebServiceButton.TabIndex = 37;
+            this.WebServiceButton.Text = "VIEW NBRM DATA";
+            this.WebServiceButton.UseVisualStyleBackColor = true;
+            this.WebServiceButton.Click += new System.EventHandler(this.WebServiceButton_Click);
+            // 
+            // NBRMDataGridView
+            // 
+            this.NBRMDataGridView.AllowUserToOrderColumns = true;
+            this.NBRMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NBRMDataGridView.Location = new System.Drawing.Point(1056, 99);
+            this.NBRMDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NBRMDataGridView.MultiSelect = false;
+            this.NBRMDataGridView.Name = "NBRMDataGridView";
+            this.NBRMDataGridView.RowHeadersWidth = 62;
+            this.NBRMDataGridView.RowTemplate.Height = 33;
+            this.NBRMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.NBRMDataGridView.Size = new System.Drawing.Size(713, 451);
+            this.NBRMDataGridView.TabIndex = 36;
             // 
             // CurrencyToComboBox
             // 
@@ -222,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 664);
+            this.ClientSize = new System.Drawing.Size(1901, 881);
             this.Controls.Add(this.ExchangeRatesPanel);
             this.Name = "ExchangeRatesForm";
             this.Text = "ExchangeRatesForm";
@@ -230,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesDataGridView)).EndInit();
             this.ExchangeRatesPanel.ResumeLayout(false);
             this.ExchangeRatesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NBRMDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesCurrencyFromErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesCurrencyToErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesRateErrorProvider)).EndInit();
@@ -257,5 +299,8 @@
         private System.Windows.Forms.ErrorProvider ExchangeRatesRateErrorProvider;
         private System.Windows.Forms.ComboBox CurrencyToComboBox;
         private System.Windows.Forms.ComboBox CurrencyFromComboBox;
+        private System.Windows.Forms.DataGridView NBRMDataGridView;
+        private System.Windows.Forms.Button WebServiceButton;
+        private System.Windows.Forms.Button DownloadExchangeRatesButton;
     }
 }

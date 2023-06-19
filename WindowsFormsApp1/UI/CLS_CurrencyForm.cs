@@ -10,14 +10,18 @@ namespace WindowsFormsApp1.UI
 {
     public partial class CLS_CurrencyForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         ICLS_CurrencyService cls_CurrencyService;
 
-        public CLS_CurrencyForm()
+        public CLS_CurrencyForm(ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            cls_CurrencyService = new CLSCurrencyServiceImpl();
+            this.WindowState = FormWindowState.Maximized;
+            this.cls_CurrencyService = cls_CurrencyService;
         }
+
+        public CLS_CurrencyForm() : this(new CLSCurrencyServiceImpl()) { }
+
 
         private void CLS_CurrencyForm_Load(object sender, EventArgs e)
         {
@@ -65,8 +69,7 @@ namespace WindowsFormsApp1.UI
                 clsCurrencyCodeErrorProvider.Clear(); 
             }
 
-            //name
-
+            //name logic
             bool nameFlag = true;
 
             if (string.IsNullOrEmpty(NameTextBox2.Text.Trim()))

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.OfficialRatesPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.NBRMDataButton = new System.Windows.Forms.Button();
+            this.OfficialRatesCurrencyComboBox = new System.Windows.Forms.ComboBox();
             this.officialRateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ValidityDatalabel = new System.Windows.Forms.Label();
             this.OfficialRatedataGridView = new System.Windows.Forms.DataGridView();
@@ -44,54 +46,79 @@
             this.Ratelabel = new System.Windows.Forms.Label();
             this.officialRateCurrencyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.officialRateRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.OfficialRatesCurrencyComboBox = new System.Windows.Forms.ComboBox();
+            this.ViewOfficialRatesNBRMDataGridView = new System.Windows.Forms.DataGridView();
+            this.viewOfficialRatesNBRM = new System.Windows.Forms.Button();
             this.OfficialRatesPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateCurrencyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateRateErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // OfficialRatesPanel
             // 
             this.OfficialRatesPanel.Controls.Add(this.tableLayoutPanel1);
-            this.OfficialRatesPanel.Location = new System.Drawing.Point(28, 22);
+            this.OfficialRatesPanel.Location = new System.Drawing.Point(38, 24);
             this.OfficialRatesPanel.Name = "OfficialRatesPanel";
-            this.OfficialRatesPanel.Size = new System.Drawing.Size(1087, 685);
+            this.OfficialRatesPanel.Size = new System.Drawing.Size(1629, 830);
             this.OfficialRatesPanel.TabIndex = 23;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tableLayoutPanel1.Controls.Add(this.NBRMDataButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.OfficialRatesCurrencyComboBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.officialRateDateTimePicker, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ValidityDatalabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.OfficialRatedataGridView, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.OfficialRatedataGridView, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.OfficialRatesDatalabel, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.AddNewOfficialRateButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.AddNewOfficialRateButton, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.RateTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.UserActivationcheckBox2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.SaveOfficialRate, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.SaveOfficialRate, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.Currencylabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.UserActivationLabel2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.Ratelabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ViewOfficialRatesNBRMDataGridView, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.viewOfficialRatesNBRM, 3, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 622);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1557, 670);
             this.tableLayoutPanel1.TabIndex = 34;
+            // 
+            // NBRMDataButton
+            // 
+            this.NBRMDataButton.Location = new System.Drawing.Point(387, 43);
+            this.NBRMDataButton.Name = "NBRMDataButton";
+            this.NBRMDataButton.Size = new System.Drawing.Size(194, 34);
+            this.NBRMDataButton.TabIndex = 24;
+            this.NBRMDataButton.Text = "Download Officials";
+            this.NBRMDataButton.UseVisualStyleBackColor = true;
+            this.NBRMDataButton.Click += new System.EventHandler(this.NBRMDataButton_Click);
+            // 
+            // OfficialRatesCurrencyComboBox
+            // 
+            this.OfficialRatesCurrencyComboBox.FormattingEnabled = true;
+            this.OfficialRatesCurrencyComboBox.Location = new System.Drawing.Point(177, 43);
+            this.OfficialRatesCurrencyComboBox.Name = "OfficialRatesCurrencyComboBox";
+            this.OfficialRatesCurrencyComboBox.Size = new System.Drawing.Size(194, 28);
+            this.OfficialRatesCurrencyComboBox.TabIndex = 24;
             // 
             // officialRateDateTimePicker
             // 
-            this.officialRateDateTimePicker.Location = new System.Drawing.Point(203, 3);
+            this.officialRateDateTimePicker.Location = new System.Drawing.Point(177, 3);
             this.officialRateDateTimePicker.Name = "officialRateDateTimePicker";
             this.officialRateDateTimePicker.Size = new System.Drawing.Size(194, 26);
             this.officialRateDateTimePicker.TabIndex = 35;
@@ -109,7 +136,7 @@
             // 
             this.OfficialRatedataGridView.AllowUserToOrderColumns = true;
             this.OfficialRatedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OfficialRatedataGridView.Location = new System.Drawing.Point(403, 162);
+            this.OfficialRatedataGridView.Location = new System.Drawing.Point(387, 182);
             this.OfficialRatedataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OfficialRatedataGridView.MultiSelect = false;
             this.OfficialRatedataGridView.Name = "OfficialRatedataGridView";
@@ -123,7 +150,7 @@
             // OfficialRatesDatalabel
             // 
             this.OfficialRatesDatalabel.AutoSize = true;
-            this.OfficialRatesDatalabel.Location = new System.Drawing.Point(403, 0);
+            this.OfficialRatesDatalabel.Location = new System.Drawing.Point(387, 0);
             this.OfficialRatesDatalabel.Name = "OfficialRatesDatalabel";
             this.OfficialRatesDatalabel.Size = new System.Drawing.Size(143, 20);
             this.OfficialRatesDatalabel.TabIndex = 21;
@@ -131,7 +158,7 @@
             // 
             // AddNewOfficialRateButton
             // 
-            this.AddNewOfficialRateButton.Location = new System.Drawing.Point(3, 163);
+            this.AddNewOfficialRateButton.Location = new System.Drawing.Point(3, 183);
             this.AddNewOfficialRateButton.Name = "AddNewOfficialRateButton";
             this.AddNewOfficialRateButton.Size = new System.Drawing.Size(150, 30);
             this.AddNewOfficialRateButton.TabIndex = 33;
@@ -141,7 +168,7 @@
             // 
             // RateTextBox
             // 
-            this.RateTextBox.Location = new System.Drawing.Point(203, 82);
+            this.RateTextBox.Location = new System.Drawing.Point(177, 82);
             this.RateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RateTextBox.Name = "RateTextBox";
             this.RateTextBox.Size = new System.Drawing.Size(194, 26);
@@ -150,7 +177,7 @@
             // UserActivationcheckBox2
             // 
             this.UserActivationcheckBox2.AutoSize = true;
-            this.UserActivationcheckBox2.Location = new System.Drawing.Point(203, 126);
+            this.UserActivationcheckBox2.Location = new System.Drawing.Point(177, 126);
             this.UserActivationcheckBox2.Name = "UserActivationcheckBox2";
             this.UserActivationcheckBox2.Size = new System.Drawing.Size(147, 24);
             this.UserActivationcheckBox2.TabIndex = 20;
@@ -159,7 +186,7 @@
             // 
             // SaveOfficialRate
             // 
-            this.SaveOfficialRate.Location = new System.Drawing.Point(203, 162);
+            this.SaveOfficialRate.Location = new System.Drawing.Point(177, 182);
             this.SaveOfficialRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveOfficialRate.Name = "SaveOfficialRate";
             this.SaveOfficialRate.Size = new System.Drawing.Size(159, 34);
@@ -203,19 +230,31 @@
             // 
             this.officialRateRateErrorProvider.ContainerControl = this;
             // 
-            // OfficialRatesCurrencyComboBox
+            // ViewOfficialRatesNBRMDataGridView
             // 
-            this.OfficialRatesCurrencyComboBox.FormattingEnabled = true;
-            this.OfficialRatesCurrencyComboBox.Location = new System.Drawing.Point(203, 43);
-            this.OfficialRatesCurrencyComboBox.Name = "OfficialRatesCurrencyComboBox";
-            this.OfficialRatesCurrencyComboBox.Size = new System.Drawing.Size(194, 28);
-            this.OfficialRatesCurrencyComboBox.TabIndex = 24;
+            this.ViewOfficialRatesNBRMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewOfficialRatesNBRMDataGridView.Location = new System.Drawing.Point(1006, 183);
+            this.ViewOfficialRatesNBRMDataGridView.Name = "ViewOfficialRatesNBRMDataGridView";
+            this.ViewOfficialRatesNBRMDataGridView.RowHeadersWidth = 62;
+            this.ViewOfficialRatesNBRMDataGridView.RowTemplate.Height = 28;
+            this.ViewOfficialRatesNBRMDataGridView.Size = new System.Drawing.Size(548, 459);
+            this.ViewOfficialRatesNBRMDataGridView.TabIndex = 36;
+            // 
+            // viewOfficialRatesNBRM
+            // 
+            this.viewOfficialRatesNBRM.Location = new System.Drawing.Point(1006, 83);
+            this.viewOfficialRatesNBRM.Name = "viewOfficialRatesNBRM";
+            this.viewOfficialRatesNBRM.Size = new System.Drawing.Size(148, 37);
+            this.viewOfficialRatesNBRM.TabIndex = 37;
+            this.viewOfficialRatesNBRM.Text = "View Officials";
+            this.viewOfficialRatesNBRM.UseVisualStyleBackColor = true;
+            this.viewOfficialRatesNBRM.Click += new System.EventHandler(this.viewOfficialRatesNBRM_Click);
             // 
             // OfficialRatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 775);
+            this.ClientSize = new System.Drawing.Size(1117, 617);
             this.Controls.Add(this.OfficialRatesPanel);
             this.Name = "OfficialRatesForm";
             this.Text = "OfficialRatesForm";
@@ -226,6 +265,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateCurrencyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateRateErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +288,8 @@
         private System.Windows.Forms.DateTimePicker officialRateDateTimePicker;
         private System.Windows.Forms.ErrorProvider officialRateRateErrorProvider;
         private System.Windows.Forms.ComboBox OfficialRatesCurrencyComboBox;
+        private System.Windows.Forms.Button NBRMDataButton;
+        private System.Windows.Forms.DataGridView ViewOfficialRatesNBRMDataGridView;
+        private System.Windows.Forms.Button viewOfficialRatesNBRM;
     }
 }

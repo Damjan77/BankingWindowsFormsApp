@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp1.Service;
+using WindowsFormsApp1.Service.ServiceImpl;
 using WindowsFormsApp1.UI;
 
 namespace WindowsFormsApp1
@@ -14,7 +16,27 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInForm());
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            try
+            {
+                Application.Run(new LogInForm());
+            }
+            catch (Exception ex)
+            {
+                // Handle any uncaught exceptions
+                MessageBox.Show($"An unhandled exception occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Application.Run(new MainForm()); Prasanje
+            }
         }
+
+        // Global exception handler
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {  
+            Exception ex = e.ExceptionObject as Exception;
+            MessageBox.Show($"An unhandled exception occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
     }
 }

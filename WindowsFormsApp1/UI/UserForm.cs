@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
@@ -8,14 +7,16 @@ namespace WindowsFormsApp1
 {
     public partial class UserForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         private IUserService userService;
 
-        public UserForm()
+        public UserForm(IUserService userService)
         {
             InitializeComponent();
-            userService = new UserServiceImpl();
+            this.WindowState = FormWindowState.Maximized;
+            this.userService = userService;
         }
+
+        public UserForm() : this(new UserServiceImpl()) { }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,23 @@ namespace WindowsFormsApp1
             {
                 var selectedRow = UsersDataGridView.SelectedRows[0];
                 usr.userId = Convert.ToInt32(selectedRow.Cells["userId"].Value);
+                usr.surname = SurnameTextBox.Text.ToString();
+                usr.isActive = CheckBoxForUserActivation.Checked;
+                usr.name = NameTextBox1.Text.ToString();
+                usr.username = UsernameTextBox.Text.ToString();
+                usr.password = userService.Encrypt(PasswordTextBox.Text.ToString());
+
+                userService.UpdateDataInUserTable(usr);
+            }
+            else
+            {
+                usr.surname = SurnameTextBox.Text.ToString();
+                usr.isActive = CheckBoxForUserActivation.Checked;
+                usr.name = NameTextBox1.Text.ToString();
+                usr.username = UsernameTextBox.Text.ToString();
+                usr.password = userService.Encrypt(PasswordTextBox.Text.ToString());
+
+                userService.InsertDataInUserTable(usr);
             }
 
             //if (IamExisting)
@@ -44,13 +62,7 @@ namespace WindowsFormsApp1
             //    var selected = ((DataRowView)UsersDataGridView.SelectedRows[0].DataBoundItem).Row.ItemArray;
             //    usr.userId = Int32.Parse(selected[0].ToString());
             //}
-            usr.surname = SurnameTextBox.Text.ToString();
-            usr.isActive = CheckBoxForUserActivation.Checked;
-            usr.name = NameTextBox1.Text.ToString();
-            usr.username = UsernameTextBox.Text.ToString();
-            usr.password = userService.Encrypt(PasswordTextBox.Text.ToString());
 
-            userService.InsertDataInUserTable(usr);
             getAllData();
         }
 

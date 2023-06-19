@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class CLSCurrencyServiceImpl : ICLS_CurrencyService
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
 
         public List<CLS_Currency> getAllData()
         {
@@ -38,50 +38,110 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {
+            //CLS_Currency cls_Currency = toSave as CLS_Currency;
+
+            //try
+            //{
+            //    con.Open();
+
+            //    SqlCommand sqlCommand = new SqlCommand("CLS_Currency_INSERT", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
+            //    sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
+            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
+            //    sqlCommand.ExecuteNonQuery();
+
+            //    MessageBox.Show("Data saved Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+
             CLS_Currency cls_Currency = toSave as CLS_Currency;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1())
+                {
+                    CLS_Currency newCurrency = new CLS_Currency
+                    {
+                        Code = cls_Currency.Code,
+                        Name = cls_Currency.Name,
+                        IsActive = cls_Currency.IsActive
+                    };
 
-                SqlCommand sqlCommand = new SqlCommand("CLS_Currency_INSERT", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
-                sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
-                sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    // Add the new CLS_Currency entity to the DbContext
+                    myDb.CLS_Currency.Add(newCurrency);
 
-                MessageBox.Show("Data saved Successfull");
-                con.Close();
+                    // Save changes to the database
+                    myDb.SaveChanges();
+                }
+
+                MessageBox.Show("Data saved successfully");
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
 
         public void UpdateDataInExchangeRatesTable(object toSave)
         {
+            //CLS_Currency cls_Currency = toSave as CLS_Currency;
+
+            //try
+            //{
+            //    con.Open();
+
+            //    SqlCommand sqlCommand = new SqlCommand("CLS_Currency_Update", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("CurrencyId", cls_Currency.CurrencyId);
+            //    sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
+            //    sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
+            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
+            //    sqlCommand.ExecuteNonQuery();
+
+            //    MessageBox.Show("Data updated Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+
             CLS_Currency cls_Currency = toSave as CLS_Currency;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1())
+                {
+                    CLS_Currency existingCurrency = myDb.CLS_Currency.Find(cls_Currency.CurrencyId);
 
-                SqlCommand sqlCommand = new SqlCommand("CLS_Currency_Update", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("CurrencyId", cls_Currency.CurrencyId);
-                sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
-                sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
-                sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    if (existingCurrency != null)
+                    {
+                        // Update
+                        existingCurrency.Code = cls_Currency.Code;
+                        existingCurrency.Name = cls_Currency.Name;
+                        existingCurrency.IsActive = cls_Currency.IsActive;
 
-                MessageBox.Show("Data updated Successfull");
-                con.Close();
+                        // Save changes
+                        myDb.SaveChanges();
+
+                        MessageBox.Show("Data updated successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Currency not found");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
           

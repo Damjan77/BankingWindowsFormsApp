@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-using System.Data.Entity;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class UserServiceImpl : IUserService
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         public List<User> GetAllData(string procedure)
         {
             using (var myDb = new Model1())
@@ -48,26 +46,110 @@ namespace WindowsFormsApp1.Service.ServiceImpl
         //}
 
         public void InsertDataInUserTable(object toSave)
-        {          
+        {
+            //try
+            //{
+            //    User usr = toSave as User;
+            //    con.Open();
+            //    SqlCommand sqlCommand = new SqlCommand("Users_InsertUser", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("userId", usr.userId);
+            //    sqlCommand.Parameters.AddWithValue("name", usr.name);
+            //    sqlCommand.Parameters.AddWithValue("surname", usr.surname);
+            //    sqlCommand.Parameters.AddWithValue("isActive", usr.isActive);
+            //    sqlCommand.Parameters.AddWithValue("username", usr.username);
+            //    sqlCommand.Parameters.AddWithValue("password", usr.password);
+            //    sqlCommand.ExecuteNonQuery();
+            //    MessageBox.Show("Data saved Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);//message box
+            //}
+
             try
             {
                 User usr = toSave as User;
-                con.Open();
-                SqlCommand sqlCommand = new SqlCommand("Users_InsertUser", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("userId", usr.userId);
-                sqlCommand.Parameters.AddWithValue("name", usr.name);
-                sqlCommand.Parameters.AddWithValue("surname", usr.surname);
-                sqlCommand.Parameters.AddWithValue("isActive", usr.isActive);
-                sqlCommand.Parameters.AddWithValue("username", usr.username);
-                sqlCommand.Parameters.AddWithValue("password", usr.password);
-                sqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Data saved Successfull");
-                con.Close();
+
+                using (var myDb = new Model1())
+                {
+                    // Create a new User entity
+                    User newUser = new User
+                    {
+                        userId = usr.userId,
+                        name = usr.name,
+                        surname = usr.surname,
+                        isActive = usr.isActive,
+                        username = usr.username,
+                        password = usr.password
+                    };
+
+                    var userWithSameUsername = myDb.Users.FirstOrDefault(u => u.username == usr.username);
+                    if (userWithSameUsername != null)
+                    {
+                        MessageBox.Show("User with this username already exist!");
+                    }
+                    else
+                    {
+                        // Add the new User entity to the DbContext
+                        myDb.Users.Add(newUser);
+
+                        // Save changes to the database
+                        myDb.SaveChanges();
+                        MessageBox.Show("Data saved successfully");
+                    }                
+                }
+                
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Data saved unsuccessfully");
+            }
+        }
+
+        public void UpdateDataInUserTable(object toSave)
+        {
+            User usr = toSave as User;
+
+            try
+            {
+                using (var myDb = new Model1())
+                {
+                    User existingUser = myDb.Users.Find(usr.userId);
+
+                    if (existingUser != null)
+                    {
+                        // Update
+                        existingUser.name = usr.name;
+                        existingUser.surname = usr.surname;
+                        existingUser.isActive = usr.isActive;
+                        existingUser.username = usr.username;
+                        existingUser.password = usr.password;
+
+                        var userWithSameUsername = myDb.Users.FirstOrDefault(u => u.username == usr.username);
+                        if (userWithSameUsername != null)
+                        {
+                            MessageBox.Show("User with this username already exist!");
+                        }
+                        else
+                        {
+                            // Save changes to the database
+                            myDb.SaveChanges();
+                            MessageBox.Show("Data updated successfully");
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
         }
 
@@ -88,6 +170,16 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 string encryptedPassword = Encrypt(password);
                 var user = myDb.Users.FirstOrDefault(u => u.username == username && u.password == encryptedPassword);
                 return user != null;
+            }
+        }
+
+        public int? getUserId(string username, string password)
+        {
+            using (var myDb = new Model1())
+            {
+                string encryptedPassword = Encrypt(password);
+                var user = myDb.Users.FirstOrDefault(u => u.username == username && u.password == encryptedPassword);
+                return user.userId;
             }
         }
 

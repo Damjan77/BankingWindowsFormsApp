@@ -23,6 +23,8 @@ namespace WindowsFormsApp1
         [StringLength(3)]
         public string CurrencyTo { get; set; }
 
+        public decimal t_money { get; set; }
+
         public virtual User User { get; set; }
     }
 }

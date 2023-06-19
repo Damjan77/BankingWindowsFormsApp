@@ -11,11 +11,12 @@ namespace WindowsFormsApp1.UI
     {
         private IUserService userService;
 
-        public RegisterForm()
+        public RegisterForm(IUserService userService)
         {
             InitializeComponent();
-            userService = new UserServiceImpl();
+            this.userService = userService;
         }
+        public RegisterForm() : this(new UserServiceImpl()) { }
 
         //string Encrypt(string value)
         //{

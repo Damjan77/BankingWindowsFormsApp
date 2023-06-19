@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 
@@ -9,12 +10,12 @@ namespace WindowsFormsApp1.UI
 {
     public partial class LogInForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IUserService userService;
         public LogInForm()
         {
-            InitializeComponent();
             userService = new UserServiceImpl();
+            InitializeComponent();  
         }
 
         private void LogInButton_Click(object sender, EventArgs e)
@@ -28,6 +29,10 @@ namespace WindowsFormsApp1.UI
 
             if (isAuthenticated)
             {
+
+                UserSession.UserName = username;
+                UserSession.UserId = userService.getUserId(username, password);
+
                 Main mainForm = new Main();
                 mainForm.Show();
                 this.Hide();

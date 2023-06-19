@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.UI
         public TDAForm()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             tDAService = new TDAServiceImpl();
         }
 

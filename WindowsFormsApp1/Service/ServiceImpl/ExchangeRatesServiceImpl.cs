@@ -4,13 +4,12 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1.NBRMServiceReference;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class ExchangeRatesServiceImpl : IExchangeRatesService
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-
         public List<ExchangeRate> getAllData()
         {
             using (var myDb = new Model1())
@@ -37,61 +36,189 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
                 return myExchangelRates;
             }
-        }
-
-        
+        }      
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {
+            //ExchangeRate exchangeRate = toSave as ExchangeRate;
+
+            //try
+            //{
+            //    con.Open();
+
+            //    SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Insert", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
+            //    sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
+            //    sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
+            //    sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
+            //    sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
+            //    sqlCommand.ExecuteNonQuery();
+
+            //    MessageBox.Show("Data saved Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+
             ExchangeRate exchangeRate = toSave as ExchangeRate;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1()) 
+                {
+                    ExchangeRate newExchangeRate = new ExchangeRate
+                    {
+                        ValidityDate = exchangeRate.ValidityDate,
+                        CurrencyFrom = exchangeRate.CurrencyFrom,
+                        CurrencyTo = exchangeRate.CurrencyTo,
+                        Rate = exchangeRate.Rate,
+                        IsActive = exchangeRate.IsActive
+                    };
 
-                SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Insert", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-                sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-                sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-                sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-                sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    if (newExchangeRate.IsActive)
+                    {
+                        var duplicateRates = myDb.ExchangeRates.Where(rate => rate.CurrencyFrom == newExchangeRate.CurrencyFrom && rate.CurrencyTo == newExchangeRate.CurrencyTo).ToList();
+                        duplicateRates.ForEach(rate => rate.IsActive = false);
+                    }
 
-                MessageBox.Show("Data saved Successfull");
-                con.Close();
+                    // Add
+                    myDb.ExchangeRates.Add(newExchangeRate);
+
+                    // Save changes
+                    myDb.SaveChanges();
+                }
+
+                MessageBox.Show("Data saved successfully");
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
 
         public void UpdateDataInExchangeRatesTable(object toSave)
         {
+            //    ExchangeRate exchangeRate = toSave as ExchangeRate;
+
+            //    try
+            //    {
+            //        con.Open();
+
+            //        SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Update", con);
+            //        sqlCommand.CommandType = CommandType.StoredProcedure;
+            //        sqlCommand.Parameters.AddWithValue("ExchangeRatesId", exchangeRate.exchangeRatesId);
+            //        sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
+            //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
+            //        sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
+            //        sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
+            //        sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
+            //        sqlCommand.ExecuteNonQuery();
+
+            //        MessageBox.Show("Data updated Successfull");
+            //        con.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        throw new Exception(ex.Message);
+            //    }
+
             ExchangeRate exchangeRate = toSave as ExchangeRate;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1()) 
+                {
+                    ExchangeRate existingExchangeRate = myDb.ExchangeRates.Find(exchangeRate.exchangeRatesId);
 
-                SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Update", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("ExchangeRatesId", exchangeRate.exchangeRatesId);
-                sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-                sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-                sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-                sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-                sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    if (existingExchangeRate != null)
+                    {
+                        // Update 
+                        existingExchangeRate.ValidityDate = exchangeRate.ValidityDate;
+                        existingExchangeRate.CurrencyFrom = exchangeRate.CurrencyFrom;
+                        existingExchangeRate.CurrencyTo = exchangeRate.CurrencyTo;
+                        existingExchangeRate.Rate = exchangeRate.Rate;
+                        existingExchangeRate.IsActive = exchangeRate.IsActive;
 
-                MessageBox.Show("Data updated Successfull");
-                con.Close();
+                        if(existingExchangeRate.IsActive)
+                        {
+                            var duplicateRates = myDb.ExchangeRates.Where(rate => rate.CurrencyFrom == existingExchangeRate.CurrencyFrom && rate.CurrencyTo == existingExchangeRate.CurrencyTo).ToList();
+                            duplicateRates.ForEach(rate => rate.IsActive = false);
+                        }
+                        
+                        // Save changes
+                        myDb.SaveChanges();
+
+                        MessageBox.Show("Data updated successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Exchange rate not found");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
+
+        }
+
+        public void AddNBRMDataInDataBase()
+        {
+            var service = new KursSoapClient();
+            string xmlResponse = service.GetExchangeRates(DateTime.Now.ToString("dd.MM.yyyy"), DateTime.Now.AddDays(1).ToString("dd.MM.yyyy")); //Test global exception
+
+            using (var myDb = new Model1())
+            {
+                using (var reader = new System.IO.StringReader(xmlResponse))
+                {
+                    var dataSet = new System.Data.DataSet();
+                    dataSet.ReadXml(reader);
+
+                    myDb.ExchangeRates.ToList().ForEach(rate => rate.IsActive = false);
+
+                    foreach (System.Data.DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        DateTime validityDate = Convert.ToDateTime(row["Datum"]);
+                        string currencyFrom = row["Oznaka"].ToString();
+                        string currencyTo = row["Oznaka"].ToString();
+                        decimal kupovenRate = Convert.ToDecimal(row["Kupoven"]);
+                        decimal prodazenRate = Convert.ToDecimal(row["Prodazen"]);
+                        bool isActive = true;
+                        string environmentCurrency = Environment.GetEnvironmentVariable("CurrencyMKD");
+
+                        var exchangeRate = new ExchangeRate
+                        {
+                            ValidityDate = validityDate,
+                            CurrencyFrom = currencyFrom,
+                            CurrencyTo = environmentCurrency,
+                            Rate = prodazenRate,
+                            IsActive = isActive
+                        };
+
+                        var exchangeRate2 = new ExchangeRate
+                        {
+                            ValidityDate = validityDate,
+                            CurrencyFrom = environmentCurrency,
+                            CurrencyTo = currencyTo,
+                            Rate = kupovenRate,
+                            IsActive = isActive
+                        };
+
+                        myDb.ExchangeRates.Add(exchangeRate);
+                        myDb.ExchangeRates.Add(exchangeRate2);
+                    }
+
+                    myDb.SaveChanges();
+                }
+            }
+            MessageBox.Show("Latest ExchangeRates downloaded!");
         }
     }
+    
 }

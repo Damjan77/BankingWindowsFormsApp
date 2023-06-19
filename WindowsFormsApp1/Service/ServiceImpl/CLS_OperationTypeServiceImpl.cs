@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class CLS_OperationTypeServiceImpl : ICLS_OperationTypeService
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"); 
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"); 
         public List<CLS_OperationType> getAllData(string procedure)
         {
             using (var myDb = new Model1())
@@ -37,50 +37,110 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {
+            //CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
+
+            //try
+            //{
+            //    con.Open();
+
+            //    SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Insert", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
+            //    sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
+            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
+            //    sqlCommand.ExecuteNonQuery();
+
+            //    MessageBox.Show("Data saved Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+
             CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1())
+                {
+                    CLS_OperationType newOperationType = new CLS_OperationType
+                    {
+                        Code = cls_OperationType.Code,
+                        Name = cls_OperationType.Name,
+                        IsActive = cls_OperationType.IsActive
+                    };
 
-                SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Insert", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-                sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-                sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    // Add 
+                    myDb.CLS_OperationType.Add(newOperationType);
 
-                MessageBox.Show("Data saved Successfull");
-                con.Close();
+                    // Save changes
+                    myDb.SaveChanges();
+                }
+
+                MessageBox.Show("Data saved successfully");
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
 
         public void UpdateDataInExchangeRatesTable(object toSave)
         {
+            //CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
+
+            //try
+            //{
+            //    con.Open();
+
+            //    SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Update", con);
+            //    sqlCommand.CommandType = CommandType.StoredProcedure;
+            //    sqlCommand.Parameters.AddWithValue("OperationTypeId", cls_OperationType.OperationTypeId);
+            //    sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
+            //    sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
+            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
+            //    sqlCommand.ExecuteNonQuery();
+
+            //    MessageBox.Show("Data saved Successfull");
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception(ex.Message);
+            //}
+
             CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
 
             try
             {
-                con.Open();
+                using (var myDb = new Model1())
+                {
+                    CLS_OperationType existingOperationType = myDb.CLS_OperationType.Find(cls_OperationType.OperationTypeId);
 
-                SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Update", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("OperationTypeId", cls_OperationType.OperationTypeId);
-                sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-                sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-                sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-                sqlCommand.ExecuteNonQuery();
+                    if (existingOperationType != null)
+                    {
+                        // Update
+                        existingOperationType.Code = cls_OperationType.Code;
+                        existingOperationType.Name = cls_OperationType.Name;
+                        existingOperationType.IsActive = cls_OperationType.IsActive;
 
-                MessageBox.Show("Data saved Successfull");
-                con.Close();
+                        // Save changes
+                        myDb.SaveChanges();
+
+                        MessageBox.Show("Data updated successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Operation type not found");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
+                MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
         }
 

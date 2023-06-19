@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLSCurrencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLSOperationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersPanel = new System.Windows.Forms.Panel();
             this.UsersDataLabel = new System.Windows.Forms.Label();
             this.CheckBoxForUserActivation = new System.Windows.Forms.CheckBox();
@@ -117,7 +118,6 @@ namespace WindowsFormsApp1
             this.NameTextBox2 = new System.Windows.Forms.TextBox();
             this.CodeTextBox = new System.Windows.Forms.TextBox();
             this.CLS_CurrentButton = new System.Windows.Forms.Button();
-            this.tDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.UsersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
@@ -200,6 +200,13 @@ namespace WindowsFormsApp1
             this.cLSOperationTypeToolStripMenuItem.Size = new System.Drawing.Size(188, 29);
             this.cLSOperationTypeToolStripMenuItem.Text = "CLS_Operation_Type";
             this.cLSOperationTypeToolStripMenuItem.Click += new System.EventHandler(this.cLSOperationTypeToolStripMenuItem_Click);
+            // 
+            // tDAToolStripMenuItem
+            // 
+            this.tDAToolStripMenuItem.Name = "tDAToolStripMenuItem";
+            this.tDAToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.tDAToolStripMenuItem.Text = "TDA";
+            this.tDAToolStripMenuItem.Click += new System.EventHandler(this.tDAToolStripMenuItem_Click);
             // 
             // UsersPanel
             // 
@@ -316,7 +323,7 @@ namespace WindowsFormsApp1
             // OfficialRatesPanel
             // 
             this.OfficialRatesPanel.Controls.Add(this.tableLayoutPanel1);
-            this.OfficialRatesPanel.Location = new System.Drawing.Point(48, 122);
+            this.OfficialRatesPanel.Location = new System.Drawing.Point(51, 119);
             this.OfficialRatesPanel.Name = "OfficialRatesPanel";
             this.OfficialRatesPanel.Size = new System.Drawing.Size(1571, 864);
             this.OfficialRatesPanel.TabIndex = 22;
@@ -1005,13 +1012,6 @@ namespace WindowsFormsApp1
             this.CLS_CurrentButton.TabIndex = 13;
             this.CLS_CurrentButton.Text = "Save";
             this.CLS_CurrentButton.UseVisualStyleBackColor = true;
-            // 
-            // tDAToolStripMenuItem
-            // 
-            this.tDAToolStripMenuItem.Name = "tDAToolStripMenuItem";
-            this.tDAToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
-            this.tDAToolStripMenuItem.Text = "TDA";
-            this.tDAToolStripMenuItem.Click += new System.EventHandler(this.tDAToolStripMenuItem_Click);
             // 
             // Main
             // 

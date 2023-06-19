@@ -4,12 +4,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1.Service;
 using WindowsFormsApp1.UI;
 
 namespace WindowsFormsApp1
 {
     public partial class Main : Form
-    {    
+    {
         //ObservableCollection<Panel> panels = new ObservableCollection<Panel>();
 
         //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         public Main()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
         
         private void Main_Load(object sender, EventArgs e)
@@ -38,16 +40,27 @@ namespace WindowsFormsApp1
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new UserForm();
             userForm.MdiParent = this;
-            userForm.Show();
-
-            //SetVisibility(sender);
-            //GetAllUsers(sender, e);
+            userForm.Show();      
         }
 
         private void officialRatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new OfficialRatesForm();
             userForm.MdiParent = this;
             userForm.Show();
@@ -55,6 +68,13 @@ namespace WindowsFormsApp1
 
         private void exchangeRatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new ExchangeRatesForm();
             userForm.MdiParent = this;
             userForm.Show();
@@ -62,6 +82,13 @@ namespace WindowsFormsApp1
 
         private void operationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new OperationsForm();
             userForm.MdiParent = this;
             userForm.Show(); 
@@ -69,6 +96,13 @@ namespace WindowsFormsApp1
 
         private void cLSCurrencyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new CLS_CurrencyForm();
             userForm.MdiParent = this;
             userForm.Show();
@@ -76,6 +110,13 @@ namespace WindowsFormsApp1
 
         private void cLSOperationTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var userForm = new CLS_OperatinoTypeForm();
             userForm.MdiParent = this;
             userForm.Show();
@@ -83,6 +124,13 @@ namespace WindowsFormsApp1
 
         private void tDAToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.Dispose(); // Dispose the current form
+            }
+
             var tdaForm = new TDAForm();
             tdaForm.MdiParent = this;
             tdaForm.Show();

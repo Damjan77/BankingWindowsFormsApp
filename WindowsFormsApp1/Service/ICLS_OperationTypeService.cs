@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Service
 {
-    internal interface ICLS_OperationTypeService
+    public interface ICLS_OperationTypeService
     {
         void AddNewDataInExchangeRateTable(object toSave);
         void UpdateDataInExchangeRatesTable(object toSave);

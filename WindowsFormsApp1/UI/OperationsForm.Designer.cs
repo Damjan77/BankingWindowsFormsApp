@@ -33,7 +33,6 @@
             this.CurrencyToComboBox = new System.Windows.Forms.ComboBox();
             this.CurrencyFromComboBox = new System.Windows.Forms.ComboBox();
             this.OperationTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.UsersComboBox = new System.Windows.Forms.ComboBox();
             this.OperationsDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddNewOperationButton = new System.Windows.Forms.Button();
             this.CurrencyToLabel2 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.OperationDateLabel = new System.Windows.Forms.Label();
             this.OperationsDataLabel = new System.Windows.Forms.Label();
             this.AmountLabel = new System.Windows.Forms.Label();
-            this.UserIdLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.OperationsDataGridView = new System.Windows.Forms.DataGridView();
             this.SaveOperationButton = new System.Windows.Forms.Button();
@@ -63,7 +61,6 @@
             this.OperationsPanel.Controls.Add(this.CurrencyToComboBox);
             this.OperationsPanel.Controls.Add(this.CurrencyFromComboBox);
             this.OperationsPanel.Controls.Add(this.OperationTypeComboBox);
-            this.OperationsPanel.Controls.Add(this.UsersComboBox);
             this.OperationsPanel.Controls.Add(this.OperationsDateTimePicker);
             this.OperationsPanel.Controls.Add(this.AddNewOperationButton);
             this.OperationsPanel.Controls.Add(this.CurrencyToLabel2);
@@ -72,7 +69,6 @@
             this.OperationsPanel.Controls.Add(this.OperationDateLabel);
             this.OperationsPanel.Controls.Add(this.OperationsDataLabel);
             this.OperationsPanel.Controls.Add(this.AmountLabel);
-            this.OperationsPanel.Controls.Add(this.UserIdLabel);
             this.OperationsPanel.Controls.Add(this.label5);
             this.OperationsPanel.Controls.Add(this.OperationsDataGridView);
             this.OperationsPanel.Controls.Add(this.SaveOperationButton);
@@ -84,7 +80,7 @@
             // CurrencyToComboBox
             // 
             this.CurrencyToComboBox.FormattingEnabled = true;
-            this.CurrencyToComboBox.Location = new System.Drawing.Point(189, 326);
+            this.CurrencyToComboBox.Location = new System.Drawing.Point(189, 305);
             this.CurrencyToComboBox.Name = "CurrencyToComboBox";
             this.CurrencyToComboBox.Size = new System.Drawing.Size(269, 28);
             this.CurrencyToComboBox.TabIndex = 38;
@@ -92,7 +88,7 @@
             // CurrencyFromComboBox
             // 
             this.CurrencyFromComboBox.FormattingEnabled = true;
-            this.CurrencyFromComboBox.Location = new System.Drawing.Point(189, 267);
+            this.CurrencyFromComboBox.Location = new System.Drawing.Point(189, 238);
             this.CurrencyFromComboBox.Name = "CurrencyFromComboBox";
             this.CurrencyFromComboBox.Size = new System.Drawing.Size(269, 28);
             this.CurrencyFromComboBox.TabIndex = 37;
@@ -105,19 +101,11 @@
             this.OperationTypeComboBox.Size = new System.Drawing.Size(269, 28);
             this.OperationTypeComboBox.TabIndex = 36;
             // 
-            // UsersComboBox
-            // 
-            this.UsersComboBox.FormattingEnabled = true;
-            this.UsersComboBox.Location = new System.Drawing.Point(189, 99);
-            this.UsersComboBox.Name = "UsersComboBox";
-            this.UsersComboBox.Size = new System.Drawing.Size(269, 28);
-            this.UsersComboBox.TabIndex = 35;
-            // 
             // OperationsDateTimePicker
             // 
             this.OperationsDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm";
             this.OperationsDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.OperationsDateTimePicker.Location = new System.Drawing.Point(189, 153);
+            this.OperationsDateTimePicker.Location = new System.Drawing.Point(189, 115);
             this.OperationsDateTimePicker.Name = "OperationsDateTimePicker";
             this.OperationsDateTimePicker.Size = new System.Drawing.Size(269, 26);
             this.OperationsDateTimePicker.TabIndex = 34;
@@ -135,7 +123,7 @@
             // CurrencyToLabel2
             // 
             this.CurrencyToLabel2.AutoSize = true;
-            this.CurrencyToLabel2.Location = new System.Drawing.Point(10, 326);
+            this.CurrencyToLabel2.Location = new System.Drawing.Point(14, 305);
             this.CurrencyToLabel2.Name = "CurrencyToLabel2";
             this.CurrencyToLabel2.Size = new System.Drawing.Size(94, 20);
             this.CurrencyToLabel2.TabIndex = 26;
@@ -144,7 +132,7 @@
             // CurrencyFromLabel2
             // 
             this.CurrencyFromLabel2.AutoSize = true;
-            this.CurrencyFromLabel2.Location = new System.Drawing.Point(10, 267);
+            this.CurrencyFromLabel2.Location = new System.Drawing.Point(14, 238);
             this.CurrencyFromLabel2.Name = "CurrencyFromLabel2";
             this.CurrencyFromLabel2.Size = new System.Drawing.Size(113, 20);
             this.CurrencyFromLabel2.TabIndex = 25;
@@ -152,7 +140,7 @@
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(189, 208);
+            this.AmountTextBox.Location = new System.Drawing.Point(189, 173);
             this.AmountTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(269, 26);
@@ -161,7 +149,7 @@
             // OperationDateLabel
             // 
             this.OperationDateLabel.AutoSize = true;
-            this.OperationDateLabel.Location = new System.Drawing.Point(10, 153);
+            this.OperationDateLabel.Location = new System.Drawing.Point(13, 115);
             this.OperationDateLabel.Name = "OperationDateLabel";
             this.OperationDateLabel.Size = new System.Drawing.Size(114, 20);
             this.OperationDateLabel.TabIndex = 22;
@@ -179,20 +167,11 @@
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
-            this.AmountLabel.Location = new System.Drawing.Point(10, 214);
+            this.AmountLabel.Location = new System.Drawing.Point(13, 173);
             this.AmountLabel.Name = "AmountLabel";
             this.AmountLabel.Size = new System.Drawing.Size(65, 20);
             this.AmountLabel.TabIndex = 19;
             this.AmountLabel.Text = "Amount";
-            // 
-            // UserIdLabel
-            // 
-            this.UserIdLabel.AutoSize = true;
-            this.UserIdLabel.Location = new System.Drawing.Point(10, 96);
-            this.UserIdLabel.Name = "UserIdLabel";
-            this.UserIdLabel.Size = new System.Drawing.Size(61, 20);
-            this.UserIdLabel.TabIndex = 18;
-            this.UserIdLabel.Text = "User Id";
             // 
             // label5
             // 
@@ -275,7 +254,6 @@
         private System.Windows.Forms.Label OperationDateLabel;
         private System.Windows.Forms.Label OperationsDataLabel;
         private System.Windows.Forms.Label AmountLabel;
-        private System.Windows.Forms.Label UserIdLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView OperationsDataGridView;
         private System.Windows.Forms.Button SaveOperationButton;
@@ -283,7 +261,6 @@
         private System.Windows.Forms.ErrorProvider OperationsCurrencyFromErrorProvider;
         private System.Windows.Forms.ErrorProvider OperationsCurrencyToErrorProvider;
         private System.Windows.Forms.ErrorProvider OperationsAmountErrorProvider;
-        private System.Windows.Forms.ComboBox UsersComboBox;
         private System.Windows.Forms.ComboBox OperationTypeComboBox;
         private System.Windows.Forms.ComboBox CurrencyFromComboBox;
         private System.Windows.Forms.ComboBox CurrencyToComboBox;

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using WindowsFormsApp1.NBRMServiceReference;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 
@@ -10,15 +12,18 @@ namespace WindowsFormsApp1.UI
 {
     public partial class OfficialRatesForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IOfficialRatesService officialRates;
         ICLS_CurrencyService cls_CurrencyService;
-        public OfficialRatesForm()
+        public OfficialRatesForm(IOfficialRatesService officialRates, ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            officialRates = new OfficialRatesServiceImpl();
-            cls_CurrencyService = new CLSCurrencyServiceImpl();
+            this.WindowState = FormWindowState.Maximized;
+            this.officialRates = officialRates;
+            this.cls_CurrencyService = cls_CurrencyService;
         }
+
+        public OfficialRatesForm() : this(new OfficialRatesServiceImpl(), new CLSCurrencyServiceImpl()) { }
+
 
         private void OfficialRatesForm_Load(object sender, EventArgs e)
         {
@@ -31,7 +36,7 @@ namespace WindowsFormsApp1.UI
 
         private void getAllData()
         {
-            OfficialRatedataGridView.DataSource = officialRates.getAllData("OfficialRates_GetAll");
+            OfficialRatedataGridView.DataSource = officialRates.getAllData();
         }
 
         private void clearOfficialRateData()
@@ -194,6 +199,22 @@ namespace WindowsFormsApp1.UI
             OfficialRatesCurrencyComboBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
             RateTextBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             UserActivationcheckBox2.Checked = (bool)OfficialRatedataGridView.Rows[e.RowIndex].Cells[4].Value;
+        }
+
+        private void NBRMDataButton_Click(object sender, EventArgs e)
+        {
+            officialRates.AddNBRMDataInDataBase();
+            getAllData();
+        }
+
+        private void viewOfficialRatesNBRM_Click(object sender, EventArgs e)
+        {
+            var service = new KursSoapClient();
+            string xmlResponse = service.GetExchangeRate(DateTime.Now.ToString("dd.MM.yyyy"), DateTime.Now.AddDays(1).ToString("dd.MM.yyyy"));
+            var dataSet = new DataSet();
+            dataSet.ReadXml(new System.IO.StringReader(xmlResponse));
+
+            ViewOfficialRatesNBRMDataGridView.DataSource = dataSet.Tables[0];
         }
     }
 }

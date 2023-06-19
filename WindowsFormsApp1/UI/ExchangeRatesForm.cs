@@ -4,21 +4,28 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
+using WindowsFormsApp1.NBRMServiceReference;
+using System.Linq;
+using System.Collections.Generic;
+using System.Data;
 
 namespace WindowsFormsApp1.UI
 {
     public partial class ExchangeRatesForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IExchangeRatesService exchangeRates;
         ICLS_CurrencyService cls_CurrencyService;
 
-        public ExchangeRatesForm()
+        public ExchangeRatesForm(IExchangeRatesService exchangeRates, ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            exchangeRates = new ExchangeRatesServiceImpl();
-            cls_CurrencyService = new CLSCurrencyServiceImpl();
+            this.WindowState = FormWindowState.Maximized;
+            this.exchangeRates = exchangeRates;
+            this.cls_CurrencyService = cls_CurrencyService;
         }
+
+        public ExchangeRatesForm() : this(new ExchangeRatesServiceImpl(), new CLSCurrencyServiceImpl()) { }
 
         private void ExchangeRatesForm_Load(object sender, EventArgs e)
         {
@@ -32,8 +39,13 @@ namespace WindowsFormsApp1.UI
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;
 
-            getAllData();
+            //string connectionString = Environment.GetEnvironmentVariable("ConnString");
 
+
+            getAllData();
+            //getNBRMData();
+            //NBRMServiceReference.KursSoapClient client = new NBRMServiceReference.KursSoapClient();
+            //EdataGridView.DataSource = client.GetExchangeRates("01.02.2010", "15.02.2010"); 
         }
 
         private void getAllData()
@@ -41,18 +53,16 @@ namespace WindowsFormsApp1.UI
             ExchangeRatesDataGridView.DataSource = exchangeRates.getAllData();
         }
 
-        //private void GetAllExchangeRates(object sender, EventArgs e)
+        //private void getNBRMData()
         //{
-        //    getAllData("ExchangeRates_GetAll", ExchangeRatesDataGridView);
-        //}
-
-        //private void getAllData(string procedure, DataGridView dataGridView)
-        //{
-        //    using(var myDb = new Model1())
+        //    var client = new KursSoapClient();
+        //    var exchangeRates = client.GetExchangeRate("01.02.2010", "15.02.2010");
+        //    //List<ExchangeRate> exchangeRatesList = exchangeRates.ToList();
+        //    foreach (var rate in exchangeRates)
         //    {
-        //        var myExchangeRates = myDb.ExchangeRates.ToList();
-        //        dataGridView.DataSource = myExchangeRates;
+        //        NBRMDataGridView.DataSource += rate.ToString();
         //    }
+        //    NBRMDataGridView.DataSource = exchangeRates.ToList();
         //}
 
         private void clearAllData()
@@ -226,6 +236,24 @@ namespace WindowsFormsApp1.UI
 
             if (currencyFromFlag && currencyToFlag && rateFlag) return true;
             else return false;
+        }
+
+      
+
+        private void WebServiceButton_Click(object sender, EventArgs e)
+        {
+            var service = new KursSoapClient();
+            string xmlResponse = service.GetExchangeRates(DateTime.Now.ToString("dd.MM.yyyy"), DateTime.Now.AddDays(1).ToString("dd.MM.yyyy"));
+            var dataSet = new DataSet();
+            dataSet.ReadXml(new System.IO.StringReader(xmlResponse));
+
+            NBRMDataGridView.DataSource = dataSet.Tables[0];
+        }
+
+        private void DownloadExchangeRatesButton_Click(object sender, EventArgs e) //Da se poviak metodot so scheduler sekoj den vo 12:00
+        {
+            exchangeRates.AddNBRMDataInDataBase();
+            getAllData();
         }
     }
 }
