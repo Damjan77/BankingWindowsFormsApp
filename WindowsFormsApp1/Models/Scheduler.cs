@@ -37,7 +37,7 @@ namespace WindowsFormsApp1.Models
             {
                 DateTime now = DateTime.Now;
 
-                if (now.Hour == 13 && now.Minute == 43 && now.Second == 0)
+                if (now.Hour == 10 && now.Minute == 0 && now.Second == 0)
                 {
                     // Execute the AddNBRMDataInDataBase() method
                     exchangeRateService.AddNBRMDataInDataBase();
