@@ -45,36 +45,40 @@
             // 
             // WelcomeLabel
             // 
+            this.WelcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(329, 38);
+            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLabel.Location = new System.Drawing.Point(319, 47);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(294, 29);
+            this.WelcomeLabel.Size = new System.Drawing.Size(316, 29);
             this.WelcomeLabel.TabIndex = 0;
             this.WelcomeLabel.Text = "Welcome to ExchangeBox";
             // 
             // PasswordLabel
             // 
+            this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.Location = new System.Drawing.Point(144, 246);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(180, 44);
+            this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
             // 
             // UsernameLabel
             // 
+            this.UsernameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.Location = new System.Drawing.Point(144, 172);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(186, 44);
+            this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
             this.UsernameLabel.TabIndex = 2;
             this.UsernameLabel.Text = "Username";
             // 
             // UserNameTextBox_LogIn
             // 
+            this.UserNameTextBox_LogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserNameTextBox_LogIn.Location = new System.Drawing.Point(324, 172);
             this.UserNameTextBox_LogIn.Name = "UserNameTextBox_LogIn";
             this.UserNameTextBox_LogIn.Size = new System.Drawing.Size(299, 26);
@@ -82,6 +86,7 @@
             // 
             // PasswordTextBox_LogIn
             // 
+            this.PasswordTextBox_LogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordTextBox_LogIn.Location = new System.Drawing.Point(324, 250);
             this.PasswordTextBox_LogIn.Name = "PasswordTextBox_LogIn";
             this.PasswordTextBox_LogIn.PasswordChar = '*';
@@ -90,6 +95,7 @@
             // 
             // LogInButton
             // 
+            this.LogInButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LogInButton.Location = new System.Drawing.Point(390, 311);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.Size = new System.Drawing.Size(161, 54);
@@ -100,6 +106,7 @@
             // 
             // RegisterButton
             // 
+            this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterButton.Location = new System.Drawing.Point(390, 513);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(161, 54);
@@ -110,6 +117,7 @@
             // 
             // RegisterLabel
             // 
+            this.RegisterLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterLabel.AutoSize = true;
             this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterLabel.Location = new System.Drawing.Point(257, 445);

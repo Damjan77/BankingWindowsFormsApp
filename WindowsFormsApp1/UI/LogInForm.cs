@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.UI
 {
@@ -19,9 +21,7 @@ namespace WindowsFormsApp1.UI
         }
 
         
-
-
-        private void LogInButton_Click(object sender, EventArgs e)
+        private async void LogInButton_Click(object sender, EventArgs e)
         {
             if (!validateData()) return;
 
@@ -31,6 +31,10 @@ namespace WindowsFormsApp1.UI
 
             if (isAuthenticated)
             {
+                LogInButton.Text = "Success!"; //Da se zameni so Environment Variable
+                LogInButton.BackColor = Color.Green;
+                //Here wait 1 sec :D
+                await Task.Delay(1000);
                 UserSession.UserName = username;
                 UserSession.UserId = userService.getUserId(username, password);
 

@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
         //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IExchangeRatesService exchangeRates;
         IOfficialRatesService officialRatesService;
+
         public Main(IExchangeRatesService exchangeRates, IOfficialRatesService officialRatesService)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace WindowsFormsApp1
         private void Main_Load(object sender, EventArgs e)
         {
             Scheduler.StartScheduling(exchangeRates,officialRatesService);
+            mainWelcomeLabel.Text += " " + UserSession.UserName;
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,6 +182,8 @@ namespace WindowsFormsApp1
             tdaForm.MdiParent = this;
             tdaForm.Show();
         }
+
+       
 
         //private void getAllData(string procedure, DataGridView dataGridView)
         //{

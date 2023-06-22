@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
             this.cLSCurrencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLSOperationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainWelcomeLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,11 +117,23 @@ namespace WindowsFormsApp1
             this.tDAToolStripMenuItem.Text = "TDA";
             this.tDAToolStripMenuItem.Click += new System.EventHandler(this.tDAToolStripMenuItem_Click);
             // 
+            // mainWelcomeLabel
+            // 
+            this.mainWelcomeLabel.AutoSize = true;
+            this.mainWelcomeLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainWelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainWelcomeLabel.Location = new System.Drawing.Point(802, 105);
+            this.mainWelcomeLabel.Name = "mainWelcomeLabel";
+            this.mainWelcomeLabel.Size = new System.Drawing.Size(188, 46);
+            this.mainWelcomeLabel.TabIndex = 9;
+            this.mainWelcomeLabel.Text = "Welcome";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2427, 1120);
+            this.Controls.Add(this.mainWelcomeLabel);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "Main";
@@ -143,5 +156,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem cLSCurrencyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cLSOperationTypeToolStripMenuItem;
         private ToolStripMenuItem tDAToolStripMenuItem;
+        private Label mainWelcomeLabel;
     }
 }
