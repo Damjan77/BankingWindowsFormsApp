@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
@@ -84,21 +85,13 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         username = usr.username,
                         password = usr.password
                     };
+  
+                    // Add the new User entity to the DbContext
+                    myDb.Users.Add(newUser); //Prasanje zosto UNIQUE constraint ne go prikazuva ?
 
-                    var userWithSameUsername = myDb.Users.FirstOrDefault(u => u.username == usr.username);
-                    if (userWithSameUsername != null)
-                    {
-                        MessageBox.Show("User with this username already exist!");
-                    }
-                    else
-                    {
-                        // Add the new User entity to the DbContext
-                        myDb.Users.Add(newUser);
-
-                        // Save changes to the database
-                        myDb.SaveChanges();
-                        MessageBox.Show("Data saved successfully");
-                    }                
+                    // Save changes to the database
+                    myDb.SaveChanges();
+                    MessageBox.Show("Data saved successfully");                 
                 }
                 
             }
@@ -126,19 +119,9 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         existingUser.isActive = usr.isActive;
                         existingUser.username = usr.username;
                         existingUser.password = usr.password;
-
-                        var userWithSameUsername = myDb.Users.FirstOrDefault(u => u.username == usr.username);
-                        if (userWithSameUsername != null)
-                        {
-                            MessageBox.Show("User with this username already exist!");
-                        }
-                        else
-                        {
-                            // Save changes to the database
-                            myDb.SaveChanges();
-                            MessageBox.Show("Data updated successfully");
-                        }
-                        
+                   
+                        myDb.SaveChanges();
+                        MessageBox.Show("Data updated successfully");                     
                     }
                     else
                     {

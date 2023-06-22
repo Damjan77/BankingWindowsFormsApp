@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.UI
                 officialRateRateErrorProvider.SetError(RateTextBox, "Rate is required!");
                 rateFlag = false;
             }
-            else if (!Regex.IsMatch(RateTextBox.Text, "^[0-9.]+$")) //Only digits
+            else if (!(Regex.IsMatch(RateTextBox.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(RateTextBox.Text, "^[0-9]+$"))) //Only digits and .
             {
                 officialRateRateErrorProvider.SetError(RateTextBox, "Rate must contains only numbers!");
                 rateFlag = false;

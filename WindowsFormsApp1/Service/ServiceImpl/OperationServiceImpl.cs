@@ -169,7 +169,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
         {
             return amount * rate;
         }
-      
+
         public decimal SearchRateFromExchangeRates(string currencyFrom, string currencyTo)
         {
             using (var myDb = new Model1())
@@ -185,6 +185,39 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 return query.Rate;
             }
         }
+
+        //public decimal SearchRateFromExchangeRates(string currencyFrom, string currencyTo) //MKD -> EUR
+        //{
+        //    using (var myDb = new Model1())
+        //    {
+        //        var query = myDb.ExchangeRates
+        //            .FirstOrDefault(exchangeRate => exchangeRate.CurrencyFrom == currencyFrom &&
+        //                                    exchangeRate.CurrencyTo == currencyTo &&
+        //                                    exchangeRate.IsActive);
+
+        //        //Handle Null exception
+        //        if (query == null) //Ne e pronajden zapis
+        //        {
+        //            query = myDb.ExchangeRates
+        //                .FirstOrDefault(exchangeRate => exchangeRate.CurrencyFrom == currencyTo &&
+        //                                    exchangeRate.CurrencyTo == currencyFrom &&
+        //                                    exchangeRate.IsActive); //Da bara zapis obratno od dadenoto : dadeno:MKD -> EUR najdi:EUR->MKD
+        //            if (query != null)
+        //            {
+        //                return 1/query.Rate; //Vrati go prodazniot Rate
+        //            }
+        //            else
+        //            {
+        //                return 0.0m;
+        //            }
+        //        }
+        //        else //Pronajden e ExchangeRate so soodvetni CurrencyFrom -> CurrencyTo
+        //        {
+        //            return query.Rate; //Vrati go kupovniot Rate
+        //        }
+        //    }
+        //}
+
 
     }
 }

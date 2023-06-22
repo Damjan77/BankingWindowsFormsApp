@@ -46,27 +46,30 @@
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Location = new System.Drawing.Point(436, 50);
+            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLabel.Location = new System.Drawing.Point(329, 38);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(75, 20);
+            this.WelcomeLabel.Size = new System.Drawing.Size(294, 29);
             this.WelcomeLabel.TabIndex = 0;
-            this.WelcomeLabel.Text = "Welcome";
+            this.WelcomeLabel.Text = "Welcome to ExchangeBox";
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.Location = new System.Drawing.Point(144, 246);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(78, 20);
+            this.PasswordLabel.Size = new System.Drawing.Size(180, 44);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.Location = new System.Drawing.Point(144, 172);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(83, 20);
+            this.UsernameLabel.Size = new System.Drawing.Size(186, 44);
             this.UsernameLabel.TabIndex = 2;
             this.UsernameLabel.Text = "Username";
             // 
@@ -74,7 +77,7 @@
             // 
             this.UserNameTextBox_LogIn.Location = new System.Drawing.Point(324, 172);
             this.UserNameTextBox_LogIn.Name = "UserNameTextBox_LogIn";
-            this.UserNameTextBox_LogIn.Size = new System.Drawing.Size(299, 39);
+            this.UserNameTextBox_LogIn.Size = new System.Drawing.Size(299, 26);
             this.UserNameTextBox_LogIn.TabIndex = 3;
             // 
             // PasswordTextBox_LogIn
@@ -82,14 +85,14 @@
             this.PasswordTextBox_LogIn.Location = new System.Drawing.Point(324, 250);
             this.PasswordTextBox_LogIn.Name = "PasswordTextBox_LogIn";
             this.PasswordTextBox_LogIn.PasswordChar = '*';
-            this.PasswordTextBox_LogIn.Size = new System.Drawing.Size(299, 39);
+            this.PasswordTextBox_LogIn.Size = new System.Drawing.Size(299, 26);
             this.PasswordTextBox_LogIn.TabIndex = 4;
             // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(428, 320);
+            this.LogInButton.Location = new System.Drawing.Point(390, 311);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(83, 41);
+            this.LogInButton.Size = new System.Drawing.Size(161, 54);
             this.LogInButton.TabIndex = 5;
             this.LogInButton.Text = "Log In";
             this.LogInButton.UseVisualStyleBackColor = true;
@@ -97,9 +100,9 @@
             // 
             // RegisterButton
             // 
-            this.RegisterButton.Location = new System.Drawing.Point(428, 524);
+            this.RegisterButton.Location = new System.Drawing.Point(390, 513);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(83, 41);
+            this.RegisterButton.Size = new System.Drawing.Size(161, 54);
             this.RegisterButton.TabIndex = 6;
             this.RegisterButton.Text = "Register";
             this.RegisterButton.UseVisualStyleBackColor = true;
@@ -108,9 +111,10 @@
             // RegisterLabel
             // 
             this.RegisterLabel.AutoSize = true;
-            this.RegisterLabel.Location = new System.Drawing.Point(320, 452);
+            this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterLabel.Location = new System.Drawing.Point(257, 445);
             this.RegisterLabel.Name = "RegisterLabel";
-            this.RegisterLabel.Size = new System.Drawing.Size(301, 20);
+            this.RegisterLabel.Size = new System.Drawing.Size(448, 29);
             this.RegisterLabel.TabIndex = 7;
             this.RegisterLabel.Text = "If you don\'t have account please Register";
             // 
@@ -126,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 713);
+            this.ClientSize = new System.Drawing.Size(930, 715);
             this.Controls.Add(this.RegisterLabel);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.LogInButton);

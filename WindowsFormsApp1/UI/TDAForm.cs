@@ -91,7 +91,7 @@ namespace WindowsFormsApp1.UI
                 amountFlag = false;
                 AmountErrorProvider.SetError(AmountTextBox, "Amount is required!");
             }
-            else if (!Regex.IsMatch(AmountTextBox.Text, "^[0-9.]+$")) //Only digits
+            else if (!(Regex.IsMatch(AmountTextBox.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(AmountTextBox.Text, "^[0-9]+$")))
             {
                 AmountErrorProvider.SetError(AmountTextBox, "Amount must contains only numbers!");
                 amountFlag = false;
@@ -110,7 +110,7 @@ namespace WindowsFormsApp1.UI
                 periodFlag = false;
                 PeriodErrorProvider.SetError(PeriodTextBox, "Period is required!");
             }
-            else if (!Regex.IsMatch(PeriodTextBox.Text, "^[0-9.]+$")) //Only digits
+            else if (!Regex.IsMatch(PeriodTextBox.Text, "^[0-9]+$"))
             {
                 PeriodErrorProvider.SetError(PeriodTextBox, "Period must contains only numbers!");
                 periodFlag = false;
@@ -120,6 +120,7 @@ namespace WindowsFormsApp1.UI
                 PeriodErrorProvider.SetError(PeriodTextBox, string.Empty);
                 PeriodErrorProvider.Clear();
             }
+
             //Interest Rate Logic
             bool interestRateFlag = true;
 
@@ -128,7 +129,8 @@ namespace WindowsFormsApp1.UI
                 interestRateFlag = false;
                 InterestRateErrorProvider.SetError(InterestRateTextBox, "Interest Rate is required!");
             }
-            else if (!Regex.IsMatch(InterestRateTextBox.Text, "^[0-9.]+$")) //Only digits
+            //else if (!Regex.IsMatch(InterestRateTextBox.Text, "^[0-9.]+$")) //Only digits
+            else if (!(Regex.IsMatch(InterestRateTextBox.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(InterestRateTextBox.Text, "^[0-9]+$")))
             {
                 InterestRateErrorProvider.SetError(InterestRateTextBox, "Interest Rate must contains only numbers!");
                 interestRateFlag = false;

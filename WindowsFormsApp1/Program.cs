@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             {
                 // Handle any uncaught exceptions
                 MessageBox.Show($"An unhandled exception occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //Application.Run(new MainForm()); Prasanje
+                Application.Run(new Main()); //Prasanje
             }
         }
 

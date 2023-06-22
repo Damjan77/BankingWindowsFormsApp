@@ -57,12 +57,6 @@ namespace WindowsFormsApp1
                 userService.InsertDataInUserTable(usr);
             }
 
-            //if (IamExisting)
-            //{
-            //    var selected = ((DataRowView)UsersDataGridView.SelectedRows[0].DataBoundItem).Row.ItemArray;
-            //    usr.userId = Int32.Parse(selected[0].ToString());
-            //}
-
             getAllData();
         }
 
@@ -108,7 +102,6 @@ namespace WindowsFormsApp1
 
             //Username Logic
             bool usernameFlag = true;
-
             if (string.IsNullOrEmpty(UsernameTextBox.Text.Trim()))
             {
                 UsernameErrorProvider.SetError(UsernameTextBox, "Username is required!");
@@ -175,7 +168,7 @@ namespace WindowsFormsApp1
             SurnameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
             CheckBoxForUserActivation.Checked = (bool)UsersDataGridView.Rows[e.RowIndex].Cells[3].Value;
             UsernameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            PasswordTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //PasswordTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void clearData()

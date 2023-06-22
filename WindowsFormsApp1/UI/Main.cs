@@ -4,7 +4,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
+using WindowsFormsApp1.Service.ServiceImpl;
 using WindowsFormsApp1.UI;
 
 namespace WindowsFormsApp1
@@ -14,65 +16,92 @@ namespace WindowsFormsApp1
         //ObservableCollection<Panel> panels = new ObservableCollection<Panel>();
 
         //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-
-        public Main()
+        IExchangeRatesService exchangeRates;
+        IOfficialRatesService officialRatesService;
+        public Main(IExchangeRatesService exchangeRates, IOfficialRatesService officialRatesService)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            this.exchangeRates = exchangeRates;
+            this.officialRatesService = officialRatesService;
         }
-        
+
+        public Main() : this(new ExchangeRatesServiceImpl(), new OfficialRatesServiceImpl()) { }
+
         private void Main_Load(object sender, EventArgs e)
         {
-            //panels.Add(OfficialRatesPanel);
-            //panels.Add(UsersPanel);
-            //panels.Add(ExchangeRatesPanel);
-            //panels.Add(OperationsPanel);
-            //panels.Add(CLS_CurrencyPanel);
-            //panels.Add(CLS_OperationTypePanel);
-
-            UsersPanel.Visible = false;
-            OfficialRatesPanel.Visible = false;
-            ExchangeRatesPanel.Visible = false;
-            OperationsPanel.Visible = false;
-            CLS_CurrencyPanel.Visible = false;
-            CLS_OperationTypePanel.Visible = false;
+            Scheduler.StartScheduling(exchangeRates,officialRatesService);
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form currentForm = this.ActiveMdiChild;
+            //Form currentForm = this.ActiveMdiChild;
+            //if (currentForm != null)
+            //{
+            //    currentForm.Close(); // Close the current form
+            //    currentForm.Dispose(); // Dispose the current form
+            //}
+
+            //var userForm = new UserForm();
+            //userForm.MdiParent = this;
+            //userForm.Show();
+
+            var currentForm = this.ActiveMdiChild;
             if (currentForm != null)
-            {
+            { 
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+               
             }
 
             var userForm = new UserForm();
             userForm.MdiParent = this;
-            userForm.Show();      
+            userForm.Show();
         }
 
         private void officialRatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form currentForm = this.ActiveMdiChild;
+            //Form currentForm = this.ActiveMdiChild;
+            //if (currentForm != null)
+            //{
+            //    currentForm.Close(); // Close the current form
+            //    currentForm.Dispose(); // Dispose the current form
+            //}
+
+            //var officialRateForm = new OfficialRatesForm();
+            //officialRateForm.MdiParent = this;
+            //officialRateForm.Show();
+
+            var currentForm = this.ActiveMdiChild;
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
-            var userForm = new OfficialRatesForm();
-            userForm.MdiParent = this;
-            userForm.Show();
+            var officialRateForm = new OfficialRatesForm();
+            officialRateForm.MdiParent = this;
+            officialRateForm.Show();
         }
 
-        private void exchangeRatesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exchangeRatesToolStripMenuItem_Click(object sender, EventArgs e) //BUG padnuva pri brzo klikanje
         {
             Form currentForm = this.ActiveMdiChild;
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
             var userForm = new ExchangeRatesForm();
@@ -86,7 +115,11 @@ namespace WindowsFormsApp1
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
             var userForm = new OperationsForm();
@@ -100,7 +133,11 @@ namespace WindowsFormsApp1
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
             var userForm = new CLS_CurrencyForm();
@@ -114,7 +151,11 @@ namespace WindowsFormsApp1
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
             var userForm = new CLS_OperatinoTypeForm();
@@ -128,7 +169,11 @@ namespace WindowsFormsApp1
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
-                currentForm.Dispose(); // Dispose the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+                
             }
 
             var tdaForm = new TDAForm();

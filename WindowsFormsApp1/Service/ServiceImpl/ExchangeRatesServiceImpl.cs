@@ -146,7 +146,10 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         if(existingExchangeRate.IsActive)
                         {
                             var duplicateRates = myDb.ExchangeRates.Where(rate => rate.CurrencyFrom == existingExchangeRate.CurrencyFrom && rate.CurrencyTo == existingExchangeRate.CurrencyTo).ToList();
-                            duplicateRates.ForEach(rate => rate.IsActive = false);
+                            if (duplicateRates.Count > 1)
+                            {
+                                duplicateRates.ForEach(rate => rate.IsActive = false);
+                            }
                         }
                         
                         // Save changes

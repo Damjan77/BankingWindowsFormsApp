@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
@@ -60,6 +61,11 @@ namespace WindowsFormsApp1.UI
             else if (CodeTextBox.Text.Length > 3)
             {
                 clsCurrencyCodeErrorProvider.SetError(CodeTextBox, "Code is too long!");
+                codeFlag = false;
+            }
+            else if (!Regex.IsMatch(CodeTextBox.Text, "^[A-Z]+$"))
+            {
+                clsCurrencyCodeErrorProvider.SetError(CodeTextBox, "Code must contain only letters!");
                 codeFlag = false;
             }
 

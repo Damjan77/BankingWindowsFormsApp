@@ -39,7 +39,6 @@ namespace WindowsFormsApp1.UI
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;
 
-            Scheduler.StartScheduling(exchangeRates);
             getAllData(); 
         }
 
@@ -206,7 +205,7 @@ namespace WindowsFormsApp1.UI
                 ExchangeRatesRateErrorProvider.SetError(RateTextBox2, "Rate is required!");
                 rateFlag = false;
             }
-            else if (!Regex.IsMatch(RateTextBox2.Text, "^[0-9.]+$")) //Only digits
+            else if (!(Regex.IsMatch(RateTextBox2.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(RateTextBox2.Text, "^[0-9]+$")))
             {
                 ExchangeRatesRateErrorProvider.SetError(RateTextBox2, "Rate must contains only numbers!");
                 rateFlag = false;
@@ -238,10 +237,6 @@ namespace WindowsFormsApp1.UI
             exchangeRates.AddNBRMDataInDataBase();
             getAllData();
         }
-
-        private void ExchangeRatesForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Scheduler.StopScheduling();
-        }
+        
     }
 }

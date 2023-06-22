@@ -90,9 +90,9 @@
             this.ActivateUserLabel4.AutoSize = true;
             this.ActivateUserLabel4.Location = new System.Drawing.Point(10, 159);
             this.ActivateUserLabel4.Name = "ActivateUserLabel4";
-            this.ActivateUserLabel4.Size = new System.Drawing.Size(104, 20);
+            this.ActivateUserLabel4.Size = new System.Drawing.Size(200, 30);
             this.ActivateUserLabel4.TabIndex = 22;
-            this.ActivateUserLabel4.Text = "Activate User";
+            this.ActivateUserLabel4.Text = "Activate Currency";
             // 
             // CLS_CurrencyLabel
             // 

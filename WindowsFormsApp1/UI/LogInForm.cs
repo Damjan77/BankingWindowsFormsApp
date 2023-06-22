@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
@@ -15,13 +14,16 @@ namespace WindowsFormsApp1.UI
         public LogInForm()
         {
             userService = new UserServiceImpl();
-            InitializeComponent();  
+
+            InitializeComponent();
         }
+
+        
+
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
             if (!validateData()) return;
-
 
             string username = UserNameTextBox_LogIn.Text;
             string password = PasswordTextBox_LogIn.Text;
@@ -29,7 +31,6 @@ namespace WindowsFormsApp1.UI
 
             if (isAuthenticated)
             {
-
                 UserSession.UserName = username;
                 UserSession.UserId = userService.getUserId(username, password);
 
@@ -43,7 +44,7 @@ namespace WindowsFormsApp1.UI
                 UserNameTextBox_LogIn.Clear();
                 PasswordTextBox_LogIn.Clear();
                 UserNameTextBox_LogIn.Focus();
-            }  
+            }
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

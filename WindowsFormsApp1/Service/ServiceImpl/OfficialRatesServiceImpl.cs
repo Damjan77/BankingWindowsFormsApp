@@ -162,13 +162,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     var dataSet = new System.Data.DataSet();
                     dataSet.ReadXml(reader);
 
-
-                    // Update existing rows to set isActive to false
-                    //foreach (var existingRate in myDb.OfficialRates)
-                    //{
-                    //    existingRate.isActive = false;
-                    //}
-
                     myDb.OfficialRates.ToList().ForEach(rate => rate.isActive = false);
 
                     foreach (System.Data.DataRow row in dataSet.Tables[0].Rows)

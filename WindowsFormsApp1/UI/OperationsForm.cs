@@ -142,8 +142,8 @@ namespace WindowsFormsApp1.UI
 
                 if (operation.CurrencyFrom != enviromentCurrency && operation.CurrencyTo != enviromentCurrency) //Imame exchangeRate pr: EUR -> USD  
                 {
-                    rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, (string)currencyToObj.Code);
-                    if (rate == 0.0m) //X -> Y zapis ne postoi vo ExchangeRate
+                    rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, (string)currencyToObj.Code); //Proverka za racno dodadeno
+                    if (rate == 0.0m) //X -> Y zapis ne postoi vo ExchangeRate (ne e racno dodadeno)
                     {
                         rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, enviromentCurrency); //Prvin najdi EUR -> MKD zemam kurs za evro vo denar
                         decimal tempMoney = operationService.transferMoney(Decimal.Parse(AmountTextBox.Text.ToString()), rate); //Sega imam denari, sledi MKD -> USD
@@ -154,7 +154,6 @@ namespace WindowsFormsApp1.UI
                     {
                         operation.t_money = operationService.transferMoney(operation.Amount, rate);
                     }
-                    
                 }
                 else
                 {
@@ -336,7 +335,7 @@ namespace WindowsFormsApp1.UI
                 OperationsAmountErrorProvider.SetError(AmountTextBox, "Amount is required!");
                 amountFlag = false;
             }
-            else if (!Regex.IsMatch(AmountTextBox.Text, @"^[0-9.]+$")) //only letters
+            else if (!(Regex.IsMatch(AmountTextBox.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(AmountTextBox.Text, "^[0-9]+$")))
             {
                 OperationsAmountErrorProvider.SetError(AmountTextBox, "CurrencyTo must contains only numbers!");
                 amountFlag = false;
@@ -350,5 +349,6 @@ namespace WindowsFormsApp1.UI
             if (currencyFromFlag && currencyToFlag && amountFlag) return true;
             else return false;
         }
+
     }
 }

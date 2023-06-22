@@ -11,5 +11,6 @@ namespace WindowsFormsApp1.Service
         string Encrypt(string value);
         bool AuthenticateUser(string username, string password);
         int? getUserId(string username, string password);
+
     }
 }

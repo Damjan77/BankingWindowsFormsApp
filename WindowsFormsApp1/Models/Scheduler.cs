@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Service;
@@ -12,10 +9,12 @@ namespace WindowsFormsApp1.Models
     {
         private static CancellationTokenSource tokenSource;
         private static IExchangeRatesService exchangeRateService;
+        private static IOfficialRatesService officialRatesService;
 
-        public static void StartScheduling(IExchangeRatesService service)
+        public static void StartScheduling(IExchangeRatesService service, IOfficialRatesService officialService)
         {
             exchangeRateService = service;
+            officialRatesService = officialService;
 
             // Create a cancellation token source to stop the task if needed
             tokenSource = new CancellationTokenSource();
@@ -37,10 +36,11 @@ namespace WindowsFormsApp1.Models
             {
                 DateTime now = DateTime.Now;
 
-                if (now.Hour == 10 && now.Minute == 0 && now.Second == 0)
+                if (now.Hour == 10 && now.Minute == 31 && now.Second == 30)
                 {
                     // Execute the AddNBRMDataInDataBase() method
                     exchangeRateService.AddNBRMDataInDataBase();
+                    officialRatesService.AddNBRMDataInDataBase();
                 }
 
                 await Task.Delay(1000);  // Delay for 1 second
