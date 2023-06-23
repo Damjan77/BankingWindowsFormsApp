@@ -32,6 +32,10 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.UsersPanel = new System.Windows.Forms.Panel();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.AddNewUserButton = new System.Windows.Forms.Button();
             this.UsersDataLabel = new System.Windows.Forms.Label();
             this.CheckBoxForUserActivation = new System.Windows.Forms.CheckBox();
@@ -48,12 +52,9 @@ namespace WindowsFormsApp1
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderUserSurname = new System.Windows.Forms.ErrorProvider(this.components);
-            this.UsernameLabel = new System.Windows.Forms.Label();
-            this.PasswordLabel = new System.Windows.Forms.Label();
-            this.UsernameTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UsernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.UserInformationLabel = new System.Windows.Forms.Label();
             this.UsersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
@@ -67,6 +68,7 @@ namespace WindowsFormsApp1
             // 
             // UsersPanel
             // 
+            this.UsersPanel.Controls.Add(this.UserInformationLabel);
             this.UsersPanel.Controls.Add(this.PasswordTextBox);
             this.UsersPanel.Controls.Add(this.UsernameTextBox);
             this.UsersPanel.Controls.Add(this.PasswordLabel);
@@ -84,14 +86,53 @@ namespace WindowsFormsApp1
             this.UsersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UsersPanel.Location = new System.Drawing.Point(0, 0);
             this.UsersPanel.Name = "UsersPanel";
-            this.UsersPanel.Size = new System.Drawing.Size(1054, 594);
+            this.UsersPanel.Size = new System.Drawing.Size(1984, 906);
             this.UsersPanel.TabIndex = 9;
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordTextBox.Location = new System.Drawing.Point(512, 294);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(298, 26);
+            this.PasswordTextBox.TabIndex = 28;
+            // 
+            // UsernameTextBox
+            // 
+            this.UsernameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UsernameTextBox.Location = new System.Drawing.Point(512, 236);
+            this.UsernameTextBox.Name = "UsernameTextBox";
+            this.UsernameTextBox.Size = new System.Drawing.Size(298, 26);
+            this.UsernameTextBox.TabIndex = 27;
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.Location = new System.Drawing.Point(336, 290);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
+            this.PasswordLabel.TabIndex = 26;
+            this.PasswordLabel.Text = "Password";
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.Location = new System.Drawing.Point(336, 235);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
+            this.UsernameLabel.TabIndex = 25;
+            this.UsernameLabel.Text = "Username";
             // 
             // AddNewUserButton
             // 
-            this.AddNewUserButton.Location = new System.Drawing.Point(192, 441);
+            this.AddNewUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddNewUserButton.Location = new System.Drawing.Point(561, 508);
             this.AddNewUserButton.Name = "AddNewUserButton";
-            this.AddNewUserButton.Size = new System.Drawing.Size(135, 34);
+            this.AddNewUserButton.Size = new System.Drawing.Size(193, 34);
             this.AddNewUserButton.TabIndex = 24;
             this.AddNewUserButton.Text = "Add";
             this.AddNewUserButton.UseVisualStyleBackColor = true;
@@ -99,17 +140,20 @@ namespace WindowsFormsApp1
             // 
             // UsersDataLabel
             // 
+            this.UsersDataLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersDataLabel.AutoSize = true;
-            this.UsersDataLabel.Location = new System.Drawing.Point(717, 40);
+            this.UsersDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersDataLabel.Location = new System.Drawing.Point(1157, 36);
             this.UsersDataLabel.Name = "UsersDataLabel";
-            this.UsersDataLabel.Size = new System.Drawing.Size(90, 20);
+            this.UsersDataLabel.Size = new System.Drawing.Size(141, 29);
             this.UsersDataLabel.TabIndex = 21;
             this.UsersDataLabel.Text = "Users Data";
             // 
             // CheckBoxForUserActivation
             // 
+            this.CheckBoxForUserActivation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CheckBoxForUserActivation.AutoSize = true;
-            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(192, 309);
+            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(588, 365);
             this.CheckBoxForUserActivation.Name = "CheckBoxForUserActivation";
             this.CheckBoxForUserActivation.Size = new System.Drawing.Size(147, 24);
             this.CheckBoxForUserActivation.TabIndex = 20;
@@ -118,68 +162,77 @@ namespace WindowsFormsApp1
             // 
             // UserActivationLabel
             // 
+            this.UserActivationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserActivationLabel.AutoSize = true;
-            this.UserActivationLabel.Location = new System.Drawing.Point(24, 313);
+            this.UserActivationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserActivationLabel.Location = new System.Drawing.Point(336, 359);
             this.UserActivationLabel.Name = "UserActivationLabel";
-            this.UserActivationLabel.Size = new System.Drawing.Size(116, 20);
+            this.UserActivationLabel.Size = new System.Drawing.Size(172, 29);
             this.UserActivationLabel.TabIndex = 19;
             this.UserActivationLabel.Text = "User Activation";
             // 
             // SurnameLabel
             // 
+            this.SurnameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(37, 99);
+            this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurnameLabel.Location = new System.Drawing.Point(336, 172);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(74, 20);
+            this.SurnameLabel.Size = new System.Drawing.Size(110, 29);
             this.SurnameLabel.TabIndex = 18;
             this.SurnameLabel.Text = "Surname";
             // 
             // NameLabel
             // 
+            this.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(37, 40);
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(336, 113);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(51, 20);
+            this.NameLabel.Size = new System.Drawing.Size(78, 29);
             this.NameLabel.TabIndex = 17;
             this.NameLabel.Text = "Name";
             // 
             // UsersDataGridView
             // 
-            //this.UsersDataGridView.Columns["Operations"].Visible = false;
             this.UsersDataGridView.AllowUserToOrderColumns = true;
+            this.UsersDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsersDataGridView.Location = new System.Drawing.Point(495, 99);
+            this.UsersDataGridView.Location = new System.Drawing.Point(862, 117);
             this.UsersDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsersDataGridView.MultiSelect = false;
             this.UsersDataGridView.Name = "UsersDataGridView";
             this.UsersDataGridView.RowHeadersWidth = 62;
             this.UsersDataGridView.RowTemplate.Height = 33;
-            this.UsersDataGridView.Size = new System.Drawing.Size(539, 451);
+            this.UsersDataGridView.Size = new System.Drawing.Size(714, 451);
             this.UsersDataGridView.TabIndex = 16;
             this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(192, 93);
+            this.SurnameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SurnameTextBox.Location = new System.Drawing.Point(512, 170);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(266, 26);
+            this.SurnameTextBox.Size = new System.Drawing.Size(298, 26);
             this.SurnameTextBox.TabIndex = 15;
             // 
             // NameTextBox1
             // 
-            this.NameTextBox1.Location = new System.Drawing.Point(192, 40);
+            this.NameTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NameTextBox1.Location = new System.Drawing.Point(512, 117);
             this.NameTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox1.Name = "NameTextBox1";
-            this.NameTextBox1.Size = new System.Drawing.Size(266, 26);
+            this.NameTextBox1.Size = new System.Drawing.Size(298, 26);
             this.NameTextBox1.TabIndex = 14;
             // 
             // SaveUserButton
             // 
-            this.SaveUserButton.Location = new System.Drawing.Point(192, 384);
+            this.SaveUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaveUserButton.Location = new System.Drawing.Point(561, 451);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveUserButton.Name = "SaveUserButton";
-            this.SaveUserButton.Size = new System.Drawing.Size(135, 34);
+            this.SaveUserButton.Size = new System.Drawing.Size(193, 34);
             this.SaveUserButton.TabIndex = 13;
             this.SaveUserButton.Text = "Save";
             this.SaveUserButton.UseVisualStyleBackColor = true;
@@ -212,38 +265,6 @@ namespace WindowsFormsApp1
             // 
             this.errorProviderUserSurname.ContainerControl = this;
             // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(37, 162);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(125, 30);
-            this.UsernameLabel.TabIndex = 25;
-            this.UsernameLabel.Text = "Username";
-            // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(37, 217);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(78, 20);
-            this.PasswordLabel.TabIndex = 26;
-            this.PasswordLabel.Text = "Password";
-            // 
-            // UsernameTextBox
-            // 
-            this.UsernameTextBox.Location = new System.Drawing.Point(192, 159);
-            this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(266, 26);
-            this.UsernameTextBox.TabIndex = 27;
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(192, 217);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(266, 26);
-            this.PasswordTextBox.TabIndex = 28;
-            // 
             // UsernameErrorProvider
             // 
             this.UsernameErrorProvider.ContainerControl = this;
@@ -252,11 +273,22 @@ namespace WindowsFormsApp1
             // 
             this.PasswordErrorProvider.ContainerControl = this;
             // 
+            // UserInformationLabel
+            // 
+            this.UserInformationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserInformationLabel.AutoSize = true;
+            this.UserInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserInformationLabel.Location = new System.Drawing.Point(556, 36);
+            this.UserInformationLabel.Name = "UserInformationLabel";
+            this.UserInformationLabel.Size = new System.Drawing.Size(205, 29);
+            this.UserInformationLabel.TabIndex = 30;
+            this.UserInformationLabel.Text = "User Information";
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 594);
+            this.ClientSize = new System.Drawing.Size(1984, 906);
             this.Controls.Add(this.UsersPanel);
             this.Name = "UserForm";
             this.Text = "UserForm";
@@ -302,5 +334,6 @@ namespace WindowsFormsApp1
         private Label UsernameLabel;
         private ErrorProvider UsernameErrorProvider;
         private ErrorProvider PasswordErrorProvider;
+        private Label UserInformationLabel;
     }
 }

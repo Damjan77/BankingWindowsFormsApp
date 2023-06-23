@@ -44,16 +44,16 @@
             this.Currencylabel = new System.Windows.Forms.Label();
             this.UserActivationLabel2 = new System.Windows.Forms.Label();
             this.Ratelabel = new System.Windows.Forms.Label();
-            this.officialRateCurrencyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.officialRateRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ViewOfficialRatesNBRMDataGridView = new System.Windows.Forms.DataGridView();
             this.viewOfficialRatesNBRM = new System.Windows.Forms.Button();
+            this.officialRateCurrencyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.officialRateRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.OfficialRatesPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateCurrencyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateRateErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // OfficialRatesPanel
@@ -70,7 +70,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 554F));
             this.tableLayoutPanel1.Controls.Add(this.NBRMDataButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.OfficialRatesCurrencyComboBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.officialRateDateTimePicker, 1, 0);
@@ -222,14 +222,6 @@
             this.Ratelabel.TabIndex = 22;
             this.Ratelabel.Text = "Rate";
             // 
-            // officialRateCurrencyErrorProvider
-            // 
-            this.officialRateCurrencyErrorProvider.ContainerControl = this;
-            // 
-            // officialRateRateErrorProvider
-            // 
-            this.officialRateRateErrorProvider.ContainerControl = this;
-            // 
             // ViewOfficialRatesNBRMDataGridView
             // 
             this.ViewOfficialRatesNBRMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -250,11 +242,19 @@
             this.viewOfficialRatesNBRM.UseVisualStyleBackColor = true;
             this.viewOfficialRatesNBRM.Click += new System.EventHandler(this.viewOfficialRatesNBRM_Click);
             // 
+            // officialRateCurrencyErrorProvider
+            // 
+            this.officialRateCurrencyErrorProvider.ContainerControl = this;
+            // 
+            // officialRateRateErrorProvider
+            // 
+            this.officialRateRateErrorProvider.ContainerControl = this;
+            // 
             // OfficialRatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 617);
+            this.ClientSize = new System.Drawing.Size(2063, 1029);
             this.Controls.Add(this.OfficialRatesPanel);
             this.Name = "OfficialRatesForm";
             this.Text = "OfficialRatesForm";
@@ -263,9 +263,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateCurrencyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officialRateRateErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewOfficialRatesNBRMDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
