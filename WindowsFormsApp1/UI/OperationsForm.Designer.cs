@@ -82,51 +82,51 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(147, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 44);
+            this.label1.Size = new System.Drawing.Size(266, 29);
             this.label1.TabIndex = 39;
             this.label1.Text = "Operation Information";
             // 
             // CurrencyToComboBox
             // 
             this.CurrencyToComboBox.FormattingEnabled = true;
-            this.CurrencyToComboBox.Location = new System.Drawing.Point(194, 358);
+            this.CurrencyToComboBox.Location = new System.Drawing.Point(257, 362);
             this.CurrencyToComboBox.Name = "CurrencyToComboBox";
-            this.CurrencyToComboBox.Size = new System.Drawing.Size(269, 28);
+            this.CurrencyToComboBox.Size = new System.Drawing.Size(290, 28);
             this.CurrencyToComboBox.TabIndex = 38;
             // 
             // CurrencyFromComboBox
             // 
             this.CurrencyFromComboBox.FormattingEnabled = true;
-            this.CurrencyFromComboBox.Location = new System.Drawing.Point(194, 291);
+            this.CurrencyFromComboBox.Location = new System.Drawing.Point(257, 295);
             this.CurrencyFromComboBox.Name = "CurrencyFromComboBox";
-            this.CurrencyFromComboBox.Size = new System.Drawing.Size(269, 28);
+            this.CurrencyFromComboBox.Size = new System.Drawing.Size(290, 28);
             this.CurrencyFromComboBox.TabIndex = 37;
             // 
             // OperationTypeComboBox
             // 
             this.OperationTypeComboBox.FormattingEnabled = true;
-            this.OperationTypeComboBox.Location = new System.Drawing.Point(194, 96);
+            this.OperationTypeComboBox.Location = new System.Drawing.Point(257, 100);
             this.OperationTypeComboBox.Name = "OperationTypeComboBox";
-            this.OperationTypeComboBox.Size = new System.Drawing.Size(269, 28);
+            this.OperationTypeComboBox.Size = new System.Drawing.Size(290, 28);
             this.OperationTypeComboBox.TabIndex = 36;
             // 
             // OperationsDateTimePicker
             // 
             this.OperationsDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm";
             this.OperationsDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.OperationsDateTimePicker.Location = new System.Drawing.Point(194, 168);
+            this.OperationsDateTimePicker.Location = new System.Drawing.Point(257, 172);
             this.OperationsDateTimePicker.Name = "OperationsDateTimePicker";
-            this.OperationsDateTimePicker.Size = new System.Drawing.Size(269, 26);
+            this.OperationsDateTimePicker.Size = new System.Drawing.Size(290, 26);
             this.OperationsDateTimePicker.TabIndex = 34;
             // 
             // AddNewOperationButton
             // 
-            this.AddNewOperationButton.Location = new System.Drawing.Point(194, 532);
+            this.AddNewOperationButton.Location = new System.Drawing.Point(278, 526);
             this.AddNewOperationButton.Name = "AddNewOperationButton";
-            this.AddNewOperationButton.Size = new System.Drawing.Size(207, 34);
+            this.AddNewOperationButton.Size = new System.Drawing.Size(226, 45);
             this.AddNewOperationButton.TabIndex = 33;
             this.AddNewOperationButton.Text = "Add";
             this.AddNewOperationButton.UseVisualStyleBackColor = true;
@@ -135,63 +135,68 @@
             // CurrencyToLabel2
             // 
             this.CurrencyToLabel2.AutoSize = true;
+            this.CurrencyToLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyToLabel2.Location = new System.Drawing.Point(19, 358);
             this.CurrencyToLabel2.Name = "CurrencyToLabel2";
-            this.CurrencyToLabel2.Size = new System.Drawing.Size(94, 20);
+            this.CurrencyToLabel2.Size = new System.Drawing.Size(145, 29);
             this.CurrencyToLabel2.TabIndex = 26;
             this.CurrencyToLabel2.Text = "Currency To";
             // 
             // CurrencyFromLabel2
             // 
             this.CurrencyFromLabel2.AutoSize = true;
+            this.CurrencyFromLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyFromLabel2.Location = new System.Drawing.Point(19, 291);
             this.CurrencyFromLabel2.Name = "CurrencyFromLabel2";
-            this.CurrencyFromLabel2.Size = new System.Drawing.Size(113, 20);
+            this.CurrencyFromLabel2.Size = new System.Drawing.Size(172, 29);
             this.CurrencyFromLabel2.TabIndex = 25;
             this.CurrencyFromLabel2.Text = "Currency From";
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(194, 226);
+            this.AmountTextBox.Location = new System.Drawing.Point(257, 230);
             this.AmountTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AmountTextBox.Name = "AmountTextBox";
-            this.AmountTextBox.Size = new System.Drawing.Size(269, 26);
+            this.AmountTextBox.Size = new System.Drawing.Size(290, 26);
             this.AmountTextBox.TabIndex = 24;
             // 
             // OperationDateLabel
             // 
             this.OperationDateLabel.AutoSize = true;
+            this.OperationDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OperationDateLabel.Location = new System.Drawing.Point(18, 168);
             this.OperationDateLabel.Name = "OperationDateLabel";
-            this.OperationDateLabel.Size = new System.Drawing.Size(114, 20);
+            this.OperationDateLabel.Size = new System.Drawing.Size(170, 29);
             this.OperationDateLabel.TabIndex = 22;
             this.OperationDateLabel.Text = "OperationDate";
             // 
             // OperationsDataLabel
             // 
             this.OperationsDataLabel.AutoSize = true;
-            this.OperationsDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OperationsDataLabel.Location = new System.Drawing.Point(906, 33);
+            this.OperationsDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OperationsDataLabel.Location = new System.Drawing.Point(1024, 43);
             this.OperationsDataLabel.Name = "OperationsDataLabel";
-            this.OperationsDataLabel.Size = new System.Drawing.Size(187, 29);
+            this.OperationsDataLabel.Size = new System.Drawing.Size(202, 29);
             this.OperationsDataLabel.TabIndex = 21;
             this.OperationsDataLabel.Text = "Operations Data";
             // 
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
+            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AmountLabel.Location = new System.Drawing.Point(18, 226);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(65, 20);
+            this.AmountLabel.Size = new System.Drawing.Size(94, 29);
             this.AmountLabel.TabIndex = 19;
             this.AmountLabel.Text = "Amount";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(15, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 20);
+            this.label5.Size = new System.Drawing.Size(181, 29);
             this.label5.TabIndex = 17;
             this.label5.Text = "Operation Type";
             // 
@@ -199,7 +204,7 @@
             // 
             this.OperationsDataGridView.AllowUserToOrderColumns = true;
             this.OperationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OperationsDataGridView.Location = new System.Drawing.Point(541, 96);
+            this.OperationsDataGridView.Location = new System.Drawing.Point(653, 96);
             this.OperationsDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OperationsDataGridView.MultiSelect = false;
             this.OperationsDataGridView.Name = "OperationsDataGridView";
@@ -212,10 +217,10 @@
             // 
             // SaveOperationButton
             // 
-            this.SaveOperationButton.Location = new System.Drawing.Point(194, 454);
+            this.SaveOperationButton.Location = new System.Drawing.Point(278, 448);
             this.SaveOperationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveOperationButton.Name = "SaveOperationButton";
-            this.SaveOperationButton.Size = new System.Drawing.Size(207, 34);
+            this.SaveOperationButton.Size = new System.Drawing.Size(226, 45);
             this.SaveOperationButton.TabIndex = 13;
             this.SaveOperationButton.Text = "Save";
             this.SaveOperationButton.UseVisualStyleBackColor = true;

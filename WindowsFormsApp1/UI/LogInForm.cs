@@ -13,13 +13,23 @@ namespace WindowsFormsApp1.UI
     {
         //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IUserService userService;
+        private Rectangle OriginalLogInButtonRectangle;
+        private Rectangle OriginalFormSize;
+
         public LogInForm()
         {
             userService = new UserServiceImpl();
 
             InitializeComponent();
         }
-        
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+            OriginalLogInButtonRectangle = new Rectangle(LogInButton.Location.X, LogInButton.Location.Y, LogInButton.Width, LogInButton.Height);
+            OriginalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+        }
+
+
         private async void LogInButton_Click(object sender, EventArgs e)
         {
             if (!validateData()) return;
@@ -102,5 +112,27 @@ namespace WindowsFormsApp1.UI
             if (usernameFlag && passwordFlag) return true;
             else return false;
         }
+
+        private void resizeControl(Rectangle r, Control c)
+        {
+            float xRation = (float)(this.Width) / (float)(OriginalFormSize.Width);
+            float yRation = (float)(this.Height) / (float)(OriginalFormSize.Height);
+
+            int newX = (int)(r.Width * xRation);
+            int newY = (int)(r.Height * yRation);
+
+            int newWidth = (int)(r.Width * xRation);
+            int newHeight = (int)(r.Height * yRation);
+
+            c.Location = new Point(newX, newY);
+            c.Size = new Size(newWidth, newHeight);
+        }
+
+        private void TDAForm_Resize(object sender, EventArgs e)
+        {
+            resizeControl(OriginalLogInButtonRectangle, LogInButton);
+        }
+
+
     }
 }

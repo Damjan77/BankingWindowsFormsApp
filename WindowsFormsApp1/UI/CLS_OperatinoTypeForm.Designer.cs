@@ -42,6 +42,7 @@
             this.SaveCLS_OperationTypeButton = new System.Windows.Forms.Button();
             this.clsOperationTypeCodeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.clsOperationTypeNameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.CLS_OperationTypePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CLS_OperationTypeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clsOperationTypeCodeErrorProvider)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             // CLS_OperationTypePanel
             // 
+            this.CLS_OperationTypePanel.Controls.Add(this.label2);
             this.CLS_OperationTypePanel.Controls.Add(this.AddNewOperationTypeButton);
             this.CLS_OperationTypePanel.Controls.Add(this.checkBox1);
             this.CLS_OperationTypePanel.Controls.Add(this.label1);
@@ -62,12 +64,12 @@
             this.CLS_OperationTypePanel.Controls.Add(this.SaveCLS_OperationTypeButton);
             this.CLS_OperationTypePanel.Location = new System.Drawing.Point(30, 33);
             this.CLS_OperationTypePanel.Name = "CLS_OperationTypePanel";
-            this.CLS_OperationTypePanel.Size = new System.Drawing.Size(1065, 582);
+            this.CLS_OperationTypePanel.Size = new System.Drawing.Size(1901, 750);
             this.CLS_OperationTypePanel.TabIndex = 31;
             // 
             // AddNewOperationTypeButton
             // 
-            this.AddNewOperationTypeButton.Location = new System.Drawing.Point(77, 291);
+            this.AddNewOperationTypeButton.Location = new System.Drawing.Point(457, 403);
             this.AddNewOperationTypeButton.Name = "AddNewOperationTypeButton";
             this.AddNewOperationTypeButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewOperationTypeButton.TabIndex = 32;
@@ -78,7 +80,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(192, 159);
+            this.checkBox1.Location = new System.Drawing.Point(422, 279);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 24);
             this.checkBox1.TabIndex = 23;
@@ -88,36 +90,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 159);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 30);
+            this.label1.Size = new System.Drawing.Size(260, 29);
             this.label1.TabIndex = 22;
             this.label1.Text = "Activate Operation type";
             // 
             // CLS_OperationTypeLabel
             // 
             this.CLS_OperationTypeLabel.AutoSize = true;
-            this.CLS_OperationTypeLabel.Location = new System.Drawing.Point(717, 40);
+            this.CLS_OperationTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CLS_OperationTypeLabel.Location = new System.Drawing.Point(1104, 76);
             this.CLS_OperationTypeLabel.Name = "CLS_OperationTypeLabel";
-            this.CLS_OperationTypeLabel.Size = new System.Drawing.Size(192, 20);
+            this.CLS_OperationTypeLabel.Size = new System.Drawing.Size(311, 29);
             this.CLS_OperationTypeLabel.TabIndex = 21;
             this.CLS_OperationTypeLabel.Text = "CLS_OperationType Data";
             // 
             // NameLabel3
             // 
             this.NameLabel3.AutoSize = true;
-            this.NameLabel3.Location = new System.Drawing.Point(10, 96);
+            this.NameLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel3.Location = new System.Drawing.Point(121, 216);
             this.NameLabel3.Name = "NameLabel3";
-            this.NameLabel3.Size = new System.Drawing.Size(51, 20);
+            this.NameLabel3.Size = new System.Drawing.Size(78, 29);
             this.NameLabel3.TabIndex = 18;
             this.NameLabel3.Text = "Name";
             // 
             // CodeLabel2
             // 
             this.CodeLabel2.AutoSize = true;
-            this.CodeLabel2.Location = new System.Drawing.Point(10, 43);
+            this.CodeLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeLabel2.Location = new System.Drawing.Point(121, 162);
             this.CodeLabel2.Name = "CodeLabel2";
-            this.CodeLabel2.Size = new System.Drawing.Size(47, 20);
+            this.CodeLabel2.Size = new System.Drawing.Size(72, 29);
             this.CodeLabel2.TabIndex = 17;
             this.CodeLabel2.Text = "Code";
             // 
@@ -125,20 +131,20 @@
             // 
             this.CLS_OperationTypeDataGridView.AllowUserToOrderColumns = true;
             this.CLS_OperationTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CLS_OperationTypeDataGridView.Location = new System.Drawing.Point(495, 99);
+            this.CLS_OperationTypeDataGridView.Location = new System.Drawing.Point(978, 122);
             this.CLS_OperationTypeDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CLS_OperationTypeDataGridView.MultiSelect = false;
             this.CLS_OperationTypeDataGridView.Name = "CLS_OperationTypeDataGridView";
             this.CLS_OperationTypeDataGridView.RowHeadersWidth = 62;
             this.CLS_OperationTypeDataGridView.RowTemplate.Height = 33;
             this.CLS_OperationTypeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CLS_OperationTypeDataGridView.Size = new System.Drawing.Size(539, 451);
+            this.CLS_OperationTypeDataGridView.Size = new System.Drawing.Size(670, 451);
             this.CLS_OperationTypeDataGridView.TabIndex = 16;
             this.CLS_OperationTypeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CLS_OperationTypeDataGridView_CellClick);
             // 
             // NameTextBox3
             // 
-            this.NameTextBox3.Location = new System.Drawing.Point(192, 101);
+            this.NameTextBox3.Location = new System.Drawing.Point(422, 230);
             this.NameTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox3.Name = "NameTextBox3";
             this.NameTextBox3.Size = new System.Drawing.Size(266, 26);
@@ -146,7 +152,7 @@
             // 
             // CodeTextBox2
             // 
-            this.CodeTextBox2.Location = new System.Drawing.Point(192, 43);
+            this.CodeTextBox2.Location = new System.Drawing.Point(422, 172);
             this.CodeTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CodeTextBox2.Name = "CodeTextBox2";
             this.CodeTextBox2.Size = new System.Drawing.Size(266, 26);
@@ -154,7 +160,7 @@
             // 
             // SaveCLS_OperationTypeButton
             // 
-            this.SaveCLS_OperationTypeButton.Location = new System.Drawing.Point(77, 241);
+            this.SaveCLS_OperationTypeButton.Location = new System.Drawing.Point(457, 353);
             this.SaveCLS_OperationTypeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveCLS_OperationTypeButton.Name = "SaveCLS_OperationTypeButton";
             this.SaveCLS_OperationTypeButton.Size = new System.Drawing.Size(207, 34);
@@ -171,11 +177,21 @@
             // 
             this.clsOperationTypeNameErrorProvider.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(224, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(388, 29);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "CLS_OperationType Information";
+            // 
             // CLS_OperatinoTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 649);
+            this.ClientSize = new System.Drawing.Size(1954, 795);
             this.Controls.Add(this.CLS_OperationTypePanel);
             this.Name = "CLS_OperatinoTypeForm";
             this.Text = "CLS_OperatinoTypeForm";
@@ -204,5 +220,6 @@
         private System.Windows.Forms.Button SaveCLS_OperationTypeButton;
         private System.Windows.Forms.ErrorProvider clsOperationTypeCodeErrorProvider;
         private System.Windows.Forms.ErrorProvider clsOperationTypeNameErrorProvider;
+        private System.Windows.Forms.Label label2;
     }
 }

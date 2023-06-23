@@ -163,6 +163,7 @@
             this.Controls.Add(this.WelcomeLabel);
             this.Name = "LogInForm";
             this.Text = "LogInForm";
+            this.Load += new System.EventHandler(this.LogInForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).EndInit();
             this.ResumeLayout(false);

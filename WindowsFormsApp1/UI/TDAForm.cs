@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
@@ -10,13 +11,19 @@ namespace WindowsFormsApp1.UI
 {
     public partial class TDAForm : Form
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         ITDAService tDAService;
+        //private Rectangle OriginalCalculateButtonRectangle;
+        //private Rectangle OriginalFormSize;
         public TDAForm()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             tDAService = new TDAServiceImpl();
+        }
+        private void TDAForm_Load(object sender, EventArgs e)
+        {
+            //OriginalCalculateButtonRectangle = new Rectangle(CalculateButton.Location.X, CalculateButton.Location.Y, CalculateButton.Width, CalculateButton.Height);
+            //OriginalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
         }
 
         private void getAllData()
@@ -116,5 +123,25 @@ namespace WindowsFormsApp1.UI
             if (amountFlag && periodFlag && interestRateFlag) return true;
             else return false;
         }
+
+        //private void resizeControl(Rectangle r, Control c)
+        //{
+        //    float xRation = (float)(this.Width) / (float)(OriginalFormSize.Width);
+        //    float yRation = (float)(this.Height) / (float)(OriginalFormSize.Height);
+
+        //    int newX = (int)(r.Width * xRation);
+        //    int newY = (int)(r.Height * yRation);
+
+        //    int newWidth = (int)(r.Width * xRation);
+        //    int newHeight = (int)(r.Height * yRation);
+
+        //    c.Location = new Point(newX, newY);
+        //    c.Size = new Size(newWidth, newHeight);
+        //}
+
+        //private void TDAForm_Resize(object sender, EventArgs e)
+        //{
+        //    resizeControl(OriginalCalculateButtonRectangle, CalculateButton);
+        //}
     }
 }
