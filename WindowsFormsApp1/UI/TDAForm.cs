@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.UI
 {
     public partial class TDAForm : Form
     {
-        SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         ITDAService tDAService;
         public TDAForm()
         {
@@ -19,36 +19,6 @@ namespace WindowsFormsApp1.UI
             tDAService = new TDAServiceImpl();
         }
 
-        //private void getAllData(string procedure, DataGridView dataGridView)
-        //{
-        //    Decimal amount = Decimal.Parse(AmountTextBox.Text);
-        //    int period = Int32.Parse(PeriodTextBox.Text);
-        //    Decimal interestRate = Decimal.Parse(InterestRateTextBox.Text);
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand(procedure, con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("amount", amount);
-        //        sqlCommand.Parameters.AddWithValue("period", period);
-        //        sqlCommand.Parameters.AddWithValue("interestRate", interestRate);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
-        //        DataTable dataTable = new DataTable();
-        //        adapter.Fill(dataTable);
-        //        dataGridView.DataSource = dataTable;
-
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
         private void getAllData()
         {
             
@@ -56,7 +26,9 @@ namespace WindowsFormsApp1.UI
             int period = Int32.Parse(PeriodTextBox.Text);
             Decimal interestRate = Decimal.Parse(InterestRateTextBox.Text);
 
-            TDADataGridView.DataSource = tDAService.getAllData(amount, period, interestRate);
+            TDADataGridView.DataSource = tDAService.getAllTDAData(amount, period, interestRate);
+            var result = tDAService.getAllAnnuityData(amount, period, interestRate);
+            AnnuitydataGridView.DataSource = result; 
         }
 
         //private void GetTdaData(object sender, EventArgs e)

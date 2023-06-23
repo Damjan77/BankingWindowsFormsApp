@@ -42,10 +42,12 @@
             this.AmountErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PeriodErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.InterestRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.AnnuitydataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.TDADataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeriodErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InterestRateErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AnnuitydataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // TDAAccountLabel
@@ -148,11 +150,22 @@
             // 
             this.InterestRateErrorProvider.ContainerControl = this;
             // 
+            // AnnuitydataGridView
+            // 
+            this.AnnuitydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AnnuitydataGridView.Location = new System.Drawing.Point(1027, 133);
+            this.AnnuitydataGridView.Name = "AnnuitydataGridView";
+            this.AnnuitydataGridView.RowHeadersWidth = 62;
+            this.AnnuitydataGridView.RowTemplate.Height = 28;
+            this.AnnuitydataGridView.Size = new System.Drawing.Size(388, 285);
+            this.AnnuitydataGridView.TabIndex = 10;
+            // 
             // TDAForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 649);
+            this.ClientSize = new System.Drawing.Size(2021, 1021);
+            this.Controls.Add(this.AnnuitydataGridView);
             this.Controls.Add(this.TDAInformationLabel);
             this.Controls.Add(this.TDADataGridView);
             this.Controls.Add(this.CalculateButton);
@@ -169,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeriodErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InterestRateErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AnnuitydataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +203,6 @@
         private System.Windows.Forms.ErrorProvider AmountErrorProvider;
         private System.Windows.Forms.ErrorProvider PeriodErrorProvider;
         private System.Windows.Forms.ErrorProvider InterestRateErrorProvider;
+        private System.Windows.Forms.DataGridView AnnuitydataGridView;
     }
 }

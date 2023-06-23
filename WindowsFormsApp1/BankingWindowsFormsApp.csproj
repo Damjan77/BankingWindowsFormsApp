@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\AnnuityResult.cs" />
     <Compile Include="Models\MonthlyResult.cs" />
     <Compile Include="Models\Scheduler.cs" />
     <Compile Include="Models\UserSession.cs" />
