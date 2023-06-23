@@ -39,6 +39,7 @@
             this.RegisterLabel = new System.Windows.Forms.Label();
             this.UsernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.WelcomeUserLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -134,11 +135,24 @@
             // 
             this.PasswordErrorProvider.ContainerControl = this;
             // 
+            // WelcomeUserLabel
+            // 
+            this.WelcomeUserLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WelcomeUserLabel.AutoSize = true;
+            this.WelcomeUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeUserLabel.Location = new System.Drawing.Point(385, 391);
+            this.WelcomeUserLabel.Name = "WelcomeUserLabel";
+            this.WelcomeUserLabel.Size = new System.Drawing.Size(115, 29);
+            this.WelcomeUserLabel.TabIndex = 8;
+            this.WelcomeUserLabel.Text = "Welcome";
+            this.WelcomeUserLabel.Visible = false;
+            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 715);
+            this.Controls.Add(this.WelcomeUserLabel);
             this.Controls.Add(this.RegisterLabel);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.LogInButton);
@@ -168,5 +182,6 @@
         private System.Windows.Forms.Label RegisterLabel;
         private System.Windows.Forms.ErrorProvider UsernameErrorProvider;
         private System.Windows.Forms.ErrorProvider PasswordErrorProvider;
+        private System.Windows.Forms.Label WelcomeUserLabel;
     }
 }

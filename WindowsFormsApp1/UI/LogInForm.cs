@@ -5,7 +5,7 @@ using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace WindowsFormsApp1.UI
 {
@@ -19,7 +19,6 @@ namespace WindowsFormsApp1.UI
 
             InitializeComponent();
         }
-
         
         private async void LogInButton_Click(object sender, EventArgs e)
         {
@@ -33,11 +32,13 @@ namespace WindowsFormsApp1.UI
             {
                 LogInButton.Text = "Success!"; //Da se zameni so Environment Variable
                 LogInButton.BackColor = Color.Green;
-                //Here wait 1 sec :D
-                await Task.Delay(1000);
+                
+                
                 UserSession.UserName = username;
                 UserSession.UserId = userService.getUserId(username, password);
-
+                WelcomeUserLabel.Text += " " + username;
+                WelcomeUserLabel.Visible = true;
+                await Task.Delay(1000);
                 Main mainForm = new Main();
                 mainForm.Show();
                 this.Hide();

@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
         private void Main_Load(object sender, EventArgs e)
         {
             Scheduler.StartScheduling(exchangeRates,officialRatesService);
-            mainWelcomeLabel.Text += " " + UserSession.UserName;
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)

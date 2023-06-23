@@ -159,5 +159,12 @@ namespace WindowsFormsApp1.UI
             if (nameFlag && usernameFlag && surnameFlag && passwordFlag && confirmPasswordFlag) return true;
             else return false;
         }
+
+        private void backToLoginButton_Click(object sender, EventArgs e)
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.Show();
+            this.Hide();
+        }
     }
 }
