@@ -133,33 +133,33 @@
             // NameTextBox
             // 
             this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NameTextBox.Location = new System.Drawing.Point(261, 125);
+            this.NameTextBox.Location = new System.Drawing.Point(246, 122);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(246, 26);
+            this.NameTextBox.Size = new System.Drawing.Size(307, 26);
             this.NameTextBox.TabIndex = 6;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordTextBox.Location = new System.Drawing.Point(261, 294);
+            this.PasswordTextBox.Location = new System.Drawing.Point(246, 291);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(246, 26);
+            this.PasswordTextBox.Size = new System.Drawing.Size(307, 26);
             this.PasswordTextBox.TabIndex = 7;
             // 
             // UsernameTextBox
             // 
             this.UsernameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UsernameTextBox.Location = new System.Drawing.Point(261, 237);
+            this.UsernameTextBox.Location = new System.Drawing.Point(246, 234);
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(246, 26);
+            this.UsernameTextBox.Size = new System.Drawing.Size(307, 26);
             this.UsernameTextBox.TabIndex = 8;
             // 
             // SurnameTextBox
             // 
             this.SurnameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SurnameTextBox.Location = new System.Drawing.Point(261, 181);
+            this.SurnameTextBox.Location = new System.Drawing.Point(246, 178);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(246, 26);
+            this.SurnameTextBox.Size = new System.Drawing.Size(307, 26);
             this.SurnameTextBox.TabIndex = 9;
             // 
             // ConfirmPasswordLabel
@@ -177,9 +177,9 @@
             // ConfirmPasswordTextBox
             // 
             this.ConfirmPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(261, 346);
+            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(246, 343);
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
-            this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(246, 26);
+            this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(307, 26);
             this.ConfirmPasswordTextBox.TabIndex = 11;
             // 
             // ActivateUserLabel
@@ -197,7 +197,7 @@
             // RegisterButton
             // 
             this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterButton.Location = new System.Drawing.Point(261, 512);
+            this.RegisterButton.Location = new System.Drawing.Point(281, 479);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(231, 45);
             this.RegisterButton.TabIndex = 13;
@@ -228,7 +228,7 @@
             // backToLoginButton
             // 
             this.backToLoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backToLoginButton.Location = new System.Drawing.Point(261, 586);
+            this.backToLoginButton.Location = new System.Drawing.Point(281, 553);
             this.backToLoginButton.Name = "backToLoginButton";
             this.backToLoginButton.Size = new System.Drawing.Size(231, 45);
             this.backToLoginButton.TabIndex = 14;
@@ -255,7 +255,7 @@
             this.RegisterPanel.Controls.Add(this.NameTextBox);
             this.RegisterPanel.Controls.Add(this.UsernameTextBox);
             this.RegisterPanel.Controls.Add(this.PasswordTextBox);
-            this.RegisterPanel.Location = new System.Drawing.Point(315, 12);
+            this.RegisterPanel.Location = new System.Drawing.Point(240, 12);
             this.RegisterPanel.Name = "RegisterPanel";
             this.RegisterPanel.Size = new System.Drawing.Size(586, 717);
             this.RegisterPanel.TabIndex = 15;
@@ -267,7 +267,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1214, 783);
+            this.ClientSize = new System.Drawing.Size(1065, 783);
             this.Controls.Add(this.RegisterPanel);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";

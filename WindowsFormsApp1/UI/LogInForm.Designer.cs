@@ -41,20 +41,21 @@
             this.UsernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.WelcomeUserLabel = new System.Windows.Forms.Label();
-            this.LogInPicture = new System.Windows.Forms.PictureBox();
+            this.LogInPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogInPicture)).BeginInit();
+            this.LogInPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(319, 52);
+            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.WelcomeLabel.Location = new System.Drawing.Point(299, 65);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(316, 29);
+            this.WelcomeLabel.Size = new System.Drawing.Size(368, 32);
             this.WelcomeLabel.TabIndex = 0;
             this.WelcomeLabel.Text = "Welcome to ExchangeBox";
             // 
@@ -62,8 +63,10 @@
             // 
             this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.BackColor = System.Drawing.Color.Transparent;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(144, 244);
+            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PasswordLabel.Location = new System.Drawing.Point(145, 258);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
             this.PasswordLabel.TabIndex = 1;
@@ -73,8 +76,10 @@
             // 
             this.UsernameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(144, 170);
+            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.UsernameLabel.Location = new System.Drawing.Point(145, 184);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
             this.UsernameLabel.TabIndex = 2;
@@ -83,7 +88,7 @@
             // UserNameTextBox_LogIn
             // 
             this.UserNameTextBox_LogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserNameTextBox_LogIn.Location = new System.Drawing.Point(324, 170);
+            this.UserNameTextBox_LogIn.Location = new System.Drawing.Point(325, 184);
             this.UserNameTextBox_LogIn.Name = "UserNameTextBox_LogIn";
             this.UserNameTextBox_LogIn.Size = new System.Drawing.Size(299, 26);
             this.UserNameTextBox_LogIn.TabIndex = 3;
@@ -91,7 +96,7 @@
             // PasswordTextBox_LogIn
             // 
             this.PasswordTextBox_LogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordTextBox_LogIn.Location = new System.Drawing.Point(324, 248);
+            this.PasswordTextBox_LogIn.Location = new System.Drawing.Point(325, 262);
             this.PasswordTextBox_LogIn.Name = "PasswordTextBox_LogIn";
             this.PasswordTextBox_LogIn.PasswordChar = '*';
             this.PasswordTextBox_LogIn.Size = new System.Drawing.Size(299, 26);
@@ -100,7 +105,7 @@
             // LogInButton
             // 
             this.LogInButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LogInButton.Location = new System.Drawing.Point(390, 311);
+            this.LogInButton.Location = new System.Drawing.Point(391, 325);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.Size = new System.Drawing.Size(161, 54);
             this.LogInButton.TabIndex = 5;
@@ -111,7 +116,7 @@
             // RegisterButton
             // 
             this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterButton.Location = new System.Drawing.Point(390, 513);
+            this.RegisterButton.Location = new System.Drawing.Point(391, 527);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(161, 54);
             this.RegisterButton.TabIndex = 6;
@@ -124,7 +129,8 @@
             this.RegisterLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterLabel.AutoSize = true;
             this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterLabel.Location = new System.Drawing.Point(257, 445);
+            this.RegisterLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.RegisterLabel.Location = new System.Drawing.Point(258, 459);
             this.RegisterLabel.Name = "RegisterLabel";
             this.RegisterLabel.Size = new System.Drawing.Size(448, 29);
             this.RegisterLabel.TabIndex = 7;
@@ -143,46 +149,48 @@
             this.WelcomeUserLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WelcomeUserLabel.AutoSize = true;
             this.WelcomeUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeUserLabel.Location = new System.Drawing.Point(385, 391);
+            this.WelcomeUserLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.WelcomeUserLabel.Location = new System.Drawing.Point(386, 405);
             this.WelcomeUserLabel.Name = "WelcomeUserLabel";
             this.WelcomeUserLabel.Size = new System.Drawing.Size(115, 29);
             this.WelcomeUserLabel.TabIndex = 8;
             this.WelcomeUserLabel.Text = "Welcome";
             this.WelcomeUserLabel.Visible = false;
             // 
-            // LogInPicture
+            // LogInPanel
             // 
-            this.LogInPicture.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LogInPicture.Image = ((System.Drawing.Image)(resources.GetObject("LogInPicture.Image")));
-            this.LogInPicture.Location = new System.Drawing.Point(671, 170);
-            this.LogInPicture.Name = "LogInPicture";
-            this.LogInPicture.Size = new System.Drawing.Size(193, 104);
-            this.LogInPicture.TabIndex = 9;
-            this.LogInPicture.TabStop = false;
+            this.LogInPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LogInPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LogInPanel.Controls.Add(this.UsernameLabel);
+            this.LogInPanel.Controls.Add(this.WelcomeUserLabel);
+            this.LogInPanel.Controls.Add(this.WelcomeLabel);
+            this.LogInPanel.Controls.Add(this.RegisterLabel);
+            this.LogInPanel.Controls.Add(this.PasswordLabel);
+            this.LogInPanel.Controls.Add(this.RegisterButton);
+            this.LogInPanel.Controls.Add(this.UserNameTextBox_LogIn);
+            this.LogInPanel.Controls.Add(this.LogInButton);
+            this.LogInPanel.Controls.Add(this.PasswordTextBox_LogIn);
+            this.LogInPanel.Location = new System.Drawing.Point(12, 12);
+            this.LogInPanel.Name = "LogInPanel";
+            this.LogInPanel.Size = new System.Drawing.Size(903, 710);
+            this.LogInPanel.TabIndex = 9;
             // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 715);
-            this.Controls.Add(this.LogInPicture);
-            this.Controls.Add(this.WelcomeUserLabel);
-            this.Controls.Add(this.RegisterLabel);
-            this.Controls.Add(this.RegisterButton);
-            this.Controls.Add(this.LogInButton);
-            this.Controls.Add(this.PasswordTextBox_LogIn);
-            this.Controls.Add(this.UserNameTextBox_LogIn);
-            this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.WelcomeLabel);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(941, 734);
+            this.Controls.Add(this.LogInPanel);
             this.Name = "LogInForm";
             this.Text = "LogInForm";
             this.Load += new System.EventHandler(this.LogInForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogInPicture)).EndInit();
+            this.LogInPanel.ResumeLayout(false);
+            this.LogInPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -199,6 +207,6 @@
         private System.Windows.Forms.ErrorProvider UsernameErrorProvider;
         private System.Windows.Forms.ErrorProvider PasswordErrorProvider;
         private System.Windows.Forms.Label WelcomeUserLabel;
-        private System.Windows.Forms.PictureBox LogInPicture;
+        private System.Windows.Forms.Panel LogInPanel;
     }
 }
