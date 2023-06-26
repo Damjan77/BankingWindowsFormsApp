@@ -120,6 +120,31 @@
   <metadata name="RegisterNameErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>11, 11</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8k
+        KDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3
+        Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAB5ANcDASIAAhEBAxEB/8QA
+        GwAAAwEBAQEBAAAAAAAAAAAAAQIDAAQGBQf/xAAhEAEBAAMBAAMAAgMAAAAAAAAAAQIRITEDEkEiUTJh
+        cf/EABsBAAMBAAMBAAAAAAAAAAAAAAECAwAEBQYH/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAIBERL/2gAM
+        AwEAAhEDEQA/APz7H/GDsuF/jBdm4Z9j6We6Ugs0PKQdi2apKO09mlLqs6fe24Tem2TV5pQ0qf2DZNxa
+        aW+4zLaWLb1SrTTolNKhjn3qsyKtNLYXimKWN4fGlciaVlVwy459qYXui7i866ZTyoSqY0m4vOqGhJRl
+        KtOqSnlTlb7F3Fcpb768BKVicPlPFfHf4QbdI/DlzVVdvj59wcb/ACn/AFZHCbyiw4GjtgEQbZtlDfWH
+        N4eXYXLQQmd6TcWmjymlSlNKTVppXHI1R2fHL+y6tNHlPhbuep4zd/0pC8WmnTLwZU8bw2Ibi80pKp8d
+        6jFML0q006JVMahKpjQ3HJml9jtKU8qe4tlH3wkzbbWb7+lUzTzNk5WDh+vFY8Xl3NoyVT4/dOxx4bV/
+        jmpum2Xf421CHEkppRYS0QyBg2S3prwlDTZppR2ToxPVppSU2+Jxtl1WaX+PL8VlcsXwy2C006MbyHlS
+        xUgcXmlIf472pSnwobi80tDTLqf2NKXi80tKbaUoy7JuL5Sm+mlS3qjctE3FMpW1kftaxeH9vJ4+Gx9T
+        iuDsMeM1WXY8Jj6Y5RYGFjStaVqzMWiFKzDooytps0wyF2aUu4rNDD43RYeQvFZp0fHeHlRxvFMaHF5p
+        WU89SmR5kC00rDSpymLuLzSsppUpTbLuLzR7kEloSiTcVzTTGiErFUx5nLDG/mmxmpoYznvIDDEbYsdi
+        /ZvswGah9ozMwUW9ZisbQaBmNC6Gcbhs1ScNKnBgcUml8aeVKU0peLzSxsU8btSBxaaUlPKlKaUvFppa
+        NskowurzR9nicp8ScXmjxi7YOKZTz15wDWdCua8oFBhAW0zCzM3vGEQLL+f0IZTu40BjMEoizMzMzbNi
+        UZxhzVYaJyngarNK4VSVHGqSl4tNKSniUppkXcXmloO0pTQurTSsNKlKeF3F5o8YsolWynw6SmpXLeZC
+        MwgLDABgOwSiLNZuFMXLgM0um2FGN1m2OwEWaUYAxmNieUkGMOarKeVLGnlDis0pKaVOGlLq80pFJUpT
+        Sl3FppSU0qcPC8XmlGC+Ri8Vynw51gx8GuQ6FmZmYQ0IsBdDBoMwxsvAx9HLwWIID+ALMzMwwWnjCAmK
+        M8ZjQ0pIMEc1WU8Tx9OXV508poSG/C6tOnlUxqMVx8KvOqfjBPGLxTr/2Q==
+</value>
+  </data>
   <metadata name="RegisterSurnameErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>296, 11</value>
   </metadata>
