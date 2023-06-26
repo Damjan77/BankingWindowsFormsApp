@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
@@ -23,11 +24,14 @@ namespace WindowsFormsApp1
             // TODO: This line of code loads data into the 'dataSet1.Table' table. You can move, or remove it, as needed.
             this.tableTableAdapter.Fill(this.dataSet1.Table);
             getAllData();
+
+            //SearchTextBox.Text = "Search for User";
+            //SearchTextBox.ForeColor = System.Drawing.Color.Gray;
         }
 
         private void getAllData()
         {
-            UsersDataGridView.DataSource = userService.GetAllData("Users_GetAll");
+            UsersDataGridView.DataSource = userService.GetAllData();
         }
 
         public void DRYUser(object sender, EventArgs e, bool IamExisting)
@@ -141,6 +145,7 @@ namespace WindowsFormsApp1
             else return false;
         }
 
+
         private void AddNewUserButton_Click(object sender, EventArgs e)
         {
             if (isValidData())
@@ -179,6 +184,41 @@ namespace WindowsFormsApp1
             UsernameTextBox.Text = "";
             PasswordTextBox.Text = "";
         }
+
+        //private void SearchTextBox_Enter(object sender, EventArgs e)
+        //{
+        //    if (SearchTextBox.Text == "Search for User")
+        //    {
+        //        SearchTextBox.Text = "";
+        //        SearchTextBox.ForeColor = System.Drawing.Color.Black;
+        //    }
+
+        //}
+
+        //private void SearchTextBox_Leave(object sender, EventArgs e)
+        //{
+        //    if (SearchTextBox.Text == "")
+        //    {
+        //        SearchTextBox.Text = "Search for User";
+        //        SearchTextBox.ForeColor = System.Drawing.Color.Gray;
+        //    }
+        //}
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            List<User> users = userService.searchUsers(SearchTextBox.Text);
+            if (users != null)
+            {
+                UsersDataGridView.DataSource = users;
+            }
+        }
+
+        private void AllUsersButton_Click(object sender, EventArgs e)
+        {
+            UsersDataGridView.DataSource = userService.GetAllData();
+        }
+
+
 
         //private void getAllData(string procedure, DataGridView dataGridView)
         //{

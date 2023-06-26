@@ -7,10 +7,11 @@ namespace WindowsFormsApp1.Service
     {
         void InsertDataInUserTable(object toSave);
         void UpdateDataInUserTable(object toSave);
-        List<User> GetAllData(string procedure);
+        List<User> GetAllData();
         string Encrypt(string value);
         bool AuthenticateUser(string username, string password);
         int? getUserId(string username, string password);
+        List<User> searchUsers(string searchString);
 
     }
 }

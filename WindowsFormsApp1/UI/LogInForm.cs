@@ -48,7 +48,7 @@ namespace WindowsFormsApp1.UI
                 UserSession.UserId = userService.getUserId(username, password);
                 WelcomeUserLabel.Text += " " + username;
                 WelcomeUserLabel.Visible = true;
-                await Task.Delay(1000);
+                await Task.Delay(1000); //Pocekaj 1 sekunda
                 Main mainForm = new Main();
                 mainForm.Show();
                 this.Hide();

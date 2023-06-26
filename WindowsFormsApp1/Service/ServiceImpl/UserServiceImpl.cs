@@ -7,13 +7,15 @@ using System.Security.Cryptography;
 using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using WindowsFormsApp1.Models;
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class UserServiceImpl : IUserService
     {
         //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        public List<User> GetAllData(string procedure)
+        public List<User> GetAllData()
         {
             using (var myDb = new Model1())
             {
@@ -163,6 +165,28 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 string encryptedPassword = Encrypt(password);
                 var user = myDb.Users.FirstOrDefault(u => u.username == username && u.password == encryptedPassword);
                 return user.userId;
+            }
+        }
+
+        public List<User> searchUsers(string searchString)
+        {
+            using (var myDb = new Model1())
+            {
+                var searchResults = myDb.Users
+                .Where(u => u.name.Contains(searchString) || u.surname.Contains(searchString) || u.username.Contains(searchString))
+                .ToList();
+
+                List<User> myUsers = searchResults.Select(userProp => new User
+                {
+                    userId = userProp.userId,
+                    name = userProp.name,
+                    surname = userProp.surname,
+                    isActive = userProp.isActive,
+                    username = userProp.username,
+                    password = userProp.password
+                }).ToList();
+
+                return myUsers;
             }
         }
 

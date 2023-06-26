@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -32,6 +33,10 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.UsersPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AllUsersButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.UserInformationLabel = new System.Windows.Forms.Label();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
@@ -55,6 +60,7 @@ namespace WindowsFormsApp1
             this.errorProviderUserSurname = new System.Windows.Forms.ErrorProvider(this.components);
             this.UsernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SearchErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.UsersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
@@ -64,10 +70,15 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUserSurname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // UsersPanel
             // 
+            this.UsersPanel.Controls.Add(this.label1);
+            this.UsersPanel.Controls.Add(this.AllUsersButton);
+            this.UsersPanel.Controls.Add(this.SearchButton);
+            this.UsersPanel.Controls.Add(this.SearchTextBox);
             this.UsersPanel.Controls.Add(this.UserInformationLabel);
             this.UsersPanel.Controls.Add(this.PasswordTextBox);
             this.UsersPanel.Controls.Add(this.UsernameTextBox);
@@ -88,6 +99,47 @@ namespace WindowsFormsApp1
             this.UsersPanel.Name = "UsersPanel";
             this.UsersPanel.Size = new System.Drawing.Size(1984, 906);
             this.UsersPanel.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(975, 606);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 29);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Search User";
+            // 
+            // AllUsersButton
+            // 
+            this.AllUsersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AllUsersButton.Location = new System.Drawing.Point(1414, 641);
+            this.AllUsersButton.Name = "AllUsersButton";
+            this.AllUsersButton.Size = new System.Drawing.Size(103, 32);
+            this.AllUsersButton.TabIndex = 33;
+            this.AllUsersButton.Text = "All Users";
+            this.AllUsersButton.UseVisualStyleBackColor = true;
+            this.AllUsersButton.Click += new System.EventHandler(this.AllUsersButton_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SearchButton.Location = new System.Drawing.Point(1276, 641);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(103, 32);
+            this.SearchButton.TabIndex = 32;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchTextBox.Location = new System.Drawing.Point(862, 641);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(373, 26);
+            this.SearchTextBox.TabIndex = 31;
             // 
             // UserInformationLabel
             // 
@@ -284,6 +336,10 @@ namespace WindowsFormsApp1
             // 
             this.PasswordErrorProvider.ContainerControl = this;
             // 
+            // SearchErrorProvider
+            // 
+            this.SearchErrorProvider.ContainerControl = this;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -303,6 +359,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUserSurname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +392,10 @@ namespace WindowsFormsApp1
         private ErrorProvider UsernameErrorProvider;
         private ErrorProvider PasswordErrorProvider;
         private Label UserInformationLabel;
+        private TextBox SearchTextBox;
+        private Button SearchButton;
+        private ErrorProvider SearchErrorProvider;
+        private Button AllUsersButton;
+        private Label label1;
     }
 }
