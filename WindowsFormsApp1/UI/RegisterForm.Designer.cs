@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.RegisterLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
@@ -122,7 +123,7 @@
             // 
             this.ActivateUserCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActivateUserCheckBox.AutoSize = true;
-            this.ActivateUserCheckBox.Location = new System.Drawing.Point(261, 404);
+            this.ActivateUserCheckBox.Location = new System.Drawing.Point(246, 405);
             this.ActivateUserCheckBox.Name = "ActivateUserCheckBox";
             this.ActivateUserCheckBox.Size = new System.Drawing.Size(92, 24);
             this.ActivateUserCheckBox.TabIndex = 5;
@@ -267,6 +268,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 783);
             this.Controls.Add(this.RegisterPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNameErrorProvider)).EndInit();

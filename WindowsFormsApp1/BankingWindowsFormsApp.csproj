@@ -255,5 +255,16 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\Icons\Currency.ico" />
+    <Content Include="UI\Icons\CurrencyType.ico" />
+    <Content Include="UI\Icons\LogIn.ico" />
+    <Content Include="UI\Icons\Main.ico" />
+    <Content Include="UI\Icons\Money.ico" />
+    <Content Include="UI\Icons\Operations.ico" />
+    <Content Include="UI\Icons\Rate.ico" />
+    <Content Include="UI\Icons\Register.ico" />
+    <Content Include="UI\Icons\User.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
