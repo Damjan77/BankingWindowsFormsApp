@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExchangeRatesForm));
             this.SaveExchangeRatesButton = new System.Windows.Forms.Button();
             this.ExchangeRatesDataGridView = new System.Windows.Forms.DataGridView();
             this.ValidityDateLabel2 = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this.AddNewExchangeRateButton = new System.Windows.Forms.Button();
             this.ExchangeRatesdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ExchangeRatesPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.DownloadExchangeRatesButton = new System.Windows.Forms.Button();
             this.WebServiceButton = new System.Windows.Forms.Button();
             this.NBRMDataGridView = new System.Windows.Forms.DataGridView();
@@ -50,8 +53,6 @@
             this.ExchangeRatesCurrencyFromErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ExchangeRatesCurrencyToErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ExchangeRatesRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ExchangeRatesDataGridView)).BeginInit();
             this.ExchangeRatesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NBRMDataGridView)).BeginInit();
@@ -207,6 +208,26 @@
             this.ExchangeRatesPanel.Size = new System.Drawing.Size(1796, 803);
             this.ExchangeRatesPanel.TabIndex = 25;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1259, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(261, 29);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Exchange Rates Data";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(105, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 29);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Exchange Rates Data";
+            // 
             // DownloadExchangeRatesButton
             // 
             this.DownloadExchangeRatesButton.Location = new System.Drawing.Point(670, 588);
@@ -269,32 +290,14 @@
             // 
             this.ExchangeRatesRateErrorProvider.ContainerControl = this;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 29);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Exchange Rates Data";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1259, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(261, 29);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Exchange Rates Data";
-            // 
             // ExchangeRatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1901, 881);
             this.Controls.Add(this.ExchangeRatesPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExchangeRatesForm";
             this.Text = "ExchangeRatesForm";
             this.Load += new System.EventHandler(this.ExchangeRatesForm_Load);

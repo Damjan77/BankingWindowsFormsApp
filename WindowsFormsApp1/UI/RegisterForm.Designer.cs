@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.RegisterLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
@@ -64,7 +63,7 @@
             this.RegisterLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterLabel.AutoSize = true;
             this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RegisterLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.RegisterLabel.Location = new System.Drawing.Point(183, 26);
             this.RegisterLabel.Name = "RegisterLabel";
             this.RegisterLabel.Size = new System.Drawing.Size(128, 32);
@@ -76,7 +75,7 @@
             this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.PasswordLabel.Location = new System.Drawing.Point(25, 291);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
@@ -88,7 +87,7 @@
             this.UsernameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.UsernameLabel.Location = new System.Drawing.Point(25, 234);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
@@ -100,7 +99,7 @@
             this.SurnameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SurnameLabel.AutoSize = true;
             this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurnameLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.SurnameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.SurnameLabel.Location = new System.Drawing.Point(25, 174);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(110, 29);
@@ -112,7 +111,7 @@
             this.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.NameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.NameLabel.Location = new System.Drawing.Point(25, 125);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(78, 29);
@@ -167,7 +166,7 @@
             this.ConfirmPasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ConfirmPasswordLabel.AutoSize = true;
             this.ConfirmPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPasswordLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.ConfirmPasswordLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.ConfirmPasswordLabel.Location = new System.Drawing.Point(25, 343);
             this.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel";
             this.ConfirmPasswordLabel.Size = new System.Drawing.Size(210, 29);
@@ -187,7 +186,7 @@
             this.ActivateUserLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActivateUserLabel.AutoSize = true;
             this.ActivateUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivateUserLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.ActivateUserLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.ActivateUserLabel.Location = new System.Drawing.Point(25, 405);
             this.ActivateUserLabel.Name = "ActivateUserLabel";
             this.ActivateUserLabel.Size = new System.Drawing.Size(153, 29);
@@ -255,7 +254,7 @@
             this.RegisterPanel.Controls.Add(this.NameTextBox);
             this.RegisterPanel.Controls.Add(this.UsernameTextBox);
             this.RegisterPanel.Controls.Add(this.PasswordTextBox);
-            this.RegisterPanel.Location = new System.Drawing.Point(240, 12);
+            this.RegisterPanel.Location = new System.Drawing.Point(221, 12);
             this.RegisterPanel.Name = "RegisterPanel";
             this.RegisterPanel.Size = new System.Drawing.Size(586, 717);
             this.RegisterPanel.TabIndex = 15;
@@ -264,8 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 783);
             this.Controls.Add(this.RegisterPanel);

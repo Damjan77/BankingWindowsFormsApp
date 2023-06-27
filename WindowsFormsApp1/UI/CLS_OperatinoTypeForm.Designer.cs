@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CLS_OperatinoTypeForm));
             this.CLS_OperationTypePanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.AddNewOperationTypeButton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +44,6 @@
             this.SaveCLS_OperationTypeButton = new System.Windows.Forms.Button();
             this.clsOperationTypeCodeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.clsOperationTypeNameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.CLS_OperationTypePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CLS_OperationTypeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clsOperationTypeCodeErrorProvider)).BeginInit();
@@ -66,6 +67,16 @@
             this.CLS_OperationTypePanel.Name = "CLS_OperationTypePanel";
             this.CLS_OperationTypePanel.Size = new System.Drawing.Size(1901, 750);
             this.CLS_OperationTypePanel.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(224, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(388, 29);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "CLS_OperationType Information";
             // 
             // AddNewOperationTypeButton
             // 
@@ -177,22 +188,14 @@
             // 
             this.clsOperationTypeNameErrorProvider.ContainerControl = this;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(388, 29);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "CLS_OperationType Information";
-            // 
             // CLS_OperatinoTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1954, 795);
             this.Controls.Add(this.CLS_OperationTypePanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CLS_OperatinoTypeForm";
             this.Text = "CLS_OperatinoTypeForm";
             this.Load += new System.EventHandler(this.CLS_OperationTypeForm_Load);

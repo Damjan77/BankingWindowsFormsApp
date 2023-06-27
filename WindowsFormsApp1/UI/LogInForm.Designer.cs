@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
@@ -52,8 +51,8 @@
             this.WelcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.WelcomeLabel.Location = new System.Drawing.Point(299, 65);
+            this.WelcomeLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.WelcomeLabel.Location = new System.Drawing.Point(300, 69);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.Size = new System.Drawing.Size(368, 32);
             this.WelcomeLabel.TabIndex = 0;
@@ -65,7 +64,7 @@
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.BackColor = System.Drawing.Color.Transparent;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.PasswordLabel.Location = new System.Drawing.Point(145, 258);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
@@ -78,7 +77,7 @@
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.UsernameLabel.Location = new System.Drawing.Point(145, 184);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
@@ -129,7 +128,7 @@
             this.RegisterLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterLabel.AutoSize = true;
             this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.RegisterLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.RegisterLabel.Location = new System.Drawing.Point(258, 459);
             this.RegisterLabel.Name = "RegisterLabel";
             this.RegisterLabel.Size = new System.Drawing.Size(448, 29);
@@ -149,7 +148,7 @@
             this.WelcomeUserLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WelcomeUserLabel.AutoSize = true;
             this.WelcomeUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeUserLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.WelcomeUserLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.WelcomeUserLabel.Location = new System.Drawing.Point(386, 405);
             this.WelcomeUserLabel.Name = "WelcomeUserLabel";
             this.WelcomeUserLabel.Size = new System.Drawing.Size(115, 29);
@@ -179,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(941, 734);
             this.Controls.Add(this.LogInPanel);

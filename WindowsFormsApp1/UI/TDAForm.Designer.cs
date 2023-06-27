@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TDAForm));
             this.TDAAccountLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -182,6 +183,7 @@
             // 
             // TdaPanel
             // 
+            this.TdaPanel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.TdaPanel.Controls.Add(this.label1);
             this.TdaPanel.Controls.Add(this.label2);
             this.TdaPanel.Controls.Add(this.AnnuitydataGridView);
@@ -217,6 +219,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1989, 899);
             this.Controls.Add(this.TdaPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TDAForm";
             this.Text = "TDAForm";
             this.Load += new System.EventHandler(this.TDAForm_Load);
