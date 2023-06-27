@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             // AddNewUserButton
             // 
             this.AddNewUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddNewUserButton.Location = new System.Drawing.Point(466, 509);
+            this.AddNewUserButton.Location = new System.Drawing.Point(456, 506);
             this.AddNewUserButton.Name = "AddNewUserButton";
             this.AddNewUserButton.Size = new System.Drawing.Size(193, 34);
             this.AddNewUserButton.TabIndex = 24;
@@ -303,7 +303,9 @@ namespace WindowsFormsApp1
             // SaveUserButton
             // 
             this.SaveUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaveUserButton.Location = new System.Drawing.Point(466, 452);
+            this.SaveUserButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveUserButton.Image")));
+            this.SaveUserButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SaveUserButton.Location = new System.Drawing.Point(456, 446);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveUserButton.Name = "SaveUserButton";
             this.SaveUserButton.Size = new System.Drawing.Size(193, 34);

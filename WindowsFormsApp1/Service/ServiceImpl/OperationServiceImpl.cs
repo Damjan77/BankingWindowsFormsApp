@@ -9,8 +9,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class OperationServiceImpl : IOperationService
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-
         public List<Operation> GetAllData(string procedure)
         {
             using (var myDb = new Model1())
@@ -45,30 +43,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void AddNewDataInOperationsTable(object toSave)
         {
-            //Operation operation = toSave as Operation;
-
-            //try
-            //{
-            //    con.Open();
-
-            //    SqlCommand sqlCommand = new SqlCommand("Operations_Insert", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("OperationTypeId", operation.OperationTypeId);
-            //    sqlCommand.Parameters.AddWithValue("UserId", operation.userId);
-            //    sqlCommand.Parameters.AddWithValue("OperationDate", operation.OperationDate);
-            //    sqlCommand.Parameters.AddWithValue("Amount", operation.Amount);
-            //    sqlCommand.Parameters.AddWithValue("CurrencyFrom", operation.CurrencyFrom);
-            //    sqlCommand.Parameters.AddWithValue("CurrencyTo", operation.CurrencyTo);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             Operation operation = toSave as Operation;
 
             try
@@ -104,31 +78,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void UpdateDataInOperationsTable(object toSave)
         {
-        //    Operation operation = toSave as Operation;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("Operations_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("OperationId", operation.OperationId);
-        //        sqlCommand.Parameters.AddWithValue("OperationTypeId", operation.OperationTypeId);
-        //        sqlCommand.Parameters.AddWithValue("UserId", operation.userId);
-        //        sqlCommand.Parameters.AddWithValue("OperationDate", operation.OperationDate);
-        //        sqlCommand.Parameters.AddWithValue("Amount", operation.Amount);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", operation.CurrencyFrom);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyTo", operation.CurrencyTo);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data updated Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-
             Operation operation = toSave as Operation;
 
             try

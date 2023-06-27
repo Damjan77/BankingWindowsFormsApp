@@ -8,6 +8,7 @@ using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 using WindowsFormsApp1.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1
 {
@@ -167,6 +168,7 @@ namespace WindowsFormsApp1
         private void tDAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form currentForm = this.ActiveMdiChild;
+            
             if (currentForm != null)
             {
                 currentForm.Close(); // Close the current form
@@ -174,15 +176,33 @@ namespace WindowsFormsApp1
                 {
                     currentForm.Dispose(); // Dispose the form after it is closed
                 };
-                
             }
-
             var tdaForm = new TDAForm();
             tdaForm.MdiParent = this;
             tdaForm.Show();
         }
 
-       
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm != null)
+            {
+                currentForm.Close(); // Close the current form
+                currentForm.FormClosed += (s, args) =>
+                {
+                    currentForm.Dispose(); // Dispose the form after it is closed
+                };
+            }
+
+            this.Close();
+            this.Dispose();
+            var logInForm = new LogInForm();
+            UserSession.UserName = null;
+            UserSession.UserId = null;
+            logInForm.Show();
+        }
+
+
 
         //private void getAllData(string procedure, DataGridView dataGridView)
         //{

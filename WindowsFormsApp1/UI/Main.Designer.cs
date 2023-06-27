@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             this.cLSCurrencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLSOperationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@ namespace WindowsFormsApp1
             this.operationsToolStripMenuItem,
             this.cLSCurrencyToolStripMenuItem,
             this.cLSOperationTypeToolStripMenuItem,
-            this.tDAToolStripMenuItem});
+            this.tDAToolStripMenuItem,
+            this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -117,6 +119,13 @@ namespace WindowsFormsApp1
             this.tDAToolStripMenuItem.Text = "TDA";
             this.tDAToolStripMenuItem.Click += new System.EventHandler(this.tDAToolStripMenuItem_Click);
             // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(93, 29);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -145,5 +154,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem cLSCurrencyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cLSOperationTypeToolStripMenuItem;
         private ToolStripMenuItem tDAToolStripMenuItem;
+        private ToolStripMenuItem logOutToolStripMenuItem;
     }
 }

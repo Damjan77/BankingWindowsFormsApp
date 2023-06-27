@@ -43,11 +43,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
         }
 
-        //public void GetAllUsers(object sender, EventArgs e)
-        //{
-        //    GetAllData("Users_GetAll");
-        //}
-
         public void InsertDataInUserTable(object toSave)
         {
             //try
@@ -99,7 +94,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data saved unsuccessfully");
+                MessageBox.Show("Data saved unsuccessfully. " + ex.Message);
             }
         }
 

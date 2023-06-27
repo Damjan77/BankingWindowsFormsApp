@@ -10,6 +10,6 @@ namespace WindowsFormsApp1.Service
     internal interface ITDAService
     {
         List<MonthlyResult> getAllTDAData(decimal amount, int period, decimal interestRate);
-        List<AnnuityResult> getAllAnnuityData(decimal amount, int period, decimal interestRate); 
+        List<AnnuityResult> getAllAnnuityData(decimal amount, int period, decimal interestRate);
     }
 }
