@@ -23,7 +23,6 @@ namespace WindowsFormsApp1.UI
 
         public CLS_CurrencyForm() : this(new CLSCurrencyServiceImpl()) { }
 
-
         private void CLS_CurrencyForm_Load(object sender, EventArgs e)
         {
             getAllData();

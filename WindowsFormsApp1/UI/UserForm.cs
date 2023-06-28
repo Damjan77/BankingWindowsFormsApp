@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         public UserForm(IUserService userService)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            
             this.userService = userService;
         }
 
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
             // TODO: This line of code loads data into the 'dataSet1.Table' table. You can move, or remove it, as needed.
             this.tableTableAdapter.Fill(this.dataSet1.Table);
             getAllData();
-
+            this.WindowState = FormWindowState.Maximized;
             //SearchTextBox.Text = "Search for User";
             //SearchTextBox.ForeColor = System.Drawing.Color.Gray;
         }

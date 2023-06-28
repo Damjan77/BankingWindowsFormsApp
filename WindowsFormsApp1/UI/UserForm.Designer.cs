@@ -364,6 +364,7 @@ namespace WindowsFormsApp1
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
             this.UsersPanel.ResumeLayout(false);

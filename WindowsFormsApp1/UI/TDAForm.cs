@@ -12,8 +12,6 @@ namespace WindowsFormsApp1.UI
     public partial class TDAForm : Form
     {
         ITDAService tDAService;
-        //private Rectangle OriginalCalculateButtonRectangle;
-        //private Rectangle OriginalFormSize;
         public TDAForm()
         {
             InitializeComponent();

@@ -17,7 +17,7 @@ namespace WindowsFormsApp1.UI
         public OfficialRatesForm(IOfficialRatesService officialRates, ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            
             this.officialRates = officialRates;
             this.cls_CurrencyService = cls_CurrencyService;
         }
@@ -32,6 +32,7 @@ namespace WindowsFormsApp1.UI
             OfficialRatesCurrencyComboBox.DisplayMember = "Code";
             OfficialRatesCurrencyComboBox.SelectedItem = null;
             getAllData();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void getAllData()
@@ -46,11 +47,6 @@ namespace WindowsFormsApp1.UI
             RateTextBox.Text = "";
             UserActivationcheckBox2.Checked = false;
         }
-
-        //private void GetAllOfficialRates(object sender, EventArgs e)
-        //{
-        //    getAllData(OfficialRatedataGridView);
-        //}
    
         private bool isDataValid()
         {
@@ -100,79 +96,23 @@ namespace WindowsFormsApp1.UI
                 official.OfficialRatesId = Convert.ToInt32(selected.Cells["OfficialRatesId"].Value);
                 official.ValidityDate = officialRateDateTimePicker.Value;
                 official.Currency = OfficialRatesCurrencyComboBox.Text.ToString();
-                //official.Currency = CurrencyTextBox.Text.ToString();
                 official.Rate = Decimal.Parse(RateTextBox.Text.ToString());
                 official.isActive = UserActivationcheckBox2.Checked;
 
                 officialRates.UpdateDataInOfficialRatesTable(official);
                 getAllData();
-                //UpdateDataInOfficialRatesTable(official);
-                //GetAllOfficialRates(sender, e);
             }
             else
             {
                 official.ValidityDate = officialRateDateTimePicker.Value;
                 official.Currency = OfficialRatesCurrencyComboBox.Text.ToString();
-                //official.Currency = CurrencyTextBox.Text.ToString();
                 official.Rate = Decimal.Parse(RateTextBox.Text.ToString());
                 official.isActive = UserActivationcheckBox2.Checked;
 
                 officialRates.AddNewDataInOfficialRateTable(official);
                 getAllData();
-                //AddNewDataInOfficialRateTable(official);
-                //GetAllOfficialRates(sender, e);
             }
         }
-
-        //private void AddNewDataInOfficialRateTable(object toSave) //Add OfficialRate
-        //{
-        //    OfficialRate officialRate = toSave as OfficialRate;
-
-        //    try
-        //    {
-        //        con.Open();
-        //        SqlCommand sqlCommand = new SqlCommand("OfficialRates_Insert", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("ValidityDate", officialRate.ValidityDate);
-        //        sqlCommand.Parameters.AddWithValue("Currency", officialRate.Currency);
-        //        sqlCommand.Parameters.AddWithValue("Rate", officialRate.Rate);
-        //        sqlCommand.Parameters.AddWithValue("isActive", officialRate.isActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void UpdateDataInOfficialRatesTable(object toSave) //Update OfficialRate
-        //{
-        //    OfficialRate officialRate = toSave as OfficialRate;
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("OfficialRates_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("OfficialRatesId", officialRate.OfficialRatesId);
-        //        sqlCommand.Parameters.AddWithValue("ValidityDate", officialRate.ValidityDate);
-        //        sqlCommand.Parameters.AddWithValue("Currency", officialRate.Currency);
-        //        sqlCommand.Parameters.AddWithValue("Rate", officialRate.Rate);
-        //        sqlCommand.Parameters.AddWithValue("isActive", officialRate.isActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data updated Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
 
         private void AddNewOfficialRateButton_Click(object sender, EventArgs e)
         {

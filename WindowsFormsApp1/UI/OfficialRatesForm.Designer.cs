@@ -260,6 +260,7 @@
             this.Controls.Add(this.OfficialRatesPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OfficialRatesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "OfficialRatesForm";
             this.Load += new System.EventHandler(this.OfficialRatesForm_Load);
             this.OfficialRatesPanel.ResumeLayout(false);

@@ -73,7 +73,6 @@ namespace WindowsFormsApp1.UI
                 
                 exchangeRates.UpdateDataInExchangeRatesTable(exchangeRate);//PROVERI ZA NAME'
                 getAllData();
-                //UpdateDataInExchangeRatesTable(exchangeRate);
             }
             else
             {
@@ -85,63 +84,10 @@ namespace WindowsFormsApp1.UI
 
                 exchangeRates.AddNewDataInExchangeRateTable(exchangeRate);//PROVERI ZA NAME'
                 getAllData();
-                //AddNewDataInExchangeRateTable(exchangeRate);
             }
             clearAllData();
-            //GetAllExchangeRates(sender, e);
-        }
-        //private void UpdateDataInExchangeRatesTable(object toSave) //Update ExchangeRates
-        //{
-        //    ExchangeRate exchangeRate = toSave as ExchangeRate;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("ExchangeRatesId", exchangeRate.exchangeRatesId);
-        //        sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-        //        sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data updated Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void AddNewDataInExchangeRateTable(object toSave) //Add ExchangeRate
-        //{
-        //    ExchangeRate exchangeRate = toSave as ExchangeRate;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Insert", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-        //        sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+            
+        }   
 
         private void AddNewExchangeRateButton_Click(object sender, EventArgs e)
         {
