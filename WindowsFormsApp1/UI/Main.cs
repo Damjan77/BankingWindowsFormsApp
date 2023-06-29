@@ -261,13 +261,16 @@ namespace WindowsFormsApp1
             //        currentForm.Dispose(); // Dispose the form after it is closed
             //    };
             //}
-
-            this.Close();
-            this.Dispose();
-            var logInForm = new LogInForm();
-            UserSession.UserName = null;
-            UserSession.UserId = null;
-            logInForm.Show();
+            DialogResult result = MessageBox.Show("Do you want to Log Out?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                this.Dispose();
+                var logInForm = new LogInForm();
+                UserSession.UserName = null;
+                UserSession.UserId = null;
+                logInForm.Show();
+            }
 
         }   
     }
