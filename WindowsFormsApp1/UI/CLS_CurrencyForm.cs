@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
@@ -16,7 +13,6 @@ namespace WindowsFormsApp1.UI
         public CLS_CurrencyForm(ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             this.cls_CurrencyService = cls_CurrencyService;
         }
 
@@ -24,6 +20,7 @@ namespace WindowsFormsApp1.UI
 
         private void CLS_CurrencyForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             getAllData();
         }
 
@@ -117,7 +114,6 @@ namespace WindowsFormsApp1.UI
                 DRYCLS_Currency(sender, e, false);
                 clearData();
             }
-            
         }
 
         private void SaveCLS_CurrentButton_Click(object sender, EventArgs e)

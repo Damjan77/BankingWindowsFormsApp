@@ -22,7 +22,6 @@ namespace WindowsFormsApp1.UI
         public OperationsForm(IOperationService operationService, ICLS_OperationTypeService cLS_OperationType)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             this.operationService = operationService;
             this.cLS_OperationType = cLS_OperationType;
         }
@@ -31,6 +30,7 @@ namespace WindowsFormsApp1.UI
 
         private void Operation_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             getAllData();
 
             using (var myDb = new Model1())

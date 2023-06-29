@@ -67,9 +67,9 @@
             this.RegisterLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.RegisterLabel.Location = new System.Drawing.Point(183, 26);
             this.RegisterLabel.Name = "RegisterLabel";
-            this.RegisterLabel.Size = new System.Drawing.Size(128, 32);
+            this.RegisterLabel.Size = new System.Drawing.Size(299, 48);
             this.RegisterLabel.TabIndex = 0;
-            this.RegisterLabel.Text = "Register";
+            this.RegisterLabel.Text = "Register User";
             // 
             // PasswordLabel
             // 

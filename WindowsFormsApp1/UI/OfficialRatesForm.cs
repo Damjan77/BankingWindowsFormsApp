@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.NBRMServiceReference;
@@ -31,8 +29,9 @@ namespace WindowsFormsApp1.UI
             OfficialRatesCurrencyComboBox.ValueMember = "Code";
             OfficialRatesCurrencyComboBox.DisplayMember = "Code";
             OfficialRatesCurrencyComboBox.SelectedItem = null;
-            getAllData();
+
             this.WindowState = FormWindowState.Maximized;
+            getAllData();
         }
 
         private void getAllData()

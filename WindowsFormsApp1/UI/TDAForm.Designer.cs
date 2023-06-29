@@ -217,6 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1989, 899);
             this.Controls.Add(this.TdaPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
@@ -16,7 +14,6 @@ namespace WindowsFormsApp1.UI
         public CLS_OperatinoTypeForm(ICLS_OperationTypeService operationTypeService)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             this.operationTypeService = operationTypeService;
         }
 
@@ -24,8 +21,10 @@ namespace WindowsFormsApp1.UI
 
         private void CLS_OperationTypeForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             getAllData();
         }
+
         private void getAllData()
         {
             CLS_OperationTypeDataGridView.DataSource = operationTypeService.getAllData("CLS_OperationType_GetAll");

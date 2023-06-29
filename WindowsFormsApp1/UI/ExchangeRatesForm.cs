@@ -20,7 +20,6 @@ namespace WindowsFormsApp1.UI
         public ExchangeRatesForm(IExchangeRatesService exchangeRates, ICLS_CurrencyService cls_CurrencyService)
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             this.exchangeRates = exchangeRates;
             this.cls_CurrencyService = cls_CurrencyService;
         }
@@ -29,6 +28,8 @@ namespace WindowsFormsApp1.UI
 
         private void ExchangeRatesForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             CurrencyFromComboBox.DataSource = cls_CurrencyService.getAllData();
             CurrencyFromComboBox.ValueMember = "Code";
             CurrencyFromComboBox.DisplayMember = "Code";
@@ -86,7 +87,6 @@ namespace WindowsFormsApp1.UI
                 getAllData();
             }
             clearAllData();
-            
         }   
 
         private void AddNewExchangeRateButton_Click(object sender, EventArgs e)
@@ -166,8 +166,6 @@ namespace WindowsFormsApp1.UI
             else return false;
         }
 
-      
-
         private void WebServiceButton_Click(object sender, EventArgs e)
         {
             var service = new KursSoapClient();
@@ -178,7 +176,7 @@ namespace WindowsFormsApp1.UI
             NBRMDataGridView.DataSource = dataSet.Tables[0];
         }
           
-        private void DownloadExchangeRatesButton_Click(object sender, EventArgs e) //Da se poviak metodot so scheduler sekoj den vo 12:00
+        private void DownloadExchangeRatesButton_Click(object sender, EventArgs e) //Da se povika metodot so scheduler sekoj den vo 12:00
         {
             exchangeRates.AddNBRMDataInDataBase();
             getAllData();
