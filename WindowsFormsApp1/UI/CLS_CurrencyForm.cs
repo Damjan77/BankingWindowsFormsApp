@@ -11,7 +11,6 @@ namespace WindowsFormsApp1.UI
 {
     public partial class CLS_CurrencyForm : Form
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         ICLS_CurrencyService cls_CurrencyService;
 
         public CLS_CurrencyForm(ICLS_CurrencyService cls_CurrencyService)
@@ -32,20 +31,6 @@ namespace WindowsFormsApp1.UI
         {
             CLS_CurrencyDataGridView.DataSource = cls_CurrencyService.getAllData();
         }
-
-        //private void getAllData(DataGridView dataGridView)
-        //{
-        //    using (var myDb = new Model1())
-        //    {
-        //        var myCurrencies = myDb.CLS_Currency.ToList();
-        //        dataGridView.DataSource = myCurrencies;
-        //    }
-        //}
-
-        //private void GetAll_Cls_Currency(object sender, EventArgs e)
-        //{
-        //    getAllData(CLS_CurrencyDataGridView);
-        //}
 
         private bool isDataValid()
         {
@@ -111,7 +96,6 @@ namespace WindowsFormsApp1.UI
                 cls_Currency.IsActive = ActivateUserCheckBox4.Checked;
 
                 cls_CurrencyService.UpdateDataInExchangeRatesTable(cls_Currency);
-                //UpdateDataInClsCurrencyTable(cls_Currency);
             }
             else
             {
@@ -120,62 +104,12 @@ namespace WindowsFormsApp1.UI
                 cls_Currency.IsActive = ActivateUserCheckBox4.Checked;
 
                 cls_CurrencyService.AddNewDataInExchangeRateTable(cls_Currency);
-
-                //AddNewDataInClsCurrencyTable(cls_Currency);
             }
             
             getAllData();
         }
 
-        //private void UpdateDataInClsCurrencyTable(object toSave) //Update CLS_Currency
-        //{
-        //    CLS_Currency cls_Currency = toSave as CLS_Currency;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("CLS_Currency_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("CurrencyId", cls_Currency.CurrencyId);
-        //        sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
-        //        sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data updated Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void AddNewDataInClsCurrencyTable(object toSave) //Add CLS_Currency
-        //{
-        //    CLS_Currency cls_Currency = toSave as CLS_Currency;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("CLS_Currency_INSERT", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("Code", cls_Currency.Code);
-        //        sqlCommand.Parameters.AddWithValue("Name", cls_Currency.Name);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", cls_Currency.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-      
+        
         private void AddNewCLS_CurrencyButton_Click(object sender, EventArgs e)
         {
             if (isDataValid())

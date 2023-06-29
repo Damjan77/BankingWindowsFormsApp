@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
@@ -15,13 +12,11 @@ namespace WindowsFormsApp1.UI
         public TDAForm()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             tDAService = new TDAServiceImpl();
         }
         private void TDAForm_Load(object sender, EventArgs e)
         {
-            //OriginalCalculateButtonRectangle = new Rectangle(CalculateButton.Location.X, CalculateButton.Location.Y, CalculateButton.Width, CalculateButton.Height);
-            //OriginalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void getAllData()
@@ -35,11 +30,6 @@ namespace WindowsFormsApp1.UI
             var result = tDAService.getAllAnnuityData(amount, period, interestRate);
             AnnuitydataGridView.DataSource = result; 
         }
-
-        //private void GetTdaData(object sender, EventArgs e)
-        //{
-        //    getAllData("CalculateTermDepositAmount", TDADataGridView);
-        //}
 
         private void clearData()
         {
@@ -106,7 +96,6 @@ namespace WindowsFormsApp1.UI
                 interestRateFlag = false;
                 InterestRateErrorProvider.SetError(InterestRateTextBox, "Interest Rate is required!");
             }
-            //else if (!Regex.IsMatch(InterestRateTextBox.Text, "^[0-9.]+$")) //Only digits
             else if (!(Regex.IsMatch(InterestRateTextBox.Text, "^[0-9]+(?:\\.?)+[0-9]+$")) && !(Regex.IsMatch(InterestRateTextBox.Text, "^[0-9]+$")))
             {
                 InterestRateErrorProvider.SetError(InterestRateTextBox, "Interest Rate must contains only numbers!");
@@ -121,25 +110,5 @@ namespace WindowsFormsApp1.UI
             if (amountFlag && periodFlag && interestRateFlag) return true;
             else return false;
         }
-
-        //private void resizeControl(Rectangle r, Control c)
-        //{
-        //    float xRation = (float)(this.Width) / (float)(OriginalFormSize.Width);
-        //    float yRation = (float)(this.Height) / (float)(OriginalFormSize.Height);
-
-        //    int newX = (int)(r.Width * xRation);
-        //    int newY = (int)(r.Height * yRation);
-
-        //    int newWidth = (int)(r.Width * xRation);
-        //    int newHeight = (int)(r.Height * yRation);
-
-        //    c.Location = new Point(newX, newY);
-        //    c.Size = new Size(newWidth, newHeight);
-        //}
-
-        //private void TDAForm_Resize(object sender, EventArgs e)
-        //{
-        //    resizeControl(OriginalCalculateButtonRectangle, CalculateButton);
-        //}
     }
 }

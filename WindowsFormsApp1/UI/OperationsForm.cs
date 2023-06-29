@@ -13,7 +13,6 @@ namespace WindowsFormsApp1.UI
 {
     public partial class OperationsForm : Form
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         IOperationService operationService;
         ICLS_OperationTypeService cLS_OperationType;
         Operation selectedOperation = new Operation();
@@ -33,7 +32,6 @@ namespace WindowsFormsApp1.UI
         private void Operation_Load(object sender, EventArgs e)
         {
             getAllData();
-            //GetAllOperations(sender, e);
 
             using (var myDb = new Model1())
             {  
@@ -65,48 +63,6 @@ namespace WindowsFormsApp1.UI
             OperationsDataGridView.DataSource = operationService.GetAllData("Operations_GetAll");
         }
 
-        //private void GetAllOperations(object sender, EventArgs e)
-        //{
-        //    getAllData(OperationsDataGridView);
-        //}
-
-        //private Operation getOparationById(int? operationId)
-        //{
-        //    try
-        //    {
-        //        con.Open();
-        //        SqlCommand sqlCommand = new SqlCommand(procedure, con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
-        //        DataTable dataTable = new DataTable();
-        //        adapter.Fill(dataTable);
-        //        dataGridView.DataSource = dataTable;
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void getAllData(DataGridView dataGridView)
-        //{
-        //    using (var myDb = new Model1())
-        //    {
-        //        var myOperations = myDb.Operations.Select(operation => new {
-        //            operation.OperationId,
-        //            operation.OperationTypeId,
-        //            operation.userId,
-        //            operation.OperationDate,
-        //            operation.Amount,
-        //            operation.CurrencyFrom,
-        //            operation.CurrencyTo,
-        //        }).ToList();
-        //        dataGridView.DataSource = myOperations.ToList();
-        //    } 
-        //}
-
-
         public void DRYOperation(object sender, EventArgs e, bool isExist)
         {
             Operation operation = new Operation();
@@ -120,7 +76,6 @@ namespace WindowsFormsApp1.UI
                 var selectedRow = OperationsDataGridView.SelectedRows[0];
                 operation.OperationId = Convert.ToInt32(selectedRow.Cells["OperationId"].Value);
                 operation.OperationTypeId = (int)operationTypeObj.OperationTypeId;
-                //operation.userId = (int)userObj.userId;
                 operation.userId = (int)UserSession.UserId;
                 operation.OperationDate = OperationsDateTimePicker.Value;
                 operation.Amount = Decimal.Parse(AmountTextBox.Text.ToString());
@@ -128,7 +83,6 @@ namespace WindowsFormsApp1.UI
                 operation.CurrencyTo = (string)currencyToObj.Code;
 
                 operationService.UpdateDataInOperationsTable(operation);
-                //UpdateDataInOperationsTable(operation);
             }
             else
             {
@@ -181,61 +135,6 @@ namespace WindowsFormsApp1.UI
             //GetAllOperations(sender, e);
         }
 
-        //private void UpdateDataInOperationsTable(object toSave) //Update Operation
-        //{
-        //    Operation operation = toSave as Operation;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("Operations_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("OperationId", operation.OperationId);
-        //        sqlCommand.Parameters.AddWithValue("OperationTypeId", operation.OperationTypeId);
-        //        sqlCommand.Parameters.AddWithValue("UserId", operation.userId);
-        //        sqlCommand.Parameters.AddWithValue("OperationDate", operation.OperationDate);
-        //        sqlCommand.Parameters.AddWithValue("Amount", operation.Amount);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", operation.CurrencyFrom);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyTo", operation.CurrencyTo);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data updated Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void AddNewDataInOperationsTable(object toSave) //Add Operation
-        //{
-        //    Operation operation = toSave as Operation;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("Operations_Insert", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("OperationTypeId", operation.OperationTypeId);
-        //        sqlCommand.Parameters.AddWithValue("UserId", operation.userId);
-        //        sqlCommand.Parameters.AddWithValue("OperationDate", operation.OperationDate);
-        //        sqlCommand.Parameters.AddWithValue("Amount", operation.Amount);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", operation.CurrencyFrom);
-        //        sqlCommand.Parameters.AddWithValue("CurrencyTo", operation.CurrencyTo);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
         private void SaveOperationButton_Click(object sender, EventArgs e)
         {
             if (isDataValid())
@@ -276,7 +175,6 @@ namespace WindowsFormsApp1.UI
         private void clearData()
         {
             OperationTypeComboBox.SelectedItem = null;
-            //UsersComboBox.SelectedItem = null;
             OperationsDateTimePicker.Value = DateTime.Now;
             AmountTextBox.Text = "";
             CurrencyFromComboBox.SelectedItem = null;

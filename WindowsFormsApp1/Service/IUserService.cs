@@ -12,6 +12,5 @@ namespace WindowsFormsApp1.Service
         bool AuthenticateUser(string username, string password);
         int? getUserId(string username, string password);
         List<User> searchUsers(string searchString);
-
     }
 }

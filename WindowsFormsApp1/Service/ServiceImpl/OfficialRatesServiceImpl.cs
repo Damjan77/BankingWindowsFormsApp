@@ -13,28 +13,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
     {
         public void AddNewDataInOfficialRateTable(object toSave)
         {
-            //OfficialRate officialRate = toSave as OfficialRate;
-
-            //try
-            //{
-            //    con.Open();
-            //    SqlCommand sqlCommand = new SqlCommand("OfficialRates_Insert", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("ValidityDate", officialRate.ValidityDate);
-            //    sqlCommand.Parameters.AddWithValue("Currency", officialRate.Currency);
-            //    sqlCommand.Parameters.AddWithValue("Rate", officialRate.Rate);
-            //    sqlCommand.Parameters.AddWithValue("isActive", officialRate.isActive);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             OfficialRate officialRate = toSave as OfficialRate;
 
             try
@@ -67,28 +45,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
         }
         public void UpdateDataInOfficialRatesTable(object toSave)
         {
-            //OfficialRate officialRate = toSave as OfficialRate;
-            //try
-            //{
-            //    con.Open();
-
-            //    SqlCommand sqlCommand = new SqlCommand("OfficialRates_Update", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("OfficialRatesId", officialRate.OfficialRatesId);
-            //    sqlCommand.Parameters.AddWithValue("ValidityDate", officialRate.ValidityDate);
-            //    sqlCommand.Parameters.AddWithValue("Currency", officialRate.Currency);
-            //    sqlCommand.Parameters.AddWithValue("Rate", officialRate.Rate);
-            //    sqlCommand.Parameters.AddWithValue("isActive", officialRate.isActive);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data updated Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             OfficialRate officialRate = toSave as OfficialRate;
 
             try
@@ -119,7 +75,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data updated successfully " + ex.Message);
             }
         }

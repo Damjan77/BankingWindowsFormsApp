@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
         public UserForm(IUserService userService)
         {
             InitializeComponent();
-            
             this.userService = userService;
         }
 
@@ -21,12 +20,9 @@ namespace WindowsFormsApp1
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Table' table. You can move, or remove it, as needed.
             this.tableTableAdapter.Fill(this.dataSet1.Table);
             getAllData();
             this.WindowState = FormWindowState.Maximized;
-            //SearchTextBox.Text = "Search for User";
-            //SearchTextBox.ForeColor = System.Drawing.Color.Gray;
         }
 
         private void getAllData()
@@ -217,55 +213,6 @@ namespace WindowsFormsApp1
         {
             UsersDataGridView.DataSource = userService.GetAllData();
         }
-
-
-
-        //private void getAllData(string procedure, DataGridView dataGridView)
-        //{
-        //    using (var myDb = new Model1())
-        //    {
-        //        var myUsers = myDb.Users.Select(user => new {
-        //            user.userId,
-        //            user.name,
-        //            user.surname,
-        //            user.isActive,
-        //            user.username,
-        //            user.password
-        //        }).ToList();
-        //        dataGridView.DataSource = myUsers.ToList();
-        //    }
-        //}
-
-        //private void GetAllUsers(object sender, EventArgs e)
-        //{
-        //    getAllData("Users_GetAll", UsersDataGridView);
-        //}
-
-        //public void InsertDataInUserTable(object toSave)
-        //{
-        //    User usr = toSave as User;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("Users_InsertUser", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("userId", usr.userId);
-        //        sqlCommand.Parameters.AddWithValue("name", usr.name);
-        //        sqlCommand.Parameters.AddWithValue("surname", usr.surname);
-        //        sqlCommand.Parameters.AddWithValue("isActive", usr.isActive);
-        //        sqlCommand.Parameters.AddWithValue("username", usr.username);
-        //        sqlCommand.Parameters.AddWithValue("password", usr.password);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        
     }
 }

@@ -71,7 +71,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
@@ -109,7 +108,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
         }

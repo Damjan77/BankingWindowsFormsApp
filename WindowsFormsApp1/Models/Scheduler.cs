@@ -46,46 +46,6 @@ namespace WindowsFormsApp1.Models
                 await Task.Delay(1000);  // Delay for 1 second
             }
         }
-
-        //private static async Task ScheduleTask()
-        //{
-        //    DateTime now = DateTime.Now;
-        //    DateTime nextRunTime = CalculateNextRunTime(now);
-
-        //    // Calculate the initial delay until the next occurrence of 12:00:00
-        //    TimeSpan initialDelay = nextRunTime - now;
-
-        //    await Task.Delay(initialDelay);
-
-        //    while (!tokenSource.Token.IsCancellationRequested)
-        //    {
-        //        // Execute the AddNBRMDataInDataBase() method
-        //        exchangeRateService.AddNBRMDataInDataBase();
-
-        //        // Calculate the next run time
-        //        now = DateTime.Now;
-        //        nextRunTime = CalculateNextRunTime(now);
-
-        //        // Calculate the delay until the next occurrence of 12:00:00
-        //        TimeSpan delay = nextRunTime - now;
-
-        //        // Delay until the next occurrence of 12:00:00
-        //        await Task.Delay(delay);
-        //    }
-        //}
-
-        //private static DateTime CalculateNextRunTime(DateTime now)
-        //{
-        //    DateTime nextRunTime = new DateTime(now.Year, now.Month, now.Day, 12, 0, 0);
-
-        //    if (nextRunTime <= now)
-        //    {
-        //        nextRunTime = nextRunTime.AddDays(1);
-        //    }
-
-        //    return nextRunTime;
-        //}
-
     }
 
 }

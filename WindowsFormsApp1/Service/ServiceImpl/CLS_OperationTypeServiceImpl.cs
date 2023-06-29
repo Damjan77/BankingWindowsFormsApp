@@ -10,7 +10,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class CLS_OperationTypeServiceImpl : ICLS_OperationTypeService
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"); 
         public List<CLS_OperationType> getAllData(string procedure)
         {
             using (var myDb = new Model1())
@@ -37,27 +36,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {
-            //CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
-
-            //try
-            //{
-            //    con.Open();
-
-            //    SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Insert", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-            //    sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
 
             try
@@ -82,35 +60,12 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
 
         public void UpdateDataInExchangeRatesTable(object toSave)
         {
-            //CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
-
-            //try
-            //{
-            //    con.Open();
-
-            //    SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Update", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("OperationTypeId", cls_OperationType.OperationTypeId);
-            //    sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-            //    sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-            //    sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
 
             try
@@ -139,7 +94,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
         }

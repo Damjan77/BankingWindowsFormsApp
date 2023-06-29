@@ -40,29 +40,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {
-            //ExchangeRate exchangeRate = toSave as ExchangeRate;
-
-            //try
-            //{
-            //    con.Open();
-
-            //    SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Insert", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-            //    sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-            //    sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-            //    sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-            //    sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-            //    sqlCommand.ExecuteNonQuery();
-
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
-
             ExchangeRate exchangeRate = toSave as ExchangeRate;
 
             try
@@ -102,30 +79,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void UpdateDataInExchangeRatesTable(object toSave)
         {
-            //    ExchangeRate exchangeRate = toSave as ExchangeRate;
-
-            //    try
-            //    {
-            //        con.Open();
-
-            //        SqlCommand sqlCommand = new SqlCommand("ExchangeRates_Update", con);
-            //        sqlCommand.CommandType = CommandType.StoredProcedure;
-            //        sqlCommand.Parameters.AddWithValue("ExchangeRatesId", exchangeRate.exchangeRatesId);
-            //        sqlCommand.Parameters.AddWithValue("ValidityDate", exchangeRate.ValidityDate);
-            //        sqlCommand.Parameters.AddWithValue("CurrencyFrom", exchangeRate.CurrencyFrom);
-            //        sqlCommand.Parameters.AddWithValue("CurrencyTo", exchangeRate.CurrencyTo);
-            //        sqlCommand.Parameters.AddWithValue("Rate", exchangeRate.Rate);
-            //        sqlCommand.Parameters.AddWithValue("IsActive", exchangeRate.IsActive);
-            //        sqlCommand.ExecuteNonQuery();
-
-            //        MessageBox.Show("Data updated Successfull");
-            //        con.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw new Exception(ex.Message);
-            //    }
-
             ExchangeRate exchangeRate = toSave as ExchangeRate;
 
             try
@@ -165,7 +118,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
 

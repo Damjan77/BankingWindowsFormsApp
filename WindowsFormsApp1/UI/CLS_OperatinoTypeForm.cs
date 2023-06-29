@@ -31,15 +31,6 @@ namespace WindowsFormsApp1.UI
             CLS_OperationTypeDataGridView.DataSource = operationTypeService.getAllData("CLS_OperationType_GetAll");
         }
 
-        //private void getAllData(DataGridView dataGridView)
-        //{
-        //    using (var myDb = new Model1())
-        //    {
-        //        var myOperationTypes = myDb.CLS_OperationType.ToList();
-        //        dataGridView.DataSource = myOperationTypes;
-        //    }
-        //}
-
         private bool isDataValid()
         {
             //code Logic
@@ -92,11 +83,6 @@ namespace WindowsFormsApp1.UI
 
         }
 
-        //private void GetAll_CLS_OperationType(object sender, EventArgs e)
-        //{
-        //    getAllData(CLS_OperationTypeDataGridView);
-        //}
-
         public void DRYCLS_OperationType(object sender, EventArgs e, bool isExist)
         {
             CLS_OperationType cls_OperationType = new CLS_OperationType();
@@ -110,7 +96,6 @@ namespace WindowsFormsApp1.UI
                 cls_OperationType.IsActive = checkBox1.Checked;
 
                 operationTypeService.UpdateDataInExchangeRatesTable(cls_OperationType);
-                //UpdateDataInClsOperationTypeTable(cls_OperationType);
             }
             else
             {
@@ -119,61 +104,10 @@ namespace WindowsFormsApp1.UI
                 cls_OperationType.IsActive = checkBox1.Checked;
 
                 operationTypeService.AddNewDataInExchangeRateTable(cls_OperationType);
-                //AddNewDataInClsOperationTypeTable(cls_OperationType);
             }
 
-            
             getAllData();
         }
-
-        //private void UpdateDataInClsOperationTypeTable(object toSave) //Update CLS_OperationType
-        //{
-        //    CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Update", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("OperationTypeId", cls_OperationType.OperationTypeId);
-        //        sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-        //        sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-
-        //private void AddNewDataInClsOperationTypeTable(object toSave) //Add CLS_OperationType
-        //{
-        //    CLS_OperationType cls_OperationType = toSave as CLS_OperationType;
-
-        //    try
-        //    {
-        //        con.Open();
-
-        //        SqlCommand sqlCommand = new SqlCommand("CLS_OperationType_Insert", con);
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Parameters.AddWithValue("Code", cls_OperationType.Code);
-        //        sqlCommand.Parameters.AddWithValue("Name", cls_OperationType.Name);
-        //        sqlCommand.Parameters.AddWithValue("IsActive", cls_OperationType.IsActive);
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        MessageBox.Show("Data saved Successfull");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
 
         private void SaveCLS_OperationTypeButton_Click(object sender, EventArgs e)
         {

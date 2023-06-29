@@ -13,6 +13,5 @@ namespace WindowsFormsApp1.Service
         List<Operation> GetAllData(string procedure);
         decimal transferMoney(decimal amount, decimal rate);
         decimal SearchRateFromExchangeRates(string currencyFrom, string currencyTo);
-
     }
 }

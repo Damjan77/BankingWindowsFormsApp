@@ -5,16 +5,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using WindowsFormsApp1.Models;
-using System.Data.Entity;
-using System.Runtime.Remoting.Contexts;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class UserServiceImpl : IUserService
     {
-        //SqlConnection con = new SqlConnection("data source=(localdb)\\MSSqlLocalDb;initial catalog=BankingDataBase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         public List<User> GetAllData()
         {
             using (var myDb = new Model1())
@@ -45,27 +40,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
         public void InsertDataInUserTable(object toSave)
         {
-            //try
-            //{
-            //    User usr = toSave as User;
-            //    con.Open();
-            //    SqlCommand sqlCommand = new SqlCommand("Users_InsertUser", con);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.Parameters.AddWithValue("userId", usr.userId);
-            //    sqlCommand.Parameters.AddWithValue("name", usr.name);
-            //    sqlCommand.Parameters.AddWithValue("surname", usr.surname);
-            //    sqlCommand.Parameters.AddWithValue("isActive", usr.isActive);
-            //    sqlCommand.Parameters.AddWithValue("username", usr.username);
-            //    sqlCommand.Parameters.AddWithValue("password", usr.password);
-            //    sqlCommand.ExecuteNonQuery();
-            //    MessageBox.Show("Data saved Successfull");
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);//message box
-            //}
-
             try
             {
                 User usr = toSave as User;
@@ -84,7 +58,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     };
   
                     // Add the new User entity to the DbContext
-                    myDb.Users.Add(newUser); //Prasanje zosto UNIQUE constraint ne go prikazuva ?
+                    myDb.Users.Add(newUser);
 
                     // Save changes to the database
                     myDb.SaveChanges();
@@ -128,7 +102,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             catch (Exception ex)
             {
-                //throw new Exception(ex.Message);
                 MessageBox.Show("Data updated unsuccessfully " + ex.Message);
             }
         }
@@ -184,30 +157,5 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 return myUsers;
             }
         }
-
-        //public string Encrypt(string value)
-        //{
-        //    byte[] data = UTF8Encoding.UTF8.GetBytes(value);
-        //    using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-        //    {
-        //        vyte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash)); 
-
-        //        UTF8Encoding utf8 = new UTF8Encoding();
-        //        byte[] data = md5.ComputeHash(utf8.GetBytes(value));
-        //        return Convert.ToBase64String(data);
-        //    }
-        //}
-
-        //public string Decrypt(string value)
-        //{
-        //    byte[] data = Convert.FromBase64String(value);
-
-        //    using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-        //    {
-        //        UTF8Encoding utf8 = new UTF8Encoding();
-        //        byte[] data = md5.ComputeHash(utf8.GetBytes(value));
-        //        return Convert.ToBase64String(data);
-        //    }
-        //}
     }
 }
