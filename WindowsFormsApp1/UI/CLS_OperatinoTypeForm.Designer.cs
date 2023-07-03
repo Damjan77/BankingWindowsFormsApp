@@ -71,16 +71,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 90);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(229, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(388, 29);
+            this.label2.Size = new System.Drawing.Size(377, 32);
             this.label2.TabIndex = 33;
-            this.label2.Text = "CLS_OperationType Information";
+            this.label2.Text = "OperationType Information";
             // 
             // AddNewOperationTypeButton
             // 
-            this.AddNewOperationTypeButton.Location = new System.Drawing.Point(457, 403);
+            this.AddNewOperationTypeButton.Location = new System.Drawing.Point(454, 403);
             this.AddNewOperationTypeButton.Name = "AddNewOperationTypeButton";
             this.AddNewOperationTypeButton.Size = new System.Drawing.Size(207, 34);
             this.AddNewOperationTypeButton.TabIndex = 32;
@@ -111,12 +111,12 @@
             // CLS_OperationTypeLabel
             // 
             this.CLS_OperationTypeLabel.AutoSize = true;
-            this.CLS_OperationTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLS_OperationTypeLabel.Location = new System.Drawing.Point(1104, 76);
+            this.CLS_OperationTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CLS_OperationTypeLabel.Location = new System.Drawing.Point(1168, 72);
             this.CLS_OperationTypeLabel.Name = "CLS_OperationTypeLabel";
-            this.CLS_OperationTypeLabel.Size = new System.Drawing.Size(311, 29);
+            this.CLS_OperationTypeLabel.Size = new System.Drawing.Size(288, 32);
             this.CLS_OperationTypeLabel.TabIndex = 21;
-            this.CLS_OperationTypeLabel.Text = "CLS_OperationType Data";
+            this.CLS_OperationTypeLabel.Text = "OperationType Data";
             // 
             // NameLabel3
             // 
@@ -171,7 +171,7 @@
             // 
             // SaveCLS_OperationTypeButton
             // 
-            this.SaveCLS_OperationTypeButton.Location = new System.Drawing.Point(457, 353);
+            this.SaveCLS_OperationTypeButton.Location = new System.Drawing.Point(454, 353);
             this.SaveCLS_OperationTypeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveCLS_OperationTypeButton.Name = "SaveCLS_OperationTypeButton";
             this.SaveCLS_OperationTypeButton.Size = new System.Drawing.Size(207, 34);

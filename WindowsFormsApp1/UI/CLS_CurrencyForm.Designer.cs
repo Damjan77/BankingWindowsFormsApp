@@ -51,12 +51,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(391, 111);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(408, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 29);
+            this.label1.Size = new System.Drawing.Size(446, 48);
             this.label1.TabIndex = 32;
-            this.label1.Text = "CLS_Currency Information";
+            this.label1.Text = "Currency Information";
             // 
             // AddNewCLS_CurrencyButton
             // 
@@ -93,12 +93,12 @@
             // CLS_CurrencyLabel
             // 
             this.CLS_CurrencyLabel.AutoSize = true;
-            this.CLS_CurrencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLS_CurrencyLabel.Location = new System.Drawing.Point(1208, 111);
+            this.CLS_CurrencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CLS_CurrencyLabel.Location = new System.Drawing.Point(1225, 111);
             this.CLS_CurrencyLabel.Name = "CLS_CurrencyLabel";
-            this.CLS_CurrencyLabel.Size = new System.Drawing.Size(240, 29);
+            this.CLS_CurrencyLabel.Size = new System.Drawing.Size(208, 32);
             this.CLS_CurrencyLabel.TabIndex = 21;
-            this.CLS_CurrencyLabel.Text = "CLS_Currency Data";
+            this.CLS_CurrencyLabel.Text = "Currency Data";
             // 
             // NameLabel2
             // 
