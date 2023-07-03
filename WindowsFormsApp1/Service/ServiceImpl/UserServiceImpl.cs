@@ -21,7 +21,8 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     user.surname,
                     user.isActive,
                     user.username,
-                    user.password
+                    user.password,
+                    user.roleId
                 }).ToList();
 
                 List<User> myUsers = userProperties.Select(userProp => new User
@@ -31,7 +32,9 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     surname = userProp.surname,
                     isActive = userProp.isActive,
                     username = userProp.username,
-                    password = userProp.password
+                    password = userProp.password,
+                    roleId = userProp.roleId
+                    
                 }).ToList();
 
                 return myUsers;
