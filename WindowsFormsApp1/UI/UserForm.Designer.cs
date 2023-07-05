@@ -34,6 +34,8 @@ namespace WindowsFormsApp1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
             this.UsersPanel = new System.Windows.Forms.Panel();
+            this.RoleComboBox = new System.Windows.Forms.ComboBox();
+            this.RoleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AllUsersButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -62,6 +64,7 @@ namespace WindowsFormsApp1
             this.UsernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SearchErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RoleErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.UsersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
@@ -72,12 +75,15 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoleErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // UsersPanel
             // 
             this.UsersPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersPanel.BackColor = System.Drawing.Color.Transparent;
+            this.UsersPanel.Controls.Add(this.RoleComboBox);
+            this.UsersPanel.Controls.Add(this.RoleLabel);
             this.UsersPanel.Controls.Add(this.label1);
             this.UsersPanel.Controls.Add(this.AllUsersButton);
             this.UsersPanel.Controls.Add(this.SearchButton);
@@ -101,6 +107,24 @@ namespace WindowsFormsApp1
             this.UsersPanel.Name = "UsersPanel";
             this.UsersPanel.Size = new System.Drawing.Size(1984, 905);
             this.UsersPanel.TabIndex = 9;
+            // 
+            // RoleComboBox
+            // 
+            this.RoleComboBox.FormattingEnabled = true;
+            this.RoleComboBox.Location = new System.Drawing.Point(417, 353);
+            this.RoleComboBox.Name = "RoleComboBox";
+            this.RoleComboBox.Size = new System.Drawing.Size(298, 28);
+            this.RoleComboBox.TabIndex = 39;
+            // 
+            // RoleLabel
+            // 
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoleLabel.Location = new System.Drawing.Point(241, 353);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(64, 29);
+            this.RoleLabel.TabIndex = 38;
+            this.RoleLabel.Text = "Role";
             // 
             // label1
             // 
@@ -159,15 +183,16 @@ namespace WindowsFormsApp1
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordTextBox.Location = new System.Drawing.Point(417, 295);
+            this.PasswordTextBox.Location = new System.Drawing.Point(417, 294);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(298, 26);
             this.PasswordTextBox.TabIndex = 28;
             // 
             // UsernameTextBox
             // 
             this.UsernameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UsernameTextBox.Location = new System.Drawing.Point(417, 237);
+            this.UsernameTextBox.Location = new System.Drawing.Point(417, 231);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(298, 26);
             this.UsernameTextBox.TabIndex = 27;
@@ -178,7 +203,7 @@ namespace WindowsFormsApp1
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.PasswordLabel.Location = new System.Drawing.Point(241, 291);
+            this.PasswordLabel.Location = new System.Drawing.Point(241, 290);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
             this.PasswordLabel.TabIndex = 26;
@@ -190,7 +215,7 @@ namespace WindowsFormsApp1
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UsernameLabel.Location = new System.Drawing.Point(241, 236);
+            this.UsernameLabel.Location = new System.Drawing.Point(241, 230);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
             this.UsernameLabel.TabIndex = 25;
@@ -199,7 +224,7 @@ namespace WindowsFormsApp1
             // AddNewUserButton
             // 
             this.AddNewUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddNewUserButton.Location = new System.Drawing.Point(456, 506);
+            this.AddNewUserButton.Location = new System.Drawing.Point(456, 620);
             this.AddNewUserButton.Name = "AddNewUserButton";
             this.AddNewUserButton.Size = new System.Drawing.Size(193, 34);
             this.AddNewUserButton.TabIndex = 24;
@@ -224,7 +249,7 @@ namespace WindowsFormsApp1
             this.CheckBoxForUserActivation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CheckBoxForUserActivation.AutoSize = true;
             this.CheckBoxForUserActivation.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(493, 366);
+            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(493, 480);
             this.CheckBoxForUserActivation.Name = "CheckBoxForUserActivation";
             this.CheckBoxForUserActivation.Size = new System.Drawing.Size(147, 24);
             this.CheckBoxForUserActivation.TabIndex = 20;
@@ -237,7 +262,7 @@ namespace WindowsFormsApp1
             this.UserActivationLabel.AutoSize = true;
             this.UserActivationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserActivationLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UserActivationLabel.Location = new System.Drawing.Point(241, 360);
+            this.UserActivationLabel.Location = new System.Drawing.Point(241, 474);
             this.UserActivationLabel.Name = "UserActivationLabel";
             this.UserActivationLabel.Size = new System.Drawing.Size(172, 29);
             this.UserActivationLabel.TabIndex = 19;
@@ -305,7 +330,7 @@ namespace WindowsFormsApp1
             this.SaveUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SaveUserButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveUserButton.Image")));
             this.SaveUserButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SaveUserButton.Location = new System.Drawing.Point(456, 446);
+            this.SaveUserButton.Location = new System.Drawing.Point(456, 560);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveUserButton.Name = "SaveUserButton";
             this.SaveUserButton.Size = new System.Drawing.Size(193, 34);
@@ -353,6 +378,10 @@ namespace WindowsFormsApp1
             // 
             this.SearchErrorProvider.ContainerControl = this;
             // 
+            // RoleErrorProvider
+            // 
+            this.RoleErrorProvider.ContainerControl = this;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -378,6 +407,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.UsernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoleErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,5 +445,8 @@ namespace WindowsFormsApp1
         private ErrorProvider SearchErrorProvider;
         private Button AllUsersButton;
         private Label label1;
+        private ComboBox RoleComboBox;
+        private Label RoleLabel;
+        private ErrorProvider RoleErrorProvider;
     }
 }

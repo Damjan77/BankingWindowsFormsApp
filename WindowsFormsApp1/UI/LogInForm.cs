@@ -35,14 +35,16 @@ namespace WindowsFormsApp1.UI
 
             if (isAuthenticated)
             {
-                LogInButton.Text = "Success!"; //Da se zameni so Environment Variable
+                LogInButton.Text = "Success!";
                 LogInButton.BackColor = Color.Green;
                 
                 UserSession.UserName = username;
                 UserSession.UserId = userService.getUserId(username, password);
+                UserSession.roleid = userService.gerRoleId(username,password);
                 WelcomeUserLabel.Text += " " + username;
                 WelcomeUserLabel.Visible = true;
-                await Task.Delay(1000); //Pocekaj 1 sekunda
+                await Task.Delay(1000);
+
                 Main mainForm = new Main();
                 mainForm.Show();
                 this.Hide();

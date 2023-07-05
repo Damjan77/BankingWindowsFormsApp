@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.UI
                 clsCurrencyCodeErrorProvider.SetError(CodeTextBox, "Code is too long!");
                 codeFlag = false;
             }
-            else if (!Regex.IsMatch(CodeTextBox.Text, "^[A-Z]+$"))
+            else if (!Regex.IsMatch(CodeTextBox.Text, "^[A-Za-z]+$"))
             {
                 clsCurrencyCodeErrorProvider.SetError(CodeTextBox, "Code must contain only letters!");
                 codeFlag = false;
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1.UI
                 var selectedRow = CLS_CurrencyDataGridView.SelectedRows[0];
                 cls_Currency.CurrencyId = Convert.ToInt32(selectedRow.Cells["CurrencyId"].Value);
                 cls_Currency.Name = NameTextBox2.Text.ToString();
-                cls_Currency.Code = CodeTextBox.Text.ToString();
+                cls_Currency.Code = CodeTextBox.Text.ToString().ToUpper();
                 cls_Currency.IsActive = ActivateUserCheckBox4.Checked;
 
                 cls_CurrencyService.UpdateDataInExchangeRatesTable(cls_Currency);
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1.UI
             else
             {
                 cls_Currency.Name = NameTextBox2.Text.ToString();
-                cls_Currency.Code = CodeTextBox.Text.ToString();
+                cls_Currency.Code = CodeTextBox.Text.ToString().ToUpper();
                 cls_Currency.IsActive = ActivateUserCheckBox4.Checked;
 
                 cls_CurrencyService.AddNewDataInExchangeRateTable(cls_Currency);
@@ -128,9 +128,12 @@ namespace WindowsFormsApp1.UI
 
         private void CLS_CurrencyDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CodeTextBox.Text = CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            NameTextBox2.Text = CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            ActivateUserCheckBox4.Checked = (bool)CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[3].Value;
+            if (e.RowIndex != -1)
+            {
+                CodeTextBox.Text = CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                NameTextBox2.Text = CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                ActivateUserCheckBox4.Checked = (bool)CLS_CurrencyDataGridView.Rows[e.RowIndex].Cells[3].Value;
+            }
         }
 
         private void clearData()

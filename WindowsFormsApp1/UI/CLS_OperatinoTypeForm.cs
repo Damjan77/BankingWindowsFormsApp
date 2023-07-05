@@ -45,7 +45,7 @@ namespace WindowsFormsApp1.UI
                 clsOperationTypeCodeErrorProvider.SetError(CodeTextBox2, "Code is too long!");
                 codeFlag = false;
             }
-            else if (!Regex.IsMatch(CodeTextBox2.Text, "^[A-Z]+$"))
+            else if (!Regex.IsMatch(CodeTextBox2.Text, "^[A-Za-z]+$"))
             {
                 clsOperationTypeCodeErrorProvider.SetError(CodeTextBox2, "Code must contain only letters!");
                 codeFlag = false;
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1.UI
                 var selectedRow = CLS_OperationTypeDataGridView.SelectedRows[0];
                 cls_OperationType.OperationTypeId = Convert.ToInt32(selectedRow.Cells["OperationTypeId"].Value);
                 cls_OperationType.Name = NameTextBox3.Text.ToString();
-                cls_OperationType.Code = CodeTextBox2.Text.ToString();
+                cls_OperationType.Code = CodeTextBox2.Text.ToString().ToUpper();
                 cls_OperationType.IsActive = checkBox1.Checked;
 
                 operationTypeService.UpdateDataInExchangeRatesTable(cls_OperationType);
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1.UI
             else
             {
                 cls_OperationType.Name = NameTextBox3.Text.ToString();
-                cls_OperationType.Code = CodeTextBox2.Text.ToString();
+                cls_OperationType.Code = CodeTextBox2.Text.ToString().ToUpper();
                 cls_OperationType.IsActive = checkBox1.Checked;
 
                 operationTypeService.AddNewDataInExchangeRateTable(cls_OperationType);
@@ -130,9 +130,12 @@ namespace WindowsFormsApp1.UI
 
         private void CLS_OperationTypeDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CodeTextBox2.Text = CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            NameTextBox3.Text = CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            checkBox1.Checked = (bool)CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[3].Value;
+            if (e.RowIndex != -1)
+            {
+                CodeTextBox2.Text = CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                NameTextBox3.Text = CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                checkBox1.Checked = (bool)CLS_OperationTypeDataGridView.Rows[e.RowIndex].Cells[3].Value;
+            }
         }
 
         private void clearData()

@@ -40,7 +40,7 @@ namespace WindowsFormsApp1.UI
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;
 
-            getAllData(); 
+            getAllData();
         }
 
         private void getAllData()
@@ -107,11 +107,14 @@ namespace WindowsFormsApp1.UI
 
         private void ExchangeRatesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ExchangeRatesdateTimePicker.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            CurrencyFromComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            CurrencyToComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-            RateTextBox2.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            ActivateUserCheckBox3.Checked = (bool)ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[5].Value;
+            if (e.RowIndex != -1)
+            {
+                ExchangeRatesdateTimePicker.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                CurrencyFromComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                CurrencyToComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                RateTextBox2.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                ActivateUserCheckBox3.Checked = (bool)ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[5].Value;
+            }
         }
 
         private bool isDataValid()

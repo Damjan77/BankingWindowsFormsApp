@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1
 {
@@ -17,9 +18,14 @@ namespace WindowsFormsApp1
         public virtual DbSet<OfficialRate> OfficialRates { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserRole>()
+            .ToTable("UserRole")
+            .HasKey(e => e.roleId);
+
             modelBuilder.Entity<CLS_Currency>()
                 .Property(e => e.Code)
                 .IsFixedLength()

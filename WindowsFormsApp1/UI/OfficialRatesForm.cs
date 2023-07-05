@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using WindowsFormsApp1.Models;
 using WindowsFormsApp1.NBRMServiceReference;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
@@ -120,7 +121,6 @@ namespace WindowsFormsApp1.UI
                 DRYOfficialRate(sender, e, false);
                 clearOfficialRateData(); 
             }
-            
         }
 
         private void SaveOfficialRate_Click(object sender, EventArgs e)
@@ -133,11 +133,15 @@ namespace WindowsFormsApp1.UI
         }
 
         private void OfficialRatedataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {   
-            officialRateDateTimePicker.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            OfficialRatesCurrencyComboBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            RateTextBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-            UserActivationcheckBox2.Checked = (bool)OfficialRatedataGridView.Rows[e.RowIndex].Cells[4].Value;
+        {
+            if (e.RowIndex != -1)
+            {
+                officialRateDateTimePicker.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                OfficialRatesCurrencyComboBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                RateTextBox.Text = OfficialRatedataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                UserActivationcheckBox2.Checked = (bool)OfficialRatedataGridView.Rows[e.RowIndex].Cells[4].Value;
+            }
+            
         }
 
         private void NBRMDataButton_Click(object sender, EventArgs e)

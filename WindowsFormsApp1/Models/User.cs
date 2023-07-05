@@ -7,18 +7,18 @@ namespace WindowsFormsApp1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
-        
         {
             Operations = new HashSet<Operation>();
         }
 
-        public User(string name,string surname,bool isActive, string username, string password)
+        public User(string name,string surname,bool isActive, string username, string password, int roleId)
         {
             this.name = name;
             this.surname = surname;
             this.isActive = isActive;
             this.username = username;
             this.password = password;
+            this.roleId = roleId;
             Operations = new HashSet<Operation>();
         }
 

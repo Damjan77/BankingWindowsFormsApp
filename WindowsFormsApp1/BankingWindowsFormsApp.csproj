@@ -73,6 +73,7 @@
     <Compile Include="Models\AnnuityResult.cs" />
     <Compile Include="Models\MonthlyResult.cs" />
     <Compile Include="Models\Scheduler.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\UserSession.cs" />
     <Compile Include="Service\ICLS_CurrencyService.cs" />
     <Compile Include="Service\ICLS_OperationTypeService.cs" />

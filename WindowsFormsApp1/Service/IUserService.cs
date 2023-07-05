@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.Service
 {
@@ -11,6 +12,9 @@ namespace WindowsFormsApp1.Service
         string Encrypt(string value);
         bool AuthenticateUser(string username, string password);
         int? getUserId(string username, string password);
+
+        int gerRoleId(string username, string password);
         List<User> searchUsers(string searchString);
+        string findUserRoleName(int id);
     }
 }

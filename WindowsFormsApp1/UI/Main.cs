@@ -91,6 +91,7 @@ namespace WindowsFormsApp1
                 var logInForm = new LogInForm();
                 UserSession.UserName = null;
                 UserSession.UserId = null;
+                UserSession.roleid = 1;
                 logInForm.Show();
             }
         }   

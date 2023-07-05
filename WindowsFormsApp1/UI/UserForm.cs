@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 
@@ -20,9 +22,30 @@ namespace WindowsFormsApp1
 
         private void UserForm_Load(object sender, EventArgs e)
         {
+            using (var myDb = new Model1())
+            {
+                var roles = myDb.UserRoles.ToList();
+                RoleComboBox.DataSource = roles;
+                RoleComboBox.ValueMember = "roleId";
+                RoleComboBox.DisplayMember = "roleName";
+                RoleComboBox.SelectedItem = null;
+            }
+               
+
             this.tableTableAdapter.Fill(this.dataSet1.Table);
             getAllData();
             this.WindowState = FormWindowState.Maximized;
+
+            if (UserSession.roleid == 1) //Basic
+            {
+                AddNewUserButton.Visible = false;
+                RoleComboBox.Enabled = false;
+            }
+            else if(UserSession.roleid == 2)//Admin
+            {
+                AddNewUserButton.Visible = true;
+                RoleComboBox.Enabled = true;
+            }
         }
 
         private void getAllData()
@@ -33,6 +56,7 @@ namespace WindowsFormsApp1
         public void DRYUser(object sender, EventArgs e, bool IamExisting)
         {
             User usr = new User();
+            UserRole userRoleObj = RoleComboBox.SelectedItem as UserRole;
 
             if (IamExisting)
             {
@@ -43,6 +67,7 @@ namespace WindowsFormsApp1
                 usr.name = NameTextBox1.Text.ToString();
                 usr.username = UsernameTextBox.Text.ToString();
                 usr.password = userService.Encrypt(PasswordTextBox.Text.ToString());
+                usr.roleId = userRoleObj.roleId;
 
                 userService.UpdateDataInUserTable(usr);
             }
@@ -53,6 +78,7 @@ namespace WindowsFormsApp1
                 usr.name = NameTextBox1.Text.ToString();
                 usr.username = UsernameTextBox.Text.ToString();
                 usr.password = userService.Encrypt(PasswordTextBox.Text.ToString());
+                usr.roleId = userRoleObj.roleId;
 
                 userService.InsertDataInUserTable(usr);
             }
@@ -137,7 +163,21 @@ namespace WindowsFormsApp1
                 PasswordErrorProvider.Clear();
             }
 
-            if (nameFlag && surnameFlag && usernameFlag && passwordFlag) return true;
+            //Role Logic
+            bool RoleFlag = true;
+
+            if (RoleComboBox.SelectedItem == null)
+            {
+                RoleErrorProvider.SetError(RoleComboBox, "Select Role");
+                RoleFlag = false;
+            }
+            if (RoleFlag)
+            {
+                RoleErrorProvider.SetError(RoleComboBox, string.Empty);
+                RoleErrorProvider.Clear();
+            }
+
+            if (nameFlag && surnameFlag && usernameFlag && passwordFlag && RoleFlag) return true;
             else return false;
         }
 
@@ -163,13 +203,17 @@ namespace WindowsFormsApp1
 
         private void UsersDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UsersDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //Dokolku se klikne bilo kade na dataGridiew
-            UsersDataGridView.CurrentCell.Selected = true;
-            NameTextBox1.Text = UsersDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            SurnameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            CheckBoxForUserActivation.Checked = (bool)UsersDataGridView.Rows[e.RowIndex].Cells[3].Value;
-            UsernameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //PasswordTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                UsersDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                UsersDataGridView.CurrentCell.Selected = true;
+                NameTextBox1.Text = UsersDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                SurnameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                CheckBoxForUserActivation.Checked = (bool)UsersDataGridView.Rows[e.RowIndex].Cells[3].Value;
+                UsernameTextBox.Text = UsersDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                int roleId = (int)UsersDataGridView.Rows[e.RowIndex].Cells[6].Value;
+                RoleComboBox.Text = userService.findUserRoleName(roleId);
+            }
         }
 
         private void clearData()
@@ -179,26 +223,8 @@ namespace WindowsFormsApp1
             CheckBoxForUserActivation.Checked = false;
             UsernameTextBox.Text = "";
             PasswordTextBox.Text = "";
+            RoleComboBox.SelectedItem = null;
         }
-
-        //private void SearchTextBox_Enter(object sender, EventArgs e)
-        //{
-        //    if (SearchTextBox.Text == "Search for User")
-        //    {
-        //        SearchTextBox.Text = "";
-        //        SearchTextBox.ForeColor = System.Drawing.Color.Black;
-        //    }
-
-        //}
-
-        //private void SearchTextBox_Leave(object sender, EventArgs e)
-        //{
-        //    if (SearchTextBox.Text == "")
-        //    {
-        //        SearchTextBox.Text = "Search for User";
-        //        SearchTextBox.ForeColor = System.Drawing.Color.Gray;
-        //    }
-        //}
 
         private void SearchButton_Click(object sender, EventArgs e)
         {

@@ -126,13 +126,9 @@ namespace WindowsFormsApp1.UI
                     operationService.AddNewDataInOperationsTable(operation);
                 }
                 
-
-
-                //AddNewDataInOperationsTable(operation);
             }
 
             getAllData();
-            //GetAllOperations(sender, e);
         }
 
         private void SaveOperationButton_Click(object sender, EventArgs e)
@@ -156,20 +152,22 @@ namespace WindowsFormsApp1.UI
 
         private void OperationsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedOperation = OperationsDataGridView.SelectedRows[0].DataBoundItem as Operation;           
-            if (selectedOperation != null) 
+            if (e.RowIndex != -1)
             {
-                OperationTypeComboBox.Text = cLS_OperationType.GetOperationTypeById(selectedOperation.OperationTypeId);
+                selectedOperation = OperationsDataGridView.SelectedRows[0].DataBoundItem as Operation;           
+                if (selectedOperation != null) 
+                {
+                    OperationTypeComboBox.Text = cLS_OperationType.GetOperationTypeById(selectedOperation.OperationTypeId);
+                }
+
+                //OperationTypeComboBox.Text = selectedOperation.
+                //OperationTypeComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //UsersComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                OperationsDateTimePicker.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                AmountTextBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                CurrencyFromComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                CurrencyToComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
-
-            //OperationTypeComboBox.Text = selectedOperation.
-            //OperationTypeComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //UsersComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            OperationsDateTimePicker.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-            AmountTextBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            CurrencyFromComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
-            CurrencyToComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
-
         }
 
         private void clearData()

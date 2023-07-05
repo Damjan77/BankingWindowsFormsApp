@@ -51,12 +51,16 @@
             this.RegisterConfirmPasswordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.backToLoginButton = new System.Windows.Forms.Button();
             this.RegisterPanel = new System.Windows.Forms.Panel();
+            this.RegisterRoleComboBox = new System.Windows.Forms.ComboBox();
+            this.RoleLabel = new System.Windows.Forms.Label();
+            this.RegisterRoleErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterSurnameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterUsernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterPasswordErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterConfirmPasswordErrorProvider)).BeginInit();
             this.RegisterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterRoleErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // RegisterLabel
@@ -67,7 +71,7 @@
             this.RegisterLabel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.RegisterLabel.Location = new System.Drawing.Point(183, 26);
             this.RegisterLabel.Name = "RegisterLabel";
-            this.RegisterLabel.Size = new System.Drawing.Size(299, 48);
+            this.RegisterLabel.Size = new System.Drawing.Size(199, 32);
             this.RegisterLabel.TabIndex = 0;
             this.RegisterLabel.Text = "Register User";
             // 
@@ -123,7 +127,7 @@
             // 
             this.ActivateUserCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActivateUserCheckBox.AutoSize = true;
-            this.ActivateUserCheckBox.Location = new System.Drawing.Point(246, 405);
+            this.ActivateUserCheckBox.Location = new System.Drawing.Point(246, 463);
             this.ActivateUserCheckBox.Name = "ActivateUserCheckBox";
             this.ActivateUserCheckBox.Size = new System.Drawing.Size(92, 24);
             this.ActivateUserCheckBox.TabIndex = 5;
@@ -143,6 +147,7 @@
             this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordTextBox.Location = new System.Drawing.Point(246, 291);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(307, 26);
             this.PasswordTextBox.TabIndex = 7;
             // 
@@ -179,6 +184,7 @@
             this.ConfirmPasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(246, 343);
             this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
+            this.ConfirmPasswordTextBox.PasswordChar = '*';
             this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(307, 26);
             this.ConfirmPasswordTextBox.TabIndex = 11;
             // 
@@ -188,7 +194,7 @@
             this.ActivateUserLabel.AutoSize = true;
             this.ActivateUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActivateUserLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.ActivateUserLabel.Location = new System.Drawing.Point(25, 405);
+            this.ActivateUserLabel.Location = new System.Drawing.Point(25, 463);
             this.ActivateUserLabel.Name = "ActivateUserLabel";
             this.ActivateUserLabel.Size = new System.Drawing.Size(153, 29);
             this.ActivateUserLabel.TabIndex = 12;
@@ -197,7 +203,7 @@
             // RegisterButton
             // 
             this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterButton.Location = new System.Drawing.Point(281, 479);
+            this.RegisterButton.Location = new System.Drawing.Point(281, 542);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(231, 45);
             this.RegisterButton.TabIndex = 13;
@@ -228,7 +234,7 @@
             // backToLoginButton
             // 
             this.backToLoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backToLoginButton.Location = new System.Drawing.Point(281, 553);
+            this.backToLoginButton.Location = new System.Drawing.Point(281, 616);
             this.backToLoginButton.Name = "backToLoginButton";
             this.backToLoginButton.Size = new System.Drawing.Size(231, 45);
             this.backToLoginButton.TabIndex = 14;
@@ -240,6 +246,8 @@
             // 
             this.RegisterPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RegisterPanel.Controls.Add(this.RegisterRoleComboBox);
+            this.RegisterPanel.Controls.Add(this.RoleLabel);
             this.RegisterPanel.Controls.Add(this.NameLabel);
             this.RegisterPanel.Controls.Add(this.RegisterLabel);
             this.RegisterPanel.Controls.Add(this.backToLoginButton);
@@ -260,6 +268,28 @@
             this.RegisterPanel.Size = new System.Drawing.Size(586, 717);
             this.RegisterPanel.TabIndex = 15;
             // 
+            // RegisterRoleComboBox
+            // 
+            this.RegisterRoleComboBox.FormattingEnabled = true;
+            this.RegisterRoleComboBox.Location = new System.Drawing.Point(246, 396);
+            this.RegisterRoleComboBox.Name = "RegisterRoleComboBox";
+            this.RegisterRoleComboBox.Size = new System.Drawing.Size(307, 28);
+            this.RegisterRoleComboBox.TabIndex = 41;
+            // 
+            // RoleLabel
+            // 
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoleLabel.Location = new System.Drawing.Point(25, 392);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(64, 29);
+            this.RoleLabel.TabIndex = 40;
+            this.RoleLabel.Text = "Role";
+            // 
+            // RegisterRoleErrorProvider
+            // 
+            this.RegisterRoleErrorProvider.ContainerControl = this;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -271,6 +301,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RegisterNameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterSurnameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterUsernameErrorProvider)).EndInit();
@@ -278,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RegisterConfirmPasswordErrorProvider)).EndInit();
             this.RegisterPanel.ResumeLayout(false);
             this.RegisterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterRoleErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +337,8 @@
         private System.Windows.Forms.ErrorProvider RegisterConfirmPasswordErrorProvider;
         private System.Windows.Forms.Button backToLoginButton;
         private System.Windows.Forms.Panel RegisterPanel;
+        private System.Windows.Forms.ComboBox RegisterRoleComboBox;
+        private System.Windows.Forms.Label RoleLabel;
+        private System.Windows.Forms.ErrorProvider RegisterRoleErrorProvider;
     }
 }

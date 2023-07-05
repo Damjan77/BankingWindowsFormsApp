@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
 
@@ -20,6 +22,8 @@ namespace WindowsFormsApp1.UI
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
+            UserRole userRoleObj = RegisterRoleComboBox.SelectedItem as UserRole;
+
             if (IsValidData())
             {
                 string name = NameTextBox.Text;
@@ -27,19 +31,20 @@ namespace WindowsFormsApp1.UI
                 bool isActive = ActivateUserCheckBox.Checked;
                 string username = UsernameTextBox.Text;
                 string password = PasswordTextBox.Text;
+                int roleId = userRoleObj.roleId;
                 
-                User user = new User(name, surname, isActive, username, password);
+                User user = new User(name, surname, isActive, username, password, roleId);
                 user.name = name;
                 user.surname = surname;
                 user.username = username;
                 user.password = userService.Encrypt(password);// Encrypt(password);
+                user.roleId = roleId;
 
                 userService.InsertDataInUserTable(user);
                 LogInForm logInForm = new LogInForm();
                 logInForm.Show();
                 this.Hide();
-            }
-            
+            }  
         }
 
         bool IsValidData()
@@ -146,7 +151,20 @@ namespace WindowsFormsApp1.UI
                 RegisterConfirmPasswordErrorProvider.Clear();
             }
 
-            if (nameFlag && usernameFlag && surnameFlag && passwordFlag && confirmPasswordFlag) return true;
+            bool RoleFlag = true;
+
+            if (RegisterRoleComboBox.SelectedItem == null)
+            {
+                RegisterRoleErrorProvider.SetError(RegisterRoleComboBox, "Select Role");
+                RoleFlag = false;
+            }
+            if (RoleFlag)
+            {
+                RegisterRoleErrorProvider.SetError(RegisterRoleComboBox, string.Empty);
+                RegisterRoleErrorProvider.Clear();
+            }
+
+            if (nameFlag && usernameFlag && surnameFlag && passwordFlag && confirmPasswordFlag && RoleFlag) return true;
             else return false;
         }
 
@@ -155,6 +173,18 @@ namespace WindowsFormsApp1.UI
             LogInForm logIn = new LogInForm();
             logIn.Show();
             this.Hide();
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            using (var myDb = new Model1())
+            {
+                var roles = myDb.UserRoles.ToList();
+                RegisterRoleComboBox.DataSource = roles;
+                RegisterRoleComboBox.ValueMember = "roleId";
+                RegisterRoleComboBox.DisplayMember = "roleName";
+                RegisterRoleComboBox.SelectedItem = null;
+            }
         }
     }
 }

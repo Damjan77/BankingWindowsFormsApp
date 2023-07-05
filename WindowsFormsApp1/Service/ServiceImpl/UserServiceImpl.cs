@@ -5,6 +5,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using WindowsFormsApp1.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1.Service.ServiceImpl
 {
@@ -57,7 +59,8 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         surname = usr.surname,
                         isActive = usr.isActive,
                         username = usr.username,
-                        password = usr.password
+                        password = usr.password,
+                        roleId = usr.roleId
                     };
   
                     // Add the new User entity to the DbContext
@@ -87,15 +90,36 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
                     if (existingUser != null)
                     {
-                        // Update
-                        existingUser.name = usr.name;
-                        existingUser.surname = usr.surname;
-                        existingUser.isActive = usr.isActive;
-                        existingUser.username = usr.username;
-                        existingUser.password = usr.password;
-                   
-                        myDb.SaveChanges();
-                        MessageBox.Show("Data updated successfully");                     
+                        if (UserSession.roleid == 2) //Admin
+                        {
+                            // Update
+                            existingUser.name = usr.name;
+                            existingUser.surname = usr.surname;
+                            existingUser.isActive = usr.isActive;
+                            existingUser.username = usr.username;
+                            existingUser.password = usr.password;
+                            existingUser.roleId = usr.roleId;
+
+                            myDb.SaveChanges();
+                            MessageBox.Show("Data updated successfully");
+                        }
+                        else if (UserSession.roleid == 1 && UserSession.UserId == existingUser.userId) //Basic
+                        {
+                            // Update
+                            existingUser.name = usr.name;
+                            existingUser.surname = usr.surname;
+                            existingUser.isActive = usr.isActive;
+                            existingUser.username = usr.username;
+                            existingUser.password = usr.password;
+                            existingUser.roleId = existingUser.roleId; //Basic User can't update role to himself
+
+                            myDb.SaveChanges();
+                            MessageBox.Show("Data updated successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("You don't have permission for this action!");
+                        }                                        
                     }
                     else
                     {
@@ -139,6 +163,16 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
         }
 
+        public int gerRoleId(string username, string password)
+        {
+            using (var myDb = new Model1())
+            {
+                string encryptedPassword = Encrypt(password);
+                var user = myDb.Users.FirstOrDefault(u => u.username == username && u.password == encryptedPassword);
+                return user.roleId;
+            }
+        }
+
         public List<User> searchUsers(string searchString)
         {
             using (var myDb = new Model1())
@@ -154,10 +188,20 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     surname = userProp.surname,
                     isActive = userProp.isActive,
                     username = userProp.username,
-                    password = userProp.password
+                    password = userProp.password,
+                    roleId = userProp.roleId
                 }).ToList();
 
                 return myUsers;
+            }
+        }
+
+        public string findUserRoleName(int id)
+        {
+            using (var context = new Model1())
+            {
+                var role = context.UserRoles.FirstOrDefault(r => r.roleId == id);
+                return role.roleName;
             }
         }
     }
