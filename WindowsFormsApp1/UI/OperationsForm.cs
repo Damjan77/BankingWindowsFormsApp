@@ -31,7 +31,7 @@ namespace WindowsFormsApp1.UI
         private void Operation_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            getAllData();
+            
 
             using (var myDb = new Model1())
             {  
@@ -53,6 +53,24 @@ namespace WindowsFormsApp1.UI
                 CurrencyFromComboBox.SelectedItem = null;
                 CurrencyToComboBox.SelectedItem = null;
             }
+            if (UserSession.roleid == 1) //Basic 
+            {
+                getAllDataByUserId();
+                SearchOperationLabel.Visible = false;
+                UserIdLabel.Visible = false;
+                SearchOperationTextBox.Visible = false;
+                SearchOperationsButton.Visible = false;
+                AllOperationsButton.Visible = false;
+            }
+            else if (UserSession.roleid == 2) //Admin
+            {
+                getAllData();
+                SearchOperationLabel.Visible = true;
+                UserIdLabel.Visible = true;
+                SearchOperationTextBox.Visible = true;
+                SearchOperationsButton.Visible = true;
+                AllOperationsButton.Visible = true;
+            }
 
             OperationsDateTimePicker.Text = DateTime.Now.ToString();
 
@@ -60,7 +78,12 @@ namespace WindowsFormsApp1.UI
 
         private void getAllData()
         {
-            OperationsDataGridView.DataSource = operationService.GetAllData("Operations_GetAll");
+            OperationsDataGridView.DataSource = operationService.GetAllData();
+        }
+
+        private void getAllDataByUserId()
+        {
+            OperationsDataGridView.DataSource = operationService.GetAllOperationByUserId((int)UserSession.UserId);
         }
 
         public void DRYOperation(object sender, EventArgs e, bool isExist)
@@ -246,5 +269,41 @@ namespace WindowsFormsApp1.UI
             else return false;
         }
 
+        public bool isDataSearchValid()
+        {
+            //userId Logic
+            bool userIdFlag = true;
+            if (string.IsNullOrEmpty(SearchOperationTextBox.Text.Trim()))
+            {
+                SearchErrorProvider.SetError(SearchOperationTextBox, "Please enter userId for searching");
+                userIdFlag = false;
+            }
+            else if (!(Regex.IsMatch(SearchOperationTextBox.Text, "^[0-9]+$"))) //Only numbers
+            {
+                SearchErrorProvider.SetError(SearchOperationTextBox, "userId contains only numbers!");
+                userIdFlag = false;
+            }
+            if (userIdFlag)
+            {
+                SearchErrorProvider.SetError(SearchOperationTextBox, string.Empty);
+                SearchErrorProvider.Clear();
+            }
+
+            return userIdFlag;
+        }
+
+        private void SearchOperationsButton_Click(object sender, EventArgs e)
+        {
+            if (isDataSearchValid())
+            {
+                int userId = Int32.Parse(SearchOperationTextBox.Text);
+                OperationsDataGridView.DataSource = operationService.GetAllOperationByUserId(userId);
+            }
+        }
+
+        private void AllOperationsButton_Click(object sender, EventArgs e)
+        {
+            getAllData();
+        }
     }
 }

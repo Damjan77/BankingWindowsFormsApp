@@ -10,7 +10,8 @@ namespace WindowsFormsApp1.Service
     {
         void AddNewDataInOperationsTable(object toSave);
         void UpdateDataInOperationsTable(object toSave);
-        List<Operation> GetAllData(string procedure);
+        List<Operation> GetAllData();
+        List<Operation> GetAllOperationByUserId(int userId);
         decimal transferMoney(decimal amount, decimal rate);
         decimal SearchRateFromExchangeRates(string currencyFrom, string currencyTo);
     }

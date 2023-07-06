@@ -9,11 +9,43 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 {
     internal class OperationServiceImpl : IOperationService
     {
-        public List<Operation> GetAllData(string procedure)
+        public List<Operation> GetAllData()
         {
             using (var myDb = new Model1())
             {
                 var operationsProperties = myDb.Operations.Select(operation => new
+                {
+                    operation.OperationId,
+                    operation.OperationTypeId,
+                    operation.userId,
+                    operation.OperationDate,
+                    operation.Amount,
+                    operation.CurrencyFrom,
+                    operation.CurrencyTo,
+                    operation.t_money
+                }).ToList();
+
+                List<Operation> myOperations = operationsProperties.Select(operationProp => new Operation
+                {
+                    OperationId = operationProp.OperationId,
+                    OperationTypeId = operationProp.OperationTypeId,
+                    userId = operationProp.userId,
+                    OperationDate = operationProp.OperationDate,
+                    Amount = operationProp.Amount,
+                    CurrencyFrom = operationProp.CurrencyFrom,
+                    CurrencyTo = operationProp.CurrencyTo,
+                    t_money = operationProp.t_money
+                }).ToList();
+
+                return myOperations;
+            }
+        }
+
+        public List<Operation> GetAllOperationByUserId(int userId)
+        {
+            using (var myDb = new Model1())
+            {
+                var operationsProperties = myDb.Operations.Where(operation => operation.userId == userId).Select(operation => new
                 {
                     operation.OperationId,
                     operation.OperationTypeId,

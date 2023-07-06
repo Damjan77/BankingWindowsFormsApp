@@ -50,16 +50,28 @@
             this.OperationsCurrencyToErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.OperationsAmountErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.OperationsOperationTypeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SearchOperationTextBox = new System.Windows.Forms.TextBox();
+            this.SearchOperationLabel = new System.Windows.Forms.Label();
+            this.UserIdLabel = new System.Windows.Forms.Label();
+            this.SearchOperationsButton = new System.Windows.Forms.Button();
+            this.AllOperationsButton = new System.Windows.Forms.Button();
+            this.SearchErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.OperationsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsCurrencyFromErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsCurrencyToErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsAmountErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsOperationTypeErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // OperationsPanel
             // 
+            this.OperationsPanel.Controls.Add(this.AllOperationsButton);
+            this.OperationsPanel.Controls.Add(this.SearchOperationsButton);
+            this.OperationsPanel.Controls.Add(this.UserIdLabel);
+            this.OperationsPanel.Controls.Add(this.SearchOperationLabel);
+            this.OperationsPanel.Controls.Add(this.SearchOperationTextBox);
             this.OperationsPanel.Controls.Add(this.label1);
             this.OperationsPanel.Controls.Add(this.CurrencyToComboBox);
             this.OperationsPanel.Controls.Add(this.CurrencyFromComboBox);
@@ -243,6 +255,59 @@
             // 
             this.OperationsOperationTypeErrorProvider.ContainerControl = this;
             // 
+            // SearchOperationTextBox
+            // 
+            this.SearchOperationTextBox.Location = new System.Drawing.Point(873, 615);
+            this.SearchOperationTextBox.Name = "SearchOperationTextBox";
+            this.SearchOperationTextBox.Size = new System.Drawing.Size(192, 26);
+            this.SearchOperationTextBox.TabIndex = 40;
+            // 
+            // SearchOperationLabel
+            // 
+            this.SearchOperationLabel.AutoSize = true;
+            this.SearchOperationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchOperationLabel.Location = new System.Drawing.Point(1024, 560);
+            this.SearchOperationLabel.Name = "SearchOperationLabel";
+            this.SearchOperationLabel.Size = new System.Drawing.Size(214, 29);
+            this.SearchOperationLabel.TabIndex = 41;
+            this.SearchOperationLabel.Text = "Search Operations";
+            // 
+            // UserIdLabel
+            // 
+            this.UserIdLabel.AutoSize = true;
+            this.UserIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserIdLabel.Location = new System.Drawing.Point(768, 611);
+            this.UserIdLabel.Name = "UserIdLabel";
+            this.UserIdLabel.Size = new System.Drawing.Size(86, 29);
+            this.UserIdLabel.TabIndex = 42;
+            this.UserIdLabel.Text = "userId:";
+            // 
+            // SearchOperationsButton
+            // 
+            this.SearchOperationsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchOperationsButton.Location = new System.Drawing.Point(1123, 611);
+            this.SearchOperationsButton.Name = "SearchOperationsButton";
+            this.SearchOperationsButton.Size = new System.Drawing.Size(115, 35);
+            this.SearchOperationsButton.TabIndex = 43;
+            this.SearchOperationsButton.Text = "Search";
+            this.SearchOperationsButton.UseVisualStyleBackColor = true;
+            this.SearchOperationsButton.Click += new System.EventHandler(this.SearchOperationsButton_Click);
+            // 
+            // AllOperationsButton
+            // 
+            this.AllOperationsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllOperationsButton.Location = new System.Drawing.Point(1275, 611);
+            this.AllOperationsButton.Name = "AllOperationsButton";
+            this.AllOperationsButton.Size = new System.Drawing.Size(127, 35);
+            this.AllOperationsButton.TabIndex = 44;
+            this.AllOperationsButton.Text = "All Operations";
+            this.AllOperationsButton.UseVisualStyleBackColor = true;
+            this.AllOperationsButton.Click += new System.EventHandler(this.AllOperationsButton_Click);
+            // 
+            // SearchErrorProvider
+            // 
+            this.SearchErrorProvider.ContainerControl = this;
+            // 
             // OperationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -261,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OperationsCurrencyToErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsAmountErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationsOperationTypeErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +353,11 @@
         private System.Windows.Forms.ComboBox CurrencyToComboBox;
         private System.Windows.Forms.ErrorProvider OperationsOperationTypeErrorProvider;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SearchOperationsButton;
+        private System.Windows.Forms.Label UserIdLabel;
+        private System.Windows.Forms.Label SearchOperationLabel;
+        private System.Windows.Forms.TextBox SearchOperationTextBox;
+        private System.Windows.Forms.Button AllOperationsButton;
+        private System.Windows.Forms.ErrorProvider SearchErrorProvider;
     }
 }
