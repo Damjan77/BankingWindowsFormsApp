@@ -13,12 +13,13 @@ namespace WindowsFormsApp1.UI
     {
         IUserService userService;
 
-        public LogInForm()
+        public LogInForm(IUserService userService)
         {
-            userService = new UserServiceImpl();
+            this.userService = userService;
 
             InitializeComponent();
         }
+        public LogInForm() : this(new UserServiceImpl()) { }
 
         private void LogInForm_Load(object sender, EventArgs e)
         {

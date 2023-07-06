@@ -18,7 +18,9 @@ namespace WindowsFormsApp1
             this.exchangeRates = exchangeRates;
             this.officialRatesService = officialRatesService;
         }
-
+        //public Main() {
+        //    InitializeComponent();
+        //}
         public Main() : this(new ExchangeRatesServiceImpl(), new OfficialRatesServiceImpl()) { }
 
         private void Main_Load(object sender, EventArgs e)

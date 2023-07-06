@@ -34,6 +34,30 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
         }
 
+        public List<CLS_Currency> getAllActiveData()
+        {
+            using (var myDb = new Model1())
+            {
+                var cls_CurrencyProperties = myDb.CLS_Currency.Where(currency => currency.IsActive).Select(currency => new
+                {
+                    currency.CurrencyId,
+                    currency.Code,
+                    currency.Name,
+                    currency.IsActive,
+                }).ToList();
+
+                List<CLS_Currency> myCLSCurrency = cls_CurrencyProperties.Select(currencyProp => new CLS_Currency
+                {
+                    CurrencyId = currencyProp.CurrencyId,
+                    Code = currencyProp.Code,
+                    Name = currencyProp.Name,
+                    IsActive = currencyProp.IsActive
+                }).ToList();
+
+                return myCLSCurrency;
+            }
+        }
+
         public void AddNewDataInExchangeRateTable(object toSave)
         {
             CLS_Currency cls_Currency = toSave as CLS_Currency;
@@ -97,6 +121,6 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 MessageBox.Show("Data saved unsuccessfully " + ex.Message);
             }
         }
-          
+
     }
 }

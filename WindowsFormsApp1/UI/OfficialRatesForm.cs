@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.UI
 
         private void OfficialRatesForm_Load(object sender, EventArgs e)
         {
-            OfficialRatesCurrencyComboBox.DataSource = cls_CurrencyService.getAllData();
+            OfficialRatesCurrencyComboBox.DataSource = cls_CurrencyService.getAllActiveData();
             OfficialRatesCurrencyComboBox.ValueMember = "Code";
             OfficialRatesCurrencyComboBox.DisplayMember = "Code";
             OfficialRatesCurrencyComboBox.SelectedItem = null;

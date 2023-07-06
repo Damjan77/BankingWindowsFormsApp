@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.UI
                 string username = UsernameTextBox.Text;
                 string password = PasswordTextBox.Text;
                 int roleId = userRoleObj.roleId;
-                
+
                 User user = new User(name, surname, isActive, username, password, roleId);
                 user.name = name;
                 user.surname = surname;
@@ -41,10 +41,13 @@ namespace WindowsFormsApp1.UI
                 user.roleId = roleId;
 
                 userService.InsertDataInUserTable(user);
+                this.Close();
+                this.Dispose();
+
                 LogInForm logInForm = new LogInForm();
                 logInForm.Show();
-                this.Hide();
-            }  
+
+            }
         }
 
         bool IsValidData()
@@ -170,9 +173,11 @@ namespace WindowsFormsApp1.UI
 
         private void backToLoginButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+            this.Dispose();
+
             LogInForm logIn = new LogInForm();
             logIn.Show();
-            this.Hide();
         }
 
         private void RegisterForm_Load(object sender, EventArgs e)

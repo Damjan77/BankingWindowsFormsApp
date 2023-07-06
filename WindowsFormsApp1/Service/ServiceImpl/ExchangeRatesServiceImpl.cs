@@ -36,7 +36,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
 
                 return myExchangelRates;
             }
-        }      
+        }
 
         public void AddNewDataInExchangeRateTable(object toSave)
         {

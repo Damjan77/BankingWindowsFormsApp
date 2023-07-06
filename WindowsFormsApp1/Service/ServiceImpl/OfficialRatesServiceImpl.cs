@@ -26,6 +26,12 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         isActive = officialRate.isActive
                     };
 
+                    if (newOfficialRate.isActive)
+                    {
+                        var duplicateRates = myDb.OfficialRates.Where(rate => rate.Currency == newOfficialRate.Currency).ToList();
+                        duplicateRates.ForEach(rate => rate.isActive = false);
+                    }
+
                     // Add the new OfficialRate entity to the DbContext
                     myDb.OfficialRates.Add(newOfficialRate);
 
@@ -59,6 +65,16 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         existingOfficialRate.Currency = officialRate.Currency;
                         existingOfficialRate.Rate = officialRate.Rate;
                         existingOfficialRate.isActive = officialRate.isActive;
+
+                        if (existingOfficialRate.isActive)
+                        {
+                            var duplicateRates = myDb.OfficialRates.Where(rate => rate.Currency == existingOfficialRate.Currency).ToList();
+                            if (duplicateRates.Count > 1)
+                            {
+                                duplicateRates.ForEach(rate => rate.isActive = false); //TODO
+                                existingOfficialRate.isActive = true;
+                            }
+                        }
 
                         // Save changes to the database
                         myDb.SaveChanges();

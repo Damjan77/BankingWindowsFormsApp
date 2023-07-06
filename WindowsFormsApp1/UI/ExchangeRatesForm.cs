@@ -30,12 +30,12 @@ namespace WindowsFormsApp1.UI
         {
             this.WindowState = FormWindowState.Maximized;
 
-            CurrencyFromComboBox.DataSource = cls_CurrencyService.getAllData();
+            CurrencyFromComboBox.DataSource = cls_CurrencyService.getAllActiveData();
             CurrencyFromComboBox.ValueMember = "Code";
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyFromComboBox.SelectedItem = null;
 
-            CurrencyToComboBox.DataSource = cls_CurrencyService.getAllData();
+            CurrencyToComboBox.DataSource = cls_CurrencyService.getAllActiveData();
             CurrencyToComboBox.ValueMember = "Code";
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;

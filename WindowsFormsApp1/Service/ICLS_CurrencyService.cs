@@ -9,5 +9,6 @@ namespace WindowsFormsApp1.Service
         void AddNewDataInExchangeRateTable(object toSave);
         void UpdateDataInExchangeRatesTable(object toSave);
         List<CLS_Currency> getAllData();
+        List<CLS_Currency> getAllActiveData();
     }
 }

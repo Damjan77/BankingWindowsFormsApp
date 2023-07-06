@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using WindowsFormsApp1.Service;
-using WindowsFormsApp1.Service.ServiceImpl;
 using WindowsFormsApp1.UI;
 
 namespace WindowsFormsApp1
