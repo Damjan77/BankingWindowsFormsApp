@@ -35,11 +35,11 @@ namespace WindowsFormsApp1.UI
 
             using (var myDb = new Model1())
             {  
-                var myOperationTypes = myDb.CLS_OperationType.ToList();
-                OperationTypeComboBox.DataSource = myOperationTypes;
-                OperationTypeComboBox.ValueMember = "Code";
-                OperationTypeComboBox.DisplayMember = "Code";
-                OperationTypeComboBox.SelectedItem = null;
+                //var myOperationTypes = myDb.CLS_OperationType.ToList();
+                //OperationTypeComboBox.DataSource = myOperationTypes;
+                //OperationTypeComboBox.ValueMember = "Code";
+                //OperationTypeComboBox.DisplayMember = "Code";
+                //OperationTypeComboBox.SelectedItem = null;
 
                 var myCurrencyFrom = myDb.CLS_Currency.ToList();
                 var myCurrencyTo = myDb.CLS_Currency.ToList();
@@ -90,26 +90,66 @@ namespace WindowsFormsApp1.UI
         {
             Operation operation = new Operation();
             //User userObj = UsersComboBox.SelectedItem as User;
-            CLS_OperationType operationTypeObj = OperationTypeComboBox.SelectedItem as CLS_OperationType;
+            //CLS_OperationType operationTypeObj = OperationTypeComboBox.SelectedItem as CLS_OperationType;
             CLS_Currency currencyFromObj = CurrencyFromComboBox.SelectedItem as CLS_Currency;
             CLS_Currency currencyToObj = CurrencyToComboBox.SelectedItem as CLS_Currency;
+            string MKDCurrency = Environment.GetEnvironmentVariable("CurrencyMKD");
+
+            if (currencyFromObj.Code == MKDCurrency) //Environment Variable
+            {
+                operation.OperationTypeId = cLS_OperationType.getOperationTypeId("BUY");//7002;
+            }
+            else
+            {
+                operation.OperationTypeId = cLS_OperationType.getOperationTypeId("SEL");
+            }
 
             if (isExist)
             {
                 var selectedRow = OperationsDataGridView.SelectedRows[0];
                 operation.OperationId = Convert.ToInt32(selectedRow.Cells["OperationId"].Value);
-                operation.OperationTypeId = (int)operationTypeObj.OperationTypeId;
+                //operation.OperationTypeId = (int)operationTypeObj.OperationTypeId;
                 operation.userId = (int)UserSession.UserId;
                 operation.OperationDate = OperationsDateTimePicker.Value;
                 operation.Amount = Decimal.Parse(AmountTextBox.Text.ToString());
                 operation.CurrencyFrom = (string)currencyFromObj.Code;
                 operation.CurrencyTo = (string)currencyToObj.Code;
 
-                operationService.UpdateDataInOperationsTable(operation);
+                if (operation.CurrencyFrom != enviromentCurrency && operation.CurrencyTo != enviromentCurrency) //Imame exchangeRate pr: EUR -> USD  
+                {
+                    rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, (string)currencyToObj.Code); //Proverka za racno dodadeno
+                    if (rate == 0.0m) //X -> Y zapis ne postoi vo ExchangeRate (ne e racno dodadeno)
+                    {
+                        rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, enviromentCurrency); //Prvin najdi EUR -> MKD zemam kurs za evro vo denar
+                        decimal tempMoney = operationService.transferMoney(Decimal.Parse(AmountTextBox.Text.ToString()), rate); //Sega imam denari, sledi MKD -> USD
+                        rate = operationService.SearchRateFromExchangeRates(enviromentCurrency, (string)currencyToObj.Code); //baram ExchangeRate MKD -> USD
+                        operation.t_money = operationService.transferMoney(tempMoney, 1 / rate);
+                    }
+                    else
+                    {
+                        operation.t_money = operationService.transferMoney(operation.Amount, rate);
+                    }
+                }
+                else
+                {
+                    rate = operationService.SearchRateFromExchangeRates((string)currencyFromObj.Code, (string)currencyToObj.Code);
+                    if ((string)currencyFromObj.Code == enviromentCurrency) rate = 1 / rate;
+
+                    operation.t_money = operationService.transferMoney(Decimal.Parse(AmountTextBox.Text.ToString()), rate);
+                }
+
+                if (rate == 0.0m)
+                {
+                    MessageBox.Show("ExchangeRate was not found!");
+                }
+                else
+                {
+                    operationService.UpdateDataInOperationsTable(operation);
+                }
             }
             else
             {
-                operation.OperationTypeId = (int)operationTypeObj.OperationTypeId;
+                //operation.OperationTypeId = (int)operationTypeObj.OperationTypeId;
                 //operation.userId = (int)userObj.userId;
                 operation.userId = (int)UserSession.UserId;
                 operation.OperationDate = OperationsDateTimePicker.Value;
@@ -177,11 +217,11 @@ namespace WindowsFormsApp1.UI
         {
             if (e.RowIndex != -1)
             {
-                selectedOperation = OperationsDataGridView.SelectedRows[0].DataBoundItem as Operation;           
-                if (selectedOperation != null) 
-                {
-                    OperationTypeComboBox.Text = cLS_OperationType.GetOperationTypeById(selectedOperation.OperationTypeId);
-                }
+                //selectedOperation = OperationsDataGridView.SelectedRows[0].DataBoundItem as Operation;           
+                //if (selectedOperation != null) 
+                //{
+                //    OperationTypeComboBox.Text = cLS_OperationType.GetOperationTypeById(selectedOperation.OperationTypeId);
+                //}
 
                 //OperationTypeComboBox.Text = selectedOperation.
                 //OperationTypeComboBox.Text = OperationsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -195,7 +235,7 @@ namespace WindowsFormsApp1.UI
 
         private void clearData()
         {
-            OperationTypeComboBox.SelectedItem = null;
+            //OperationTypeComboBox.SelectedItem = null;
             OperationsDateTimePicker.Value = DateTime.Now;
             AmountTextBox.Text = "";
             CurrencyFromComboBox.SelectedItem = null;
@@ -204,19 +244,19 @@ namespace WindowsFormsApp1.UI
 
         private bool isDataValid()
         {
-            //Operation Type Logic
-            bool operationTypeFlag = true;
+            ////Operation Type Logic
+            //bool operationTypeFlag = true;
 
-            if (OperationTypeComboBox.SelectedItem == null)
-            {
-                OperationsOperationTypeErrorProvider.SetError(OperationTypeComboBox, "Select Currency");
-                operationTypeFlag = false;
-            }
-            if (operationTypeFlag)
-            {
-                OperationsOperationTypeErrorProvider.SetError(CurrencyFromComboBox, string.Empty);
-                OperationsOperationTypeErrorProvider.Clear();
-            }
+            //if (OperationTypeComboBox.SelectedItem == null)
+            //{
+            //    OperationsOperationTypeErrorProvider.SetError(OperationTypeComboBox, "Select Currency");
+            //    operationTypeFlag = false;
+            //}
+            //if (operationTypeFlag)
+            //{
+            //    OperationsOperationTypeErrorProvider.SetError(CurrencyFromComboBox, string.Empty);
+            //    OperationsOperationTypeErrorProvider.Clear();
+            //}
 
             //currencyFrom Logic
             bool currencyFromFlag = true;

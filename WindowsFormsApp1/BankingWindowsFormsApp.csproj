@@ -264,6 +264,7 @@
     <Content Include="UI\Icons\Money.ico" />
     <Content Include="UI\Icons\Operations.ico" />
     <Content Include="UI\Icons\Rate.ico" />
+    <Content Include="UI\Icons\refresh.png" />
     <Content Include="UI\Icons\Register.ico" />
     <Content Include="UI\Icons\User.ico" />
   </ItemGroup>

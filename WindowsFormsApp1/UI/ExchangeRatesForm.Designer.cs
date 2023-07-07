@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1.UI
+﻿using System.Drawing;
+
+namespace WindowsFormsApp1.UI
 {
     partial class ExchangeRatesForm
     {
@@ -43,6 +45,7 @@
             this.AddNewExchangeRateButton = new System.Windows.Forms.Button();
             this.ExchangeRatesdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ExchangeRatesPanel = new System.Windows.Forms.Panel();
+            this.RefreshDataButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DownloadExchangeRatesButton = new System.Windows.Forms.Button();
@@ -184,6 +187,7 @@
             // 
             // ExchangeRatesPanel
             // 
+            this.ExchangeRatesPanel.Controls.Add(this.RefreshDataButton);
             this.ExchangeRatesPanel.Controls.Add(this.label2);
             this.ExchangeRatesPanel.Controls.Add(this.label1);
             this.ExchangeRatesPanel.Controls.Add(this.DownloadExchangeRatesButton);
@@ -207,6 +211,19 @@
             this.ExchangeRatesPanel.Name = "ExchangeRatesPanel";
             this.ExchangeRatesPanel.Size = new System.Drawing.Size(1796, 803);
             this.ExchangeRatesPanel.TabIndex = 25;
+            // 
+            // RefreshDataButton
+            // 
+            this.RefreshDataButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.RefreshDataButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDataButton.Image")));
+            this.RefreshDataButton.Location = new System.Drawing.Point(495, 46);
+            this.RefreshDataButton.Name = "RefreshDataButton";
+            this.RefreshDataButton.Size = new System.Drawing.Size(60, 48);
+            this.RefreshDataButton.TabIndex = 41;
+            this.RefreshDataButton.UseVisualStyleBackColor = false;
+            this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click);
             // 
             // label2
             // 
@@ -337,5 +354,6 @@
         private System.Windows.Forms.Button DownloadExchangeRatesButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button RefreshDataButton;
     }
 }

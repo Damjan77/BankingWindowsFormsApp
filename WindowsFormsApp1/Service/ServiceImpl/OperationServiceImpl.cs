@@ -126,6 +126,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                         existingOperation.Amount = operation.Amount;
                         existingOperation.CurrencyFrom = operation.CurrencyFrom;
                         existingOperation.CurrencyTo = operation.CurrencyTo;
+                        existingOperation.t_money = operation.t_money;
 
                         // Save changes
                         myDb.SaveChanges();

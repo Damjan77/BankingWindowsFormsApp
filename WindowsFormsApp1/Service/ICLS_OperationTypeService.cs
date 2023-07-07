@@ -12,5 +12,6 @@ namespace WindowsFormsApp1.Service
         void UpdateDataInExchangeRatesTable(object toSave);
         List<CLS_OperationType> getAllData(string procedure);
         string GetOperationTypeById(int? id);
+        int? getOperationTypeId(string code);
     }
 }

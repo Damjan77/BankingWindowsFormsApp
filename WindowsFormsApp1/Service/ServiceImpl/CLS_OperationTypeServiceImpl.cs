@@ -111,5 +111,15 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                 return db.Database.SqlQuery<CLS_OperationType>(sql, parameters).First().Code;
             }
         }
+
+        public int? getOperationTypeId(string code)
+        {
+            using (var myDb = new Model1())
+            {
+                CLS_OperationType operationType = myDb.CLS_OperationType.FirstOrDefault(opType => opType.Code == code);
+                return operationType.OperationTypeId;
+            }
+             
+        }
     }
 }

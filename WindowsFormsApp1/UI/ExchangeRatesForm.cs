@@ -184,6 +184,10 @@ namespace WindowsFormsApp1.UI
             exchangeRates.AddNBRMDataInDataBase();
             getAllData();
         }
-        
+
+        private void RefreshDataButton_Click(object sender, EventArgs e)
+        {
+            getAllData();
+        }
     }
 }

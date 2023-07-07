@@ -159,5 +159,10 @@ namespace WindowsFormsApp1.UI
 
             ViewOfficialRatesNBRMDataGridView.DataSource = dataSet.Tables[0];
         }
+
+        private void RefreshDataButton_Click_1(object sender, EventArgs e)
+        {
+            getAllData();
+        }
     }
 }

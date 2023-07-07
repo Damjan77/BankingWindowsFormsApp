@@ -49,6 +49,7 @@
             this.viewOfficialRatesNBRM = new System.Windows.Forms.Button();
             this.officialRateCurrencyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.officialRateRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RefreshDataButton = new System.Windows.Forms.Button();
             this.OfficialRatesPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).BeginInit();
@@ -72,6 +73,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 554F));
+            this.tableLayoutPanel1.Controls.Add(this.RefreshDataButton, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.NBRMDataButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.OfficialRatesCurrencyComboBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.officialRateDateTimePicker, 1, 0);
@@ -251,6 +253,19 @@
             // 
             this.officialRateRateErrorProvider.ContainerControl = this;
             // 
+            // RefreshDataButton
+            // 
+            this.RefreshDataButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.RefreshDataButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDataButton.Image")));
+            this.RefreshDataButton.Location = new System.Drawing.Point(387, 126);
+            this.RefreshDataButton.Name = "RefreshDataButton";
+            this.RefreshDataButton.Size = new System.Drawing.Size(68, 43);
+            this.RefreshDataButton.TabIndex = 42;
+            this.RefreshDataButton.UseVisualStyleBackColor = false;
+            this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click_1);
+            // 
             // OfficialRatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -295,5 +310,6 @@
         private System.Windows.Forms.Button NBRMDataButton;
         private System.Windows.Forms.DataGridView ViewOfficialRatesNBRMDataGridView;
         private System.Windows.Forms.Button viewOfficialRatesNBRM;
+        private System.Windows.Forms.Button RefreshDataButton;
     }
 }
