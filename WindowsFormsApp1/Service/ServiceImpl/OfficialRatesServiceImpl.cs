@@ -122,7 +122,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
         public void AddNBRMDataInDataBase()
         {
             var service = new KursSoapClient();
-            string xmlResponse = service.GetExchangeRate(DateTime.Now.ToString("dd.MM.yyyy"), DateTime.Now.AddDays(1).ToString("dd.MM.yyyy")); //Test global exception
+            string xmlResponse = service.GetExchangeRate(DateTime.Now.ToString("dd.MM.yyyy"), DateTime.Now.AddDays(1).ToString("dd.MM.yyyy"));
 
             using (var myDb = new Model1())
             {
@@ -154,7 +154,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     myDb.SaveChanges();
                 }
             }
-            MessageBox.Show("Latest OfficialRates downloaded!");
+            MessageBox.Show("Latest OfficialRates downloaded! Please refresh page.");
         }
     }
 }

@@ -32,15 +32,17 @@ namespace WindowsFormsApp1.UI
         {
             this.WindowState = FormWindowState.Maximized;
             
+            if (UserSession.roleid == 1)
+            {
+                SaveOperationButton.Visible = false;
+            }
+            else
+            {
+                SaveOperationButton.Visible = true;
+            }
 
             using (var myDb = new Model1())
             {  
-                //var myOperationTypes = myDb.CLS_OperationType.ToList();
-                //OperationTypeComboBox.DataSource = myOperationTypes;
-                //OperationTypeComboBox.ValueMember = "Code";
-                //OperationTypeComboBox.DisplayMember = "Code";
-                //OperationTypeComboBox.SelectedItem = null;
-
                 var myCurrencyFrom = myDb.CLS_Currency.ToList();
                 var myCurrencyTo = myDb.CLS_Currency.ToList();
 
@@ -73,7 +75,6 @@ namespace WindowsFormsApp1.UI
             }
 
             OperationsDateTimePicker.Text = DateTime.Now.ToString();
-
         }
 
         private void getAllData()
@@ -94,14 +95,34 @@ namespace WindowsFormsApp1.UI
             CLS_Currency currencyFromObj = CurrencyFromComboBox.SelectedItem as CLS_Currency;
             CLS_Currency currencyToObj = CurrencyToComboBox.SelectedItem as CLS_Currency;
             string MKDCurrency = Environment.GetEnvironmentVariable("CurrencyMKD");
+            string OperationTypeBUY = Environment.GetEnvironmentVariable("OperationTypeBUY");
+            string OperationTypeSEL = Environment.GetEnvironmentVariable("OperationTypeSEL");
 
             if (currencyFromObj.Code == MKDCurrency) //Environment Variable
             {
-                operation.OperationTypeId = cLS_OperationType.getOperationTypeId("BUY");//7002;
+                int? operationTypeId = cLS_OperationType.getOperationTypeId(OperationTypeBUY);//7002;
+                if (operationTypeId != -1)
+                {
+                    operation.OperationTypeId = operationTypeId;
+                }
+                else
+                {
+                    MessageBox.Show("Operation Type was not found! Data update unsuccessfully.");
+                    return;
+                }
             }
             else
             {
-                operation.OperationTypeId = cLS_OperationType.getOperationTypeId("SEL");
+                int? operationTypeId = cLS_OperationType.getOperationTypeId(OperationTypeSEL);
+                if (operationTypeId != -1)
+                {
+                    operation.OperationTypeId = operationTypeId;
+                }
+                else
+                {
+                    MessageBox.Show("Operation Type was not found! Data update unsuccessfully.");
+                    return;
+                }
             }
 
             if (isExist)

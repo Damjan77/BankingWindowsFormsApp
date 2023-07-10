@@ -117,7 +117,11 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             using (var myDb = new Model1())
             {
                 CLS_OperationType operationType = myDb.CLS_OperationType.FirstOrDefault(opType => opType.Code == code);
-                return operationType.OperationTypeId;
+                if (operationType != null)
+                {
+                    return operationType.OperationTypeId;
+                }
+                return -1;
             }
              
         }

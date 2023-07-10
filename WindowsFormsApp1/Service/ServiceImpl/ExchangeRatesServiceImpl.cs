@@ -173,7 +173,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                     myDb.SaveChanges();
                 }
             }
-            MessageBox.Show("Latest ExchangeRates downloaded!");
+            MessageBox.Show("Latest ExchangeRates downloaded! Please refresh page.");
         }
     }
     
