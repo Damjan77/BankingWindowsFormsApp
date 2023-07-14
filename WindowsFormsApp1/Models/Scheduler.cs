@@ -22,7 +22,9 @@ namespace WindowsFormsApp1.Models
             // Start the scheduling task
             Task.Run(ScheduleTask);
         }
-
+        /// <summary>
+        ///  
+        /// </summary>
         public static void StopScheduling()
         {
             // Cancel the task and dispose the cancellation token source
@@ -36,7 +38,7 @@ namespace WindowsFormsApp1.Models
             {
                 DateTime now = DateTime.Now;
 
-                if (now.Hour == 13 && now.Minute == 34 && now.Second == 00)
+                if (now.Hour == 15 && now.Minute == 00 && now.Second == 00)
                 {
                     // Execute the AddNBRMDataInDataBase() method
                     exchangeRateService.AddNBRMDataInDataBase();

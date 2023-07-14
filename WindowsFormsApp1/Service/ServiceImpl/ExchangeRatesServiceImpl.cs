@@ -153,7 +153,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                             ValidityDate = validityDate,
                             CurrencyFrom = currencyFrom,
                             CurrencyTo = environmentCurrency,
-                            Rate = prodazenRate,
+                            Rate = kupovenRate,
                             IsActive = isActive
                         };
 
@@ -162,7 +162,7 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                             ValidityDate = validityDate,
                             CurrencyFrom = environmentCurrency,
                             CurrencyTo = currencyTo,
-                            Rate = kupovenRate,
+                            Rate = prodazenRate,
                             IsActive = isActive
                         };
 

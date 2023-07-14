@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfficialRatesForm));
             this.OfficialRatesPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.RefreshDataButton = new System.Windows.Forms.Button();
             this.NBRMDataButton = new System.Windows.Forms.Button();
             this.OfficialRatesCurrencyComboBox = new System.Windows.Forms.ComboBox();
             this.officialRateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -49,7 +50,6 @@
             this.viewOfficialRatesNBRM = new System.Windows.Forms.Button();
             this.officialRateCurrencyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.officialRateRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.RefreshDataButton = new System.Windows.Forms.Button();
             this.OfficialRatesPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficialRatedataGridView)).BeginInit();
@@ -101,6 +101,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1557, 670);
             this.tableLayoutPanel1.TabIndex = 34;
             // 
+            // RefreshDataButton
+            // 
+            this.RefreshDataButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.RefreshDataButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.RefreshDataButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDataButton.Image")));
+            this.RefreshDataButton.Location = new System.Drawing.Point(387, 126);
+            this.RefreshDataButton.Name = "RefreshDataButton";
+            this.RefreshDataButton.Size = new System.Drawing.Size(68, 43);
+            this.RefreshDataButton.TabIndex = 42;
+            this.RefreshDataButton.UseVisualStyleBackColor = false;
+            this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click_1);
+            // 
             // NBRMDataButton
             // 
             this.NBRMDataButton.Location = new System.Drawing.Point(387, 43);
@@ -121,6 +134,7 @@
             // 
             // officialRateDateTimePicker
             // 
+            this.officialRateDateTimePicker.Enabled = false;
             this.officialRateDateTimePicker.Location = new System.Drawing.Point(177, 3);
             this.officialRateDateTimePicker.Name = "officialRateDateTimePicker";
             this.officialRateDateTimePicker.Size = new System.Drawing.Size(194, 26);
@@ -212,9 +226,9 @@
             this.UserActivationLabel2.AutoSize = true;
             this.UserActivationLabel2.Location = new System.Drawing.Point(3, 123);
             this.UserActivationLabel2.Name = "UserActivationLabel2";
-            this.UserActivationLabel2.Size = new System.Drawing.Size(116, 20);
+            this.UserActivationLabel2.Size = new System.Drawing.Size(117, 20);
             this.UserActivationLabel2.TabIndex = 19;
-            this.UserActivationLabel2.Text = "User Activation";
+            this.UserActivationLabel2.Text = "Rate Activation";
             // 
             // Ratelabel
             // 
@@ -253,25 +267,12 @@
             // 
             this.officialRateRateErrorProvider.ContainerControl = this;
             // 
-            // RefreshDataButton
-            // 
-            this.RefreshDataButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.RefreshDataButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.RefreshDataButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.RefreshDataButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDataButton.Image")));
-            this.RefreshDataButton.Location = new System.Drawing.Point(387, 126);
-            this.RefreshDataButton.Name = "RefreshDataButton";
-            this.RefreshDataButton.Size = new System.Drawing.Size(68, 43);
-            this.RefreshDataButton.TabIndex = 42;
-            this.RefreshDataButton.UseVisualStyleBackColor = false;
-            this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click_1);
-            // 
             // OfficialRatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(2063, 1029);
+            this.ClientSize = new System.Drawing.Size(1924, 1029);
             this.Controls.Add(this.OfficialRatesPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OfficialRatesForm";

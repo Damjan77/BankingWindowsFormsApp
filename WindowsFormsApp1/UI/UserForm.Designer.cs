@@ -80,7 +80,6 @@ namespace WindowsFormsApp1
             // 
             // UsersPanel
             // 
-            this.UsersPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersPanel.BackColor = System.Drawing.Color.Transparent;
             this.UsersPanel.Controls.Add(this.RoleComboBox);
             this.UsersPanel.Controls.Add(this.RoleLabel);
@@ -103,15 +102,15 @@ namespace WindowsFormsApp1
             this.UsersPanel.Controls.Add(this.SurnameTextBox);
             this.UsersPanel.Controls.Add(this.NameTextBox1);
             this.UsersPanel.Controls.Add(this.SaveUserButton);
-            this.UsersPanel.Location = new System.Drawing.Point(0, 1);
+            this.UsersPanel.Location = new System.Drawing.Point(26, 23);
             this.UsersPanel.Name = "UsersPanel";
-            this.UsersPanel.Size = new System.Drawing.Size(1984, 905);
+            this.UsersPanel.Size = new System.Drawing.Size(1831, 853);
             this.UsersPanel.TabIndex = 9;
             // 
             // RoleComboBox
             // 
             this.RoleComboBox.FormattingEnabled = true;
-            this.RoleComboBox.Location = new System.Drawing.Point(417, 353);
+            this.RoleComboBox.Location = new System.Drawing.Point(340, 338);
             this.RoleComboBox.Name = "RoleComboBox";
             this.RoleComboBox.Size = new System.Drawing.Size(298, 28);
             this.RoleComboBox.TabIndex = 39;
@@ -120,7 +119,7 @@ namespace WindowsFormsApp1
             // 
             this.RoleLabel.AutoSize = true;
             this.RoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoleLabel.Location = new System.Drawing.Point(241, 353);
+            this.RoleLabel.Location = new System.Drawing.Point(164, 338);
             this.RoleLabel.Name = "RoleLabel";
             this.RoleLabel.Size = new System.Drawing.Size(64, 29);
             this.RoleLabel.TabIndex = 38;
@@ -131,7 +130,7 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(975, 606);
+            this.label1.Location = new System.Drawing.Point(825, 569);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 29);
             this.label1.TabIndex = 34;
@@ -140,7 +139,7 @@ namespace WindowsFormsApp1
             // AllUsersButton
             // 
             this.AllUsersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AllUsersButton.Location = new System.Drawing.Point(1414, 640);
+            this.AllUsersButton.Location = new System.Drawing.Point(1337, 614);
             this.AllUsersButton.Name = "AllUsersButton";
             this.AllUsersButton.Size = new System.Drawing.Size(103, 32);
             this.AllUsersButton.TabIndex = 33;
@@ -152,7 +151,7 @@ namespace WindowsFormsApp1
             // 
             this.SearchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SearchButton.Location = new System.Drawing.Point(1276, 640);
+            this.SearchButton.Location = new System.Drawing.Point(1199, 614);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(103, 32);
             this.SearchButton.TabIndex = 32;
@@ -163,7 +162,7 @@ namespace WindowsFormsApp1
             // SearchTextBox
             // 
             this.SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchTextBox.Location = new System.Drawing.Point(862, 640);
+            this.SearchTextBox.Location = new System.Drawing.Point(785, 614);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(373, 26);
             this.SearchTextBox.TabIndex = 31;
@@ -174,7 +173,7 @@ namespace WindowsFormsApp1
             this.UserInformationLabel.AutoSize = true;
             this.UserInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserInformationLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UserInformationLabel.Location = new System.Drawing.Point(461, 35);
+            this.UserInformationLabel.Location = new System.Drawing.Point(384, 9);
             this.UserInformationLabel.Name = "UserInformationLabel";
             this.UserInformationLabel.Size = new System.Drawing.Size(238, 32);
             this.UserInformationLabel.TabIndex = 30;
@@ -183,7 +182,7 @@ namespace WindowsFormsApp1
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordTextBox.Location = new System.Drawing.Point(417, 294);
+            this.PasswordTextBox.Location = new System.Drawing.Point(340, 268);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(298, 26);
@@ -192,7 +191,7 @@ namespace WindowsFormsApp1
             // UsernameTextBox
             // 
             this.UsernameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UsernameTextBox.Location = new System.Drawing.Point(417, 231);
+            this.UsernameTextBox.Location = new System.Drawing.Point(340, 205);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(298, 26);
             this.UsernameTextBox.TabIndex = 27;
@@ -203,7 +202,7 @@ namespace WindowsFormsApp1
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.PasswordLabel.Location = new System.Drawing.Point(241, 290);
+            this.PasswordLabel.Location = new System.Drawing.Point(164, 264);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(120, 29);
             this.PasswordLabel.TabIndex = 26;
@@ -215,7 +214,7 @@ namespace WindowsFormsApp1
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UsernameLabel.Location = new System.Drawing.Point(241, 230);
+            this.UsernameLabel.Location = new System.Drawing.Point(164, 204);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(124, 29);
             this.UsernameLabel.TabIndex = 25;
@@ -224,7 +223,7 @@ namespace WindowsFormsApp1
             // AddNewUserButton
             // 
             this.AddNewUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddNewUserButton.Location = new System.Drawing.Point(456, 620);
+            this.AddNewUserButton.Location = new System.Drawing.Point(379, 594);
             this.AddNewUserButton.Name = "AddNewUserButton";
             this.AddNewUserButton.Size = new System.Drawing.Size(193, 34);
             this.AddNewUserButton.TabIndex = 24;
@@ -238,7 +237,7 @@ namespace WindowsFormsApp1
             this.UsersDataLabel.AutoSize = true;
             this.UsersDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersDataLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UsersDataLabel.Location = new System.Drawing.Point(1133, 35);
+            this.UsersDataLabel.Location = new System.Drawing.Point(1056, 9);
             this.UsersDataLabel.Name = "UsersDataLabel";
             this.UsersDataLabel.Size = new System.Drawing.Size(164, 32);
             this.UsersDataLabel.TabIndex = 21;
@@ -249,7 +248,7 @@ namespace WindowsFormsApp1
             this.CheckBoxForUserActivation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CheckBoxForUserActivation.AutoSize = true;
             this.CheckBoxForUserActivation.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(493, 480);
+            this.CheckBoxForUserActivation.Location = new System.Drawing.Point(416, 454);
             this.CheckBoxForUserActivation.Name = "CheckBoxForUserActivation";
             this.CheckBoxForUserActivation.Size = new System.Drawing.Size(147, 24);
             this.CheckBoxForUserActivation.TabIndex = 20;
@@ -262,7 +261,7 @@ namespace WindowsFormsApp1
             this.UserActivationLabel.AutoSize = true;
             this.UserActivationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserActivationLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UserActivationLabel.Location = new System.Drawing.Point(241, 474);
+            this.UserActivationLabel.Location = new System.Drawing.Point(164, 448);
             this.UserActivationLabel.Name = "UserActivationLabel";
             this.UserActivationLabel.Size = new System.Drawing.Size(172, 29);
             this.UserActivationLabel.TabIndex = 19;
@@ -274,7 +273,7 @@ namespace WindowsFormsApp1
             this.SurnameLabel.AutoSize = true;
             this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurnameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.SurnameLabel.Location = new System.Drawing.Point(241, 173);
+            this.SurnameLabel.Location = new System.Drawing.Point(164, 147);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(110, 29);
             this.SurnameLabel.TabIndex = 18;
@@ -286,7 +285,7 @@ namespace WindowsFormsApp1
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.NameLabel.Location = new System.Drawing.Point(241, 114);
+            this.NameLabel.Location = new System.Drawing.Point(164, 88);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(78, 29);
             this.NameLabel.TabIndex = 17;
@@ -297,7 +296,7 @@ namespace WindowsFormsApp1
             this.UsersDataGridView.AllowUserToOrderColumns = true;
             this.UsersDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsersDataGridView.Location = new System.Drawing.Point(862, 116);
+            this.UsersDataGridView.Location = new System.Drawing.Point(785, 90);
             this.UsersDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsersDataGridView.MultiSelect = false;
             this.UsersDataGridView.Name = "UsersDataGridView";
@@ -310,7 +309,7 @@ namespace WindowsFormsApp1
             // SurnameTextBox
             // 
             this.SurnameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SurnameTextBox.Location = new System.Drawing.Point(417, 171);
+            this.SurnameTextBox.Location = new System.Drawing.Point(340, 145);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(298, 26);
@@ -319,7 +318,7 @@ namespace WindowsFormsApp1
             // NameTextBox1
             // 
             this.NameTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NameTextBox1.Location = new System.Drawing.Point(417, 118);
+            this.NameTextBox1.Location = new System.Drawing.Point(340, 92);
             this.NameTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox1.Name = "NameTextBox1";
             this.NameTextBox1.Size = new System.Drawing.Size(298, 26);
@@ -330,7 +329,7 @@ namespace WindowsFormsApp1
             this.SaveUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SaveUserButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveUserButton.Image")));
             this.SaveUserButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SaveUserButton.Location = new System.Drawing.Point(456, 560);
+            this.SaveUserButton.Location = new System.Drawing.Point(379, 534);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveUserButton.Name = "SaveUserButton";
             this.SaveUserButton.Size = new System.Drawing.Size(193, 34);
@@ -388,7 +387,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1984, 906);
+            this.ClientSize = new System.Drawing.Size(1924, 906);
             this.Controls.Add(this.UsersPanel);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -52,7 +52,9 @@ namespace WindowsFormsApp1.UI
         {
             ExchangeRatesdateTimePicker.Value = DateTime.Now;
             CurrencyFromComboBox.SelectedText = null;
+            CurrencyFromComboBox.Text = "";
             CurrencyToComboBox.SelectedText = null;
+            CurrencyToComboBox.Text = "";
             RateTextBox2.Text = "";
             ActivateUserCheckBox3.Checked = false;
         }
@@ -61,31 +63,40 @@ namespace WindowsFormsApp1.UI
         {
             ExchangeRate exchangeRate = new ExchangeRate();
 
+            CLS_Currency currencyFromObj = CurrencyFromComboBox.SelectedItem as CLS_Currency;
+            CLS_Currency currencyToObj = CurrencyToComboBox.SelectedItem as CLS_Currency;
+
+            if (currencyFromObj.Code == currencyToObj.Code)
+            {
+                MessageBox.Show("CurrencyFrom and CurrencyTo cannot be the same!");
+                return;
+            }
+
             if (isExist)
             {
                 var selected = ExchangeRatesDataGridView.SelectedRows[0];
 
                 exchangeRate.exchangeRatesId = Convert.ToInt32(selected.Cells["ExchangeRatesId"].Value);
-                exchangeRate.ValidityDate = ExchangeRatesdateTimePicker.Value;
+                exchangeRate.ValidityDate = DateTime.Now;
                 exchangeRate.CurrencyFrom = CurrencyFromComboBox.Text.ToString();
                 exchangeRate.CurrencyTo = CurrencyToComboBox.Text.ToString();
                 exchangeRate.Rate = Decimal.Parse(RateTextBox2.Text.ToString());
                 exchangeRate.IsActive = ActivateUserCheckBox3.Checked;
                 
-                exchangeRates.UpdateDataInExchangeRatesTable(exchangeRate);//PROVERI ZA NAME'
-                getAllData();
+                exchangeRates.UpdateDataInExchangeRatesTable(exchangeRate);
             }
             else
             {
-                exchangeRate.ValidityDate = ExchangeRatesdateTimePicker.Value;
+                exchangeRate.ValidityDate = DateTime.Now;
                 exchangeRate.CurrencyFrom = CurrencyFromComboBox.Text.ToString();
                 exchangeRate.CurrencyTo = CurrencyToComboBox.Text.ToString();
                 exchangeRate.Rate = Decimal.Parse(RateTextBox2.Text.ToString());
                 exchangeRate.IsActive = ActivateUserCheckBox3.Checked;
 
-                exchangeRates.AddNewDataInExchangeRateTable(exchangeRate);//PROVERI ZA NAME'
-                getAllData();
+                exchangeRates.AddNewDataInExchangeRateTable(exchangeRate);
             }
+
+            getAllData();
             clearAllData();
         }   
 
@@ -111,7 +122,9 @@ namespace WindowsFormsApp1.UI
             {
                 ExchangeRatesdateTimePicker.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                 CurrencyFromComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                CurrencyFromComboBox.SelectedItem = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
                 CurrencyToComboBox.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                CurrencyToComboBox.SelectedItem = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
                 RateTextBox2.Text = ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
                 ActivateUserCheckBox3.Checked = (bool)ExchangeRatesDataGridView.Rows[e.RowIndex].Cells[5].Value;
             }
@@ -122,7 +135,7 @@ namespace WindowsFormsApp1.UI
             //currencyFrom Logic
             bool currencyFromFlag = true;
 
-            if (CurrencyFromComboBox.SelectedItem == null)
+            if (CurrencyFromComboBox.Text == "")
             {
                 ExchangeRatesCurrencyFromErrorProvider.SetError(CurrencyFromComboBox, "Please select currency!");
                 currencyFromFlag = false;
@@ -136,7 +149,7 @@ namespace WindowsFormsApp1.UI
             //currencyTo Logic
             bool currencyToFlag = true;
 
-            if (CurrencyToComboBox.SelectedItem == null)
+            if (CurrencyToComboBox.Text == "")
             {
                 ExchangeRatesCurrencyToErrorProvider.SetError(CurrencyToComboBox, "Please select currency!");
                 currencyToFlag = false;

@@ -45,7 +45,6 @@
             this.InterestRateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.AnnuitydataGridView = new System.Windows.Forms.DataGridView();
             this.TdaPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TDADataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeriodErrorProvider)).BeginInit();
@@ -152,7 +151,7 @@
             this.TDAInformationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TDAInformationLabel.AutoSize = true;
             this.TDAInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDAInformationLabel.Location = new System.Drawing.Point(830, 200);
+            this.TDAInformationLabel.Location = new System.Drawing.Point(1065, 170);
             this.TDAInformationLabel.Name = "TDAInformationLabel";
             this.TDAInformationLabel.Size = new System.Drawing.Size(297, 29);
             this.TDAInformationLabel.TabIndex = 9;
@@ -184,7 +183,6 @@
             // TdaPanel
             // 
             this.TdaPanel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.TdaPanel.Controls.Add(this.label1);
             this.TdaPanel.Controls.Add(this.label2);
             this.TdaPanel.Controls.Add(this.AnnuitydataGridView);
             this.TdaPanel.Controls.Add(this.label3);
@@ -200,17 +198,6 @@
             this.TdaPanel.Name = "TdaPanel";
             this.TdaPanel.Size = new System.Drawing.Size(1989, 899);
             this.TdaPanel.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1346, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 29);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Annuity Calculator";
             // 
             // TDAForm
             // 
@@ -252,6 +239,5 @@
         private System.Windows.Forms.ErrorProvider InterestRateErrorProvider;
         private System.Windows.Forms.DataGridView AnnuitydataGridView;
         private System.Windows.Forms.Panel TdaPanel;
-        private System.Windows.Forms.Label label1;
     }
 }

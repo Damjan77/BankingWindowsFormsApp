@@ -166,6 +166,7 @@
             // OperationsDateTimePicker
             // 
             this.OperationsDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm";
+            this.OperationsDateTimePicker.Enabled = false;
             this.OperationsDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.OperationsDateTimePicker.Location = new System.Drawing.Point(264, 116);
             this.OperationsDateTimePicker.Name = "OperationsDateTimePicker";

@@ -2,7 +2,6 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using WindowsFormsApp1.Models;
 using WindowsFormsApp1.NBRMServiceReference;
 using WindowsFormsApp1.Service;
 using WindowsFormsApp1.Service.ServiceImpl;
@@ -44,6 +43,7 @@ namespace WindowsFormsApp1.UI
         {
             officialRateDateTimePicker.Value = DateTime.Now;
             OfficialRatesCurrencyComboBox.SelectedItem = null;
+            OfficialRatesCurrencyComboBox.Text = "";
             RateTextBox.Text = "";
             UserActivationcheckBox2.Checked = false;
         }
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1.UI
         {
             //currency Logic
             bool currencyFlag = true;
-            if (OfficialRatesCurrencyComboBox.SelectedItem == null)
+            if (OfficialRatesCurrencyComboBox.Text == "")
             {
                 officialRateCurrencyErrorProvider.SetError(OfficialRatesCurrencyComboBox, "Please select currency!");
                 currencyFlag = false;
@@ -94,7 +94,7 @@ namespace WindowsFormsApp1.UI
             {
                 var selected = OfficialRatedataGridView.SelectedRows[0];
                 official.OfficialRatesId = Convert.ToInt32(selected.Cells["OfficialRatesId"].Value);
-                official.ValidityDate = officialRateDateTimePicker.Value;
+                official.ValidityDate = DateTime.Now;
                 official.Currency = OfficialRatesCurrencyComboBox.Text.ToString();
                 official.Rate = Decimal.Parse(RateTextBox.Text.ToString());
                 official.isActive = UserActivationcheckBox2.Checked;
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1.UI
             }
             else
             {
-                official.ValidityDate = officialRateDateTimePicker.Value;
+                official.ValidityDate = DateTime.Now;
                 official.Currency = OfficialRatesCurrencyComboBox.Text.ToString();
                 official.Rate = Decimal.Parse(RateTextBox.Text.ToString());
                 official.isActive = UserActivationcheckBox2.Checked;
