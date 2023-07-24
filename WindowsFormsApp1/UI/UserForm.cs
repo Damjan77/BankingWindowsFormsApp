@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             }
                
 
-            this.tableTableAdapter.Fill(this.dataSet1.Table);
+            //this.tableTableAdapter.Fill(this.dataSet1.Table);
             getAllData();
             this.WindowState = FormWindowState.Maximized;
 
