@@ -66,10 +66,10 @@ namespace WindowsFormsApp1.UI
             // 
             // SaveExchangeRatesButton
             // 
-            this.SaveExchangeRatesButton.Location = new System.Drawing.Point(236, 434);
+            this.SaveExchangeRatesButton.Location = new System.Drawing.Point(304, 391);
             this.SaveExchangeRatesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveExchangeRatesButton.Name = "SaveExchangeRatesButton";
-            this.SaveExchangeRatesButton.Size = new System.Drawing.Size(207, 39);
+            this.SaveExchangeRatesButton.Size = new System.Drawing.Size(184, 37);
             this.SaveExchangeRatesButton.TabIndex = 13;
             this.SaveExchangeRatesButton.Text = "Save";
             this.SaveExchangeRatesButton.UseVisualStyleBackColor = true;
@@ -79,100 +79,102 @@ namespace WindowsFormsApp1.UI
             // 
             this.ExchangeRatesDataGridView.AllowUserToOrderColumns = true;
             this.ExchangeRatesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ExchangeRatesDataGridView.Location = new System.Drawing.Point(517, 99);
+            this.ExchangeRatesDataGridView.Location = new System.Drawing.Point(594, 126);
             this.ExchangeRatesDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExchangeRatesDataGridView.MultiSelect = false;
             this.ExchangeRatesDataGridView.Name = "ExchangeRatesDataGridView";
             this.ExchangeRatesDataGridView.RowHeadersWidth = 62;
             this.ExchangeRatesDataGridView.RowTemplate.Height = 33;
             this.ExchangeRatesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ExchangeRatesDataGridView.Size = new System.Drawing.Size(539, 451);
+            this.ExchangeRatesDataGridView.Size = new System.Drawing.Size(511, 440);
             this.ExchangeRatesDataGridView.TabIndex = 16;
             this.ExchangeRatesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExchangeRatesDataGridView_CellClick);
             // 
             // ValidityDateLabel2
             // 
             this.ValidityDateLabel2.AutoSize = true;
-            this.ValidityDateLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValidityDateLabel2.Location = new System.Drawing.Point(26, 158);
+            this.ValidityDateLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValidityDateLabel2.Location = new System.Drawing.Point(70, 176);
             this.ValidityDateLabel2.Name = "ValidityDateLabel2";
-            this.ValidityDateLabel2.Size = new System.Drawing.Size(140, 29);
+            this.ValidityDateLabel2.Size = new System.Drawing.Size(186, 36);
             this.ValidityDateLabel2.TabIndex = 17;
             this.ValidityDateLabel2.Text = "ValidityDate";
             // 
             // CurrencyFromLabel
             // 
             this.CurrencyFromLabel.AutoSize = true;
-            this.CurrencyFromLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrencyFromLabel.Location = new System.Drawing.Point(27, 212);
+            this.CurrencyFromLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrencyFromLabel.Location = new System.Drawing.Point(71, 220);
             this.CurrencyFromLabel.Name = "CurrencyFromLabel";
-            this.CurrencyFromLabel.Size = new System.Drawing.Size(172, 29);
+            this.CurrencyFromLabel.Size = new System.Drawing.Size(226, 36);
             this.CurrencyFromLabel.TabIndex = 18;
             this.CurrencyFromLabel.Text = "Currency From";
             // 
             // RateLabel2
             // 
             this.RateLabel2.AutoSize = true;
-            this.RateLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RateLabel2.Location = new System.Drawing.Point(26, 319);
+            this.RateLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RateLabel2.Location = new System.Drawing.Point(70, 305);
             this.RateLabel2.Name = "RateLabel2";
-            this.RateLabel2.Size = new System.Drawing.Size(63, 29);
+            this.RateLabel2.Size = new System.Drawing.Size(83, 36);
             this.RateLabel2.TabIndex = 19;
             this.RateLabel2.Text = "Rate";
             // 
             // ExchangeRatesDataLabel
             // 
             this.ExchangeRatesDataLabel.AutoSize = true;
-            this.ExchangeRatesDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExchangeRatesDataLabel.Location = new System.Drawing.Point(673, 46);
+            this.ExchangeRatesDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExchangeRatesDataLabel.Location = new System.Drawing.Point(734, 39);
             this.ExchangeRatesDataLabel.Name = "ExchangeRatesDataLabel";
-            this.ExchangeRatesDataLabel.Size = new System.Drawing.Size(261, 29);
+            this.ExchangeRatesDataLabel.Size = new System.Drawing.Size(297, 31);
             this.ExchangeRatesDataLabel.TabIndex = 21;
             this.ExchangeRatesDataLabel.Text = "Exchange Rates Data";
             // 
             // CurrencyToLabel
             // 
             this.CurrencyToLabel.AutoSize = true;
-            this.CurrencyToLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrencyToLabel.Location = new System.Drawing.Point(27, 267);
+            this.CurrencyToLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrencyToLabel.Location = new System.Drawing.Point(71, 264);
             this.CurrencyToLabel.Name = "CurrencyToLabel";
-            this.CurrencyToLabel.Size = new System.Drawing.Size(145, 29);
+            this.CurrencyToLabel.Size = new System.Drawing.Size(189, 36);
             this.CurrencyToLabel.TabIndex = 22;
             this.CurrencyToLabel.Text = "Currency To";
             // 
             // RateTextBox2
             // 
-            this.RateTextBox2.Location = new System.Drawing.Point(209, 319);
+            this.RateTextBox2.Location = new System.Drawing.Point(280, 305);
             this.RateTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RateTextBox2.Name = "RateTextBox2";
-            this.RateTextBox2.Size = new System.Drawing.Size(268, 26);
+            this.RateTextBox2.Size = new System.Drawing.Size(239, 22);
             this.RateTextBox2.TabIndex = 24;
             // 
             // ActivateUserLabel3
             // 
             this.ActivateUserLabel3.AutoSize = true;
-            this.ActivateUserLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivateUserLabel3.Location = new System.Drawing.Point(27, 368);
+            this.ActivateUserLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivateUserLabel3.Location = new System.Drawing.Point(71, 344);
             this.ActivateUserLabel3.Name = "ActivateUserLabel3";
-            this.ActivateUserLabel3.Size = new System.Drawing.Size(171, 29);
+            this.ActivateUserLabel3.Size = new System.Drawing.Size(230, 36);
             this.ActivateUserLabel3.TabIndex = 26;
             this.ActivateUserLabel3.Text = "Rate Activation";
             // 
             // ActivateUserCheckBox3
             // 
             this.ActivateUserCheckBox3.AutoSize = true;
-            this.ActivateUserCheckBox3.Location = new System.Drawing.Point(209, 374);
+            this.ActivateUserCheckBox3.Location = new System.Drawing.Point(280, 344);
+            this.ActivateUserCheckBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ActivateUserCheckBox3.Name = "ActivateUserCheckBox3";
-            this.ActivateUserCheckBox3.Size = new System.Drawing.Size(92, 24);
+            this.ActivateUserCheckBox3.Size = new System.Drawing.Size(77, 20);
             this.ActivateUserCheckBox3.TabIndex = 27;
             this.ActivateUserCheckBox3.Text = "Activate";
             this.ActivateUserCheckBox3.UseVisualStyleBackColor = true;
             // 
             // AddNewExchangeRateButton
             // 
-            this.AddNewExchangeRateButton.Location = new System.Drawing.Point(236, 484);
+            this.AddNewExchangeRateButton.Location = new System.Drawing.Point(304, 453);
+            this.AddNewExchangeRateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddNewExchangeRateButton.Name = "AddNewExchangeRateButton";
-            this.AddNewExchangeRateButton.Size = new System.Drawing.Size(207, 39);
+            this.AddNewExchangeRateButton.Size = new System.Drawing.Size(184, 36);
             this.AddNewExchangeRateButton.TabIndex = 32;
             this.AddNewExchangeRateButton.Text = "Add";
             this.AddNewExchangeRateButton.UseVisualStyleBackColor = true;
@@ -181,9 +183,10 @@ namespace WindowsFormsApp1.UI
             // ExchangeRatesdateTimePicker
             // 
             this.ExchangeRatesdateTimePicker.Enabled = false;
-            this.ExchangeRatesdateTimePicker.Location = new System.Drawing.Point(209, 158);
+            this.ExchangeRatesdateTimePicker.Location = new System.Drawing.Point(280, 176);
+            this.ExchangeRatesdateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExchangeRatesdateTimePicker.Name = "ExchangeRatesdateTimePicker";
-            this.ExchangeRatesdateTimePicker.Size = new System.Drawing.Size(268, 26);
+            this.ExchangeRatesdateTimePicker.Size = new System.Drawing.Size(239, 22);
             this.ExchangeRatesdateTimePicker.TabIndex = 33;
             // 
             // ExchangeRatesPanel
@@ -208,9 +211,10 @@ namespace WindowsFormsApp1.UI
             this.ExchangeRatesPanel.Controls.Add(this.ValidityDateLabel2);
             this.ExchangeRatesPanel.Controls.Add(this.ExchangeRatesDataGridView);
             this.ExchangeRatesPanel.Controls.Add(this.SaveExchangeRatesButton);
-            this.ExchangeRatesPanel.Location = new System.Drawing.Point(24, 30);
+            this.ExchangeRatesPanel.Location = new System.Drawing.Point(21, 24);
+            this.ExchangeRatesPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExchangeRatesPanel.Name = "ExchangeRatesPanel";
-            this.ExchangeRatesPanel.Size = new System.Drawing.Size(1796, 803);
+            this.ExchangeRatesPanel.Size = new System.Drawing.Size(1871, 777);
             this.ExchangeRatesPanel.TabIndex = 25;
             // 
             // RefreshDataButton
@@ -219,9 +223,10 @@ namespace WindowsFormsApp1.UI
             this.RefreshDataButton.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.RefreshDataButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.RefreshDataButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDataButton.Image")));
-            this.RefreshDataButton.Location = new System.Drawing.Point(517, 46);
+            this.RefreshDataButton.Location = new System.Drawing.Point(594, 84);
+            this.RefreshDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RefreshDataButton.Name = "RefreshDataButton";
-            this.RefreshDataButton.Size = new System.Drawing.Size(60, 48);
+            this.RefreshDataButton.Size = new System.Drawing.Size(53, 38);
             this.RefreshDataButton.TabIndex = 41;
             this.RefreshDataButton.UseVisualStyleBackColor = false;
             this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click);
@@ -229,28 +234,29 @@ namespace WindowsFormsApp1.UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1281, 46);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1275, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(261, 29);
+            this.label2.Size = new System.Drawing.Size(297, 31);
             this.label2.TabIndex = 40;
             this.label2.Text = "Exchange Rates Data";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 46);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(140, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 29);
+            this.label1.Size = new System.Drawing.Size(478, 39);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Exchange Rates Data";
+            this.label1.Text = "Exchange Rates Infromation";
             // 
             // DownloadExchangeRatesButton
             // 
-            this.DownloadExchangeRatesButton.Location = new System.Drawing.Point(692, 588);
+            this.DownloadExchangeRatesButton.Location = new System.Drawing.Point(777, 608);
+            this.DownloadExchangeRatesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DownloadExchangeRatesButton.Name = "DownloadExchangeRatesButton";
-            this.DownloadExchangeRatesButton.Size = new System.Drawing.Size(213, 36);
+            this.DownloadExchangeRatesButton.Size = new System.Drawing.Size(195, 35);
             this.DownloadExchangeRatesButton.TabIndex = 38;
             this.DownloadExchangeRatesButton.Text = "DOWNLOAD DATA";
             this.DownloadExchangeRatesButton.UseVisualStyleBackColor = true;
@@ -258,9 +264,10 @@ namespace WindowsFormsApp1.UI
             // 
             // WebServiceButton
             // 
-            this.WebServiceButton.Location = new System.Drawing.Point(1337, 588);
+            this.WebServiceButton.Location = new System.Drawing.Point(1332, 608);
+            this.WebServiceButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WebServiceButton.Name = "WebServiceButton";
-            this.WebServiceButton.Size = new System.Drawing.Size(207, 36);
+            this.WebServiceButton.Size = new System.Drawing.Size(188, 35);
             this.WebServiceButton.TabIndex = 37;
             this.WebServiceButton.Text = "VIEW NBRM DATA";
             this.WebServiceButton.UseVisualStyleBackColor = true;
@@ -270,30 +277,32 @@ namespace WindowsFormsApp1.UI
             // 
             this.NBRMDataGridView.AllowUserToOrderColumns = true;
             this.NBRMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.NBRMDataGridView.Location = new System.Drawing.Point(1078, 99);
+            this.NBRMDataGridView.Location = new System.Drawing.Point(1138, 126);
             this.NBRMDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NBRMDataGridView.MultiSelect = false;
             this.NBRMDataGridView.Name = "NBRMDataGridView";
             this.NBRMDataGridView.RowHeadersWidth = 62;
             this.NBRMDataGridView.RowTemplate.Height = 33;
             this.NBRMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.NBRMDataGridView.Size = new System.Drawing.Size(687, 451);
+            this.NBRMDataGridView.Size = new System.Drawing.Size(611, 440);
             this.NBRMDataGridView.TabIndex = 36;
             // 
             // CurrencyToComboBox
             // 
             this.CurrencyToComboBox.FormattingEnabled = true;
-            this.CurrencyToComboBox.Location = new System.Drawing.Point(209, 267);
+            this.CurrencyToComboBox.Location = new System.Drawing.Point(280, 264);
+            this.CurrencyToComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CurrencyToComboBox.Name = "CurrencyToComboBox";
-            this.CurrencyToComboBox.Size = new System.Drawing.Size(268, 28);
+            this.CurrencyToComboBox.Size = new System.Drawing.Size(239, 24);
             this.CurrencyToComboBox.TabIndex = 35;
             // 
             // CurrencyFromComboBox
             // 
             this.CurrencyFromComboBox.FormattingEnabled = true;
-            this.CurrencyFromComboBox.Location = new System.Drawing.Point(209, 212);
+            this.CurrencyFromComboBox.Location = new System.Drawing.Point(280, 220);
+            this.CurrencyFromComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CurrencyFromComboBox.Name = "CurrencyFromComboBox";
-            this.CurrencyFromComboBox.Size = new System.Drawing.Size(268, 28);
+            this.CurrencyFromComboBox.Size = new System.Drawing.Size(239, 24);
             this.CurrencyFromComboBox.TabIndex = 34;
             // 
             // ExchangeRatesCurrencyFromErrorProvider
@@ -310,12 +319,13 @@ namespace WindowsFormsApp1.UI
             // 
             // ExchangeRatesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1901, 881);
+            this.ClientSize = new System.Drawing.Size(1931, 847);
             this.Controls.Add(this.ExchangeRatesPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ExchangeRatesForm";
             this.Text = "ExchangeRatesForm";
             this.Load += new System.EventHandler(this.ExchangeRatesForm_Load);
