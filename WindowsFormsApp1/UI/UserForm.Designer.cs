@@ -130,21 +130,21 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(914, 581);
+            this.label1.Location = new System.Drawing.Point(1013, 581);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 36);
+            this.label1.Size = new System.Drawing.Size(220, 39);
             this.label1.TabIndex = 34;
             this.label1.Text = "Search User";
             // 
             // AllUsersButton
             // 
             this.AllUsersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AllUsersButton.Location = new System.Drawing.Point(1409, 632);
+            this.AllUsersButton.Location = new System.Drawing.Point(1539, 628);
             this.AllUsersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AllUsersButton.Name = "AllUsersButton";
-            this.AllUsersButton.Size = new System.Drawing.Size(92, 26);
+            this.AllUsersButton.Size = new System.Drawing.Size(124, 26);
             this.AllUsersButton.TabIndex = 33;
             this.AllUsersButton.Text = "All Users";
             this.AllUsersButton.UseVisualStyleBackColor = true;
@@ -154,10 +154,10 @@ namespace WindowsFormsApp1
             // 
             this.SearchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SearchButton.Location = new System.Drawing.Point(1287, 632);
+            this.SearchButton.Location = new System.Drawing.Point(1378, 628);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(92, 26);
+            this.SearchButton.Size = new System.Drawing.Size(134, 26);
             this.SearchButton.TabIndex = 32;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -169,18 +169,18 @@ namespace WindowsFormsApp1
             this.SearchTextBox.Location = new System.Drawing.Point(919, 632);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(332, 22);
+            this.SearchTextBox.Size = new System.Drawing.Size(382, 22);
             this.SearchTextBox.TabIndex = 31;
             // 
             // UserInformationLabel
             // 
             this.UserInformationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserInformationLabel.AutoSize = true;
-            this.UserInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserInformationLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UserInformationLabel.Location = new System.Drawing.Point(455, 75);
+            this.UserInformationLabel.Location = new System.Drawing.Point(445, 75);
             this.UserInformationLabel.Name = "UserInformationLabel";
-            this.UserInformationLabel.Size = new System.Drawing.Size(231, 31);
+            this.UserInformationLabel.Size = new System.Drawing.Size(247, 33);
             this.UserInformationLabel.TabIndex = 30;
             this.UserInformationLabel.Text = "User Information";
             // 
@@ -243,11 +243,11 @@ namespace WindowsFormsApp1
             // 
             this.UsersDataLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsersDataLabel.AutoSize = true;
-            this.UsersDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersDataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersDataLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.UsersDataLabel.Location = new System.Drawing.Point(1198, 75);
+            this.UsersDataLabel.Location = new System.Drawing.Point(1195, 67);
             this.UsersDataLabel.Name = "UsersDataLabel";
-            this.UsersDataLabel.Size = new System.Drawing.Size(161, 31);
+            this.UsersDataLabel.Size = new System.Drawing.Size(171, 33);
             this.UsersDataLabel.TabIndex = 21;
             this.UsersDataLabel.Text = "Users Data";
             // 
