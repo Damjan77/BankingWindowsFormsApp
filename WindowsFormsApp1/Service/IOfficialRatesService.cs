@@ -9,5 +9,7 @@ namespace WindowsFormsApp1.Service
         void UpdateDataInOfficialRatesTable(object toSave);
         List<OfficialRate> getAllData();
         void AddNBRMDataInDataBase();
+        List<OfficialRate> SearchOfficialRates(string CurrencyToText);
+
     }
 }

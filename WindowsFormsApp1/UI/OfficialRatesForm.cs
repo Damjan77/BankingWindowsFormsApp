@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -29,6 +30,11 @@ namespace WindowsFormsApp1.UI
             OfficialRatesCurrencyComboBox.ValueMember = "Code";
             OfficialRatesCurrencyComboBox.DisplayMember = "Code";
             OfficialRatesCurrencyComboBox.SelectedItem = null;
+
+            SearchCurrrencyComboBox.DataSource = cls_CurrencyService.getAllActiveData();
+            SearchCurrrencyComboBox.ValueMember = "Code";
+            SearchCurrrencyComboBox.DisplayMember = "Code";
+            SearchCurrrencyComboBox.SelectedItem = null;
 
             this.WindowState = FormWindowState.Maximized;
             getAllData();
@@ -164,6 +170,39 @@ namespace WindowsFormsApp1.UI
         {
             getAllData();
         }
-        
+
+        private void SearchOfficialRateButton_Click(object sender, EventArgs e)
+        {
+            if (isDataSearchValid())
+            {
+                string CurrencyText = SearchCurrrencyComboBox.Text;
+
+                List<OfficialRate> searchedExchageRates = officialRates.SearchOfficialRates(CurrencyText);
+                OfficialRatedataGridView.DataSource = searchedExchageRates;
+
+                if (searchedExchageRates.Count == 0)
+                    MessageBox.Show("Official Rates with this specifications does not exist!");
+            }
+        }
+
+        private bool isDataSearchValid()
+        {
+            //currencySearchText Logic
+            bool currencySearchFlag = true;
+
+            if (SearchCurrrencyComboBox.Text == "")
+            {
+                SearchCurrencyErrorProvider.SetError(SearchCurrrencyComboBox, "Please select currency to search Official Rates!");
+                currencySearchFlag = false;
+            }
+            if (currencySearchFlag)
+            {
+                SearchCurrencyErrorProvider.SetError(SearchCurrrencyComboBox, string.Empty);
+                SearchCurrencyErrorProvider.Clear();
+            }
+
+            if (currencySearchFlag) return true;
+            else return false;
+        }
     }
 }

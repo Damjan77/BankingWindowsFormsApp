@@ -121,7 +121,7 @@
   <data name="RefreshDataButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAURJREFUSEvN1L8rRWEcx/EjAxbFoKwS/4AsYrDKIhlksBvUTQaDyW62okwYDZRB
+        vAAADrwBlbxySQAAAURJREFUSEvN1L8rRWEcx/EjAxbFoKwS/4AsYrDKIhlksBvUTQaDyW62okwYDZRB
         sVvsFomkCCU/3u+nM1w31/Gce5+6n3p1z3PO832ec849z5O1WtpyybKDc3SHVoJM4Q0XSDbJNJo+SR9m
         UMEqjvCJhicZxj7e4YC/WUapLOAFD9jACLzbLizBwU/ydnRm8YFj+HqqMw+fqPTg/XjEGTo8UZU5NDS4
         2YRfyUBo/cwW/INLD+4qvcVeaCXIIL6wGFoJMg4nmAytuAzhJv+tm1E4gVtCbKyx1jHqpgd+nmuhFRdr
@@ -131,6 +131,9 @@
   </data>
   <metadata name="ExchangeRatesCurrencyFromErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>11, 11</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>54</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2319,5 +2322,11 @@
   </metadata>
   <metadata name="ExchangeRatesRateErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>801, 11</value>
+  </metadata>
+  <metadata name="CurrencyFromSearchErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1030, 11</value>
+  </metadata>
+  <metadata name="CurrencyToSearchErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1266, 11</value>
   </metadata>
 </root>
