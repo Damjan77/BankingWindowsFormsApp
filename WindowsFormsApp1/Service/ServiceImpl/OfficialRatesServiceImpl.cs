@@ -148,10 +148,12 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                             isActive = isActive
                         };
 
-                        myDb.OfficialRates.Add(officialRate);
-                    }
+                        var duplicateRates = myDb.OfficialRates.Where(r => r.Currency == officialRate.Currency).ToList(); //TODO Da se proverat live data dali se vo red, bidejki na web servis dava za 2 dena rates
+                        duplicateRates.ForEach(r => r.isActive = false);
 
-                    myDb.SaveChanges();
+                        myDb.OfficialRates.Add(officialRate);
+                        myDb.SaveChanges();
+                    }
                 }
             }
             MessageBox.Show("Latest OfficialRates downloaded! Please refresh page.");
