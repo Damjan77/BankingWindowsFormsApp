@@ -40,6 +40,16 @@ namespace WindowsFormsApp1.UI
             CurrencyFromComboBox.DisplayMember = "Code";
             CurrencyToComboBox.SelectedItem = null;
 
+            SearchCurrencyFromComboBox.DataSource = cls_CurrencyService.getAllActiveData();
+            SearchCurrencyFromComboBox.ValueMember = "Code";
+            SearchCurrencyFromComboBox.DisplayMember = "Code";
+            SearchCurrencyFromComboBox.SelectedItem = null;
+
+            SearchCurrrencyToComboBox.DataSource = cls_CurrencyService.getAllActiveData();
+            SearchCurrrencyToComboBox.ValueMember = "Code";
+            SearchCurrrencyToComboBox.DisplayMember = "Code";
+            SearchCurrrencyToComboBox.SelectedItem = null;
+
             getAllData();
         }
 
@@ -202,5 +212,56 @@ namespace WindowsFormsApp1.UI
         {
             getAllData();
         }
+
+        private void SearchExchangeRateButton_Click(object sender, EventArgs e)
+        {
+            if (isDataSearchValid())
+            {
+                string CurrencyFromText = SearchCurrencyFromComboBox.Text;
+                string CurrencyToText = SearchCurrrencyToComboBox.Text;
+
+                List<ExchangeRate> searchedExchageRates = exchangeRates.SearchExchangeRates(CurrencyFromText, CurrencyToText);
+                ExchangeRatesDataGridView.DataSource = searchedExchageRates;
+
+                if (searchedExchageRates.Count == 0)
+                    MessageBox.Show("Exchange Rates with this specifications does not exist!");
+            }
+
+        }
+
+        private bool isDataSearchValid()
+        {
+            //currencyFromText Logic
+            bool currencyFromSearchFlag = true;
+
+            if (SearchCurrencyFromComboBox.Text == "")
+            {
+                CurrencyFromSearchErrorProvider.SetError(SearchCurrencyFromComboBox, "Please select currency to search Exchange Rates!");
+                currencyFromSearchFlag = false;
+            }
+            if (currencyFromSearchFlag)
+            {
+                CurrencyFromSearchErrorProvider.SetError(SearchCurrencyFromComboBox, string.Empty);
+                CurrencyFromSearchErrorProvider.Clear();
+            }
+
+            //currencyToText Logic
+            bool currencyToSearchFlag = true;
+
+            if (SearchCurrrencyToComboBox.Text == "")
+            {
+                CurrencyToSearchErrorProvider.SetError(SearchCurrrencyToComboBox, "Please select currency to search Exchange Rates!");
+                currencyToSearchFlag = false;
+            }
+            if (currencyToSearchFlag)
+            {
+                CurrencyToSearchErrorProvider.SetError(SearchCurrrencyToComboBox, string.Empty);
+                CurrencyToSearchErrorProvider.Clear();
+            }
+
+            if (currencyFromSearchFlag && currencyToSearchFlag) return true;
+            else return false;
+        }
+
     }
 }

@@ -175,6 +175,28 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             MessageBox.Show("Latest ExchangeRates downloaded! Please refresh page.");
         }
+
+        public List<ExchangeRate> SearchExchangeRates(string CurrencyFromText, string CurrencyToText)
+        {
+            using (var myDb = new Model1())
+            {
+                var searchResults = myDb.ExchangeRates
+                .Where(er => er.CurrencyFrom == CurrencyFromText && er.CurrencyTo == CurrencyToText)
+                .ToList();
+
+                List<ExchangeRate> myExchangeRates = searchResults.Select(ExchangeRateProp => new ExchangeRate
+                {
+                    exchangeRatesId = ExchangeRateProp.exchangeRatesId,
+                    ValidityDate = ExchangeRateProp.ValidityDate,
+                    CurrencyFrom = ExchangeRateProp.CurrencyFrom,
+                    CurrencyTo = ExchangeRateProp.CurrencyTo,
+                    Rate = ExchangeRateProp.Rate,
+                    IsActive = ExchangeRateProp.IsActive
+                }).ToList();
+
+                return myExchangeRates;
+            }
+        }
     }
     
 }

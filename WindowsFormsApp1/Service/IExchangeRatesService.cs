@@ -9,5 +9,6 @@ namespace WindowsFormsApp1.Service
         void UpdateDataInExchangeRatesTable(object toSave);
         List<ExchangeRate> getAllData();
         void AddNBRMDataInDataBase();
+        List<ExchangeRate> SearchExchangeRates(string CurrencyFromText, string CurrencyToText);
     }
 }

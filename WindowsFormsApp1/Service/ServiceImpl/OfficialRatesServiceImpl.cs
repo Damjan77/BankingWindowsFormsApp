@@ -156,5 +156,26 @@ namespace WindowsFormsApp1.Service.ServiceImpl
             }
             MessageBox.Show("Latest OfficialRates downloaded! Please refresh page.");
         }
+
+        public List<OfficialRate> SearchOfficialRates(string CurrencyToText)
+        {
+            using (var myDb = new Model1())
+            {
+                var searchResults = myDb.OfficialRates
+                .Where(of => of.Currency == CurrencyToText)
+                .ToList();
+
+                List<OfficialRate> myOfficialRates = searchResults.Select(OfficialRateProp => new OfficialRate
+                {
+                    OfficialRatesId = OfficialRateProp.OfficialRatesId,
+                    ValidityDate = OfficialRateProp.ValidityDate,
+                    Currency = OfficialRateProp.Currency,
+                    Rate = OfficialRateProp.Rate,
+                    isActive = OfficialRateProp.isActive
+                }).ToList();
+
+                return myOfficialRates;
+            }
+        }
     }
 }
