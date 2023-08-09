@@ -166,11 +166,17 @@ namespace WindowsFormsApp1.Service.ServiceImpl
                             IsActive = isActive
                         };
 
+                        var duplicateRates = myDb.ExchangeRates.Where(r => r.CurrencyFrom == exchangeRate.CurrencyFrom && r.CurrencyTo == exchangeRate.CurrencyTo).ToList();
+                        duplicateRates.ForEach(r => r.IsActive = false);
+
+                        duplicateRates = myDb.ExchangeRates.Where(r => r.CurrencyFrom == exchangeRate2.CurrencyFrom && r.CurrencyTo == exchangeRate2.CurrencyTo).ToList();
+                        duplicateRates.ForEach(r => r.IsActive = false);
+
                         myDb.ExchangeRates.Add(exchangeRate);
                         myDb.ExchangeRates.Add(exchangeRate2);
+                        myDb.SaveChanges();
                     }
-
-                    myDb.SaveChanges();
+                    
                 }
             }
             MessageBox.Show("Latest ExchangeRates downloaded! Please refresh page.");
