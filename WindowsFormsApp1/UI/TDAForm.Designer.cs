@@ -58,9 +58,9 @@
             this.TDAAccountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TDAAccountLabel.AutoSize = true;
             this.TDAAccountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDAAccountLabel.Location = new System.Drawing.Point(1135, 50);
+            this.TDAAccountLabel.Location = new System.Drawing.Point(697, 87);
             this.TDAAccountLabel.Name = "TDAAccountLabel";
-            this.TDAAccountLabel.Size = new System.Drawing.Size(163, 29);
+            this.TDAAccountLabel.Size = new System.Drawing.Size(141, 25);
             this.TDAAccountLabel.TabIndex = 0;
             this.TDAAccountLabel.Text = "TDA Account";
             // 
@@ -68,10 +68,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(219, 266);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(249, 239);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 29);
+            this.label2.Size = new System.Drawing.Size(107, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Amount";
             // 
@@ -79,10 +79,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(219, 351);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(249, 307);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 29);
+            this.label3.Size = new System.Drawing.Size(92, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Period";
             // 
@@ -90,44 +90,48 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(219, 425);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(249, 366);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 29);
+            this.label4.Size = new System.Drawing.Size(171, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Interest Rate";
             // 
             // AmountTextBox
             // 
             this.AmountTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AmountTextBox.Location = new System.Drawing.Point(463, 266);
+            this.AmountTextBox.Location = new System.Drawing.Point(466, 239);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AmountTextBox.Name = "AmountTextBox";
-            this.AmountTextBox.Size = new System.Drawing.Size(173, 26);
+            this.AmountTextBox.Size = new System.Drawing.Size(154, 22);
             this.AmountTextBox.TabIndex = 4;
             // 
             // PeriodTextBox
             // 
             this.PeriodTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PeriodTextBox.Location = new System.Drawing.Point(463, 342);
+            this.PeriodTextBox.Location = new System.Drawing.Point(466, 300);
+            this.PeriodTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PeriodTextBox.Name = "PeriodTextBox";
-            this.PeriodTextBox.Size = new System.Drawing.Size(173, 26);
+            this.PeriodTextBox.Size = new System.Drawing.Size(154, 22);
             this.PeriodTextBox.TabIndex = 5;
             // 
             // InterestRateTextBox
             // 
             this.InterestRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.InterestRateTextBox.Location = new System.Drawing.Point(463, 425);
+            this.InterestRateTextBox.Location = new System.Drawing.Point(466, 366);
+            this.InterestRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InterestRateTextBox.Name = "InterestRateTextBox";
-            this.InterestRateTextBox.Size = new System.Drawing.Size(173, 26);
+            this.InterestRateTextBox.Size = new System.Drawing.Size(154, 22);
             this.InterestRateTextBox.TabIndex = 6;
             // 
             // CalculateButton
             // 
             this.CalculateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CalculateButton.AutoSize = true;
-            this.CalculateButton.Location = new System.Drawing.Point(476, 519);
+            this.CalculateButton.Location = new System.Drawing.Point(466, 495);
+            this.CalculateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(146, 51);
+            this.CalculateButton.Size = new System.Drawing.Size(130, 41);
             this.CalculateButton.TabIndex = 7;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
@@ -138,12 +142,13 @@
             this.TDADataGridView.AllowUserToOrderColumns = true;
             this.TDADataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TDADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TDADataGridView.Location = new System.Drawing.Point(765, 266);
+            this.TDADataGridView.Location = new System.Drawing.Point(1413, 239);
+            this.TDADataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDADataGridView.Name = "TDADataGridView";
             this.TDADataGridView.ReadOnly = true;
             this.TDADataGridView.RowHeadersWidth = 62;
             this.TDADataGridView.RowTemplate.Height = 28;
-            this.TDADataGridView.Size = new System.Drawing.Size(426, 281);
+            this.TDADataGridView.Size = new System.Drawing.Size(469, 227);
             this.TDADataGridView.TabIndex = 8;
             // 
             // TDAInformationLabel
@@ -151,9 +156,9 @@
             this.TDAInformationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TDAInformationLabel.AutoSize = true;
             this.TDAInformationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDAInformationLabel.Location = new System.Drawing.Point(1065, 170);
+            this.TDAInformationLabel.Location = new System.Drawing.Point(1007, 165);
             this.TDAInformationLabel.Name = "TDAInformationLabel";
-            this.TDAInformationLabel.Size = new System.Drawing.Size(297, 29);
+            this.TDAInformationLabel.Size = new System.Drawing.Size(245, 25);
             this.TDAInformationLabel.TabIndex = 9;
             this.TDAInformationLabel.Text = "Term Deposit Calculator";
             // 
@@ -173,11 +178,12 @@
             // 
             this.AnnuitydataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnnuitydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AnnuitydataGridView.Location = new System.Drawing.Point(1247, 263);
+            this.AnnuitydataGridView.Location = new System.Drawing.Point(734, 239);
+            this.AnnuitydataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AnnuitydataGridView.Name = "AnnuitydataGridView";
             this.AnnuitydataGridView.RowHeadersWidth = 62;
             this.AnnuitydataGridView.RowTemplate.Height = 28;
-            this.AnnuitydataGridView.Size = new System.Drawing.Size(426, 284);
+            this.AnnuitydataGridView.Size = new System.Drawing.Size(623, 227);
             this.AnnuitydataGridView.TabIndex = 10;
             // 
             // TdaPanel
@@ -195,19 +201,21 @@
             this.TdaPanel.Controls.Add(this.PeriodTextBox);
             this.TdaPanel.Controls.Add(this.InterestRateTextBox);
             this.TdaPanel.Location = new System.Drawing.Point(0, 0);
+            this.TdaPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TdaPanel.Name = "TdaPanel";
-            this.TdaPanel.Size = new System.Drawing.Size(1989, 899);
+            this.TdaPanel.Size = new System.Drawing.Size(1961, 875);
             this.TdaPanel.TabIndex = 11;
             // 
             // TDAForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1989, 899);
+            this.ClientSize = new System.Drawing.Size(1969, 868);
             this.Controls.Add(this.TdaPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TDAForm";
             this.Text = "TDAForm";
             this.Load += new System.EventHandler(this.TDAForm_Load);
