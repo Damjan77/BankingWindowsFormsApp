@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(1013, 581);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 39);
+            this.label1.Size = new System.Drawing.Size(176, 31);
             this.label1.TabIndex = 34;
             this.label1.Text = "Search User";
             // 
@@ -337,7 +337,6 @@ namespace WindowsFormsApp1
             // SaveUserButton
             // 
             this.SaveUserButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaveUserButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveUserButton.Image")));
             this.SaveUserButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.SaveUserButton.Location = new System.Drawing.Point(461, 533);
             this.SaveUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -397,7 +396,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1958, 920);
+            this.ClientSize = new System.Drawing.Size(1961, 929);
             this.Controls.Add(this.UsersPanel);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
