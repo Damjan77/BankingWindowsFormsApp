@@ -8,10 +8,9 @@ namespace WindowsFormsApp1.Models
 {
     internal class AnnuityResult
     {
-        public int MonthlyNumber { get; set; }
-        public decimal TotalAmount { get; set; }
-        public decimal InitialDeposit { get; set; }
-        public decimal InterestEarned { get; set; }
-
+        public string year { get; set; }
+        public string month { get; set; }
+        public int days { get; set; }
+        public decimal interestPerMonth { get; set; }
     }
 }
