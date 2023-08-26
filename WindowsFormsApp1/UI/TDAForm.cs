@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Service;
@@ -28,7 +30,7 @@ namespace WindowsFormsApp1.UI
 
             TDADataGridView.DataSource = tDAService.getAllTDAData(amount, period, interestRate);
             var result = tDAService.getAllAnnuityData(amount, period, interestRate);
-            AnnuitydataGridView.DataSource = result; 
+            AnnuitydataGridView.DataSource = result;
         }
 
         private void clearData()
